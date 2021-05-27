@@ -1,0 +1,10 @@
+{
+  "overrides": [
+    {
+      "files": "*.wxml",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
+}

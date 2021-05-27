@@ -4,16 +4,29 @@
   "private": true,
   "scripts": {
     "pretty": "yarn prettier --write .",
+    "lint": "./node_modules/.bin/eslint .eslintrc.js  --fix",
     "prepare": "husky install"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.27.0",
     "husky": "^6.0.0",
     "lint-staged": ">=10",
     "prettier": "2.3.0",
     "pretty-quick": "^3.1.0"
   },
   "lint-staged": {
-    "*.{js,wxss,md,json}": "prettier --write"
+    "*.{js,wxss,md,json,less, wxml}": "prettier --write"
+  },
+  "prettier": {
+    "overrides": [
+      {
+        "files": "*.wxml",
+        "options": {
+          "parser": "html"
+        }
+      }
+    ]
   },
   "husky": {
     "hooks": {
