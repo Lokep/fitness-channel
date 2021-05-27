@@ -1,0 +1,24 @@
+{
+  "name": "dt-remedy",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "pretty": "yarn prettier --write .",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^6.0.0",
+    "lint-staged": ">=10",
+    "prettier": "2.3.0",
+    "pretty-quick": "^3.1.0"
+  },
+  "lint-staged": {
+    "*.{js,wxss,md,json}": "prettier --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
+  }
+}
