@@ -1,4 +1,7 @@
 // index.js
+
+const { request } = require("../../utils/request");
+
 // 获取应用实例
 const app = getApp();
 
@@ -26,6 +29,9 @@ Page({
       });
     }
   },
+  onShow() {
+    this.request();
+  },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({
@@ -46,5 +52,16 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true,
     });
+  },
+  request() {
+    request({
+      url:
+        "https://www.lanniuh.com/web-bin/m/nosen/repository/disease/query_diseaseNameList1_data?position=0d0ac08fd0fc4071ab9625e7a634b0c9",
+      showLoading: false,
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
   },
 });

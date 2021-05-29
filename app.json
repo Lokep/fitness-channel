@@ -1,11 +1,37 @@
 {
-  "pages": ["pages/index/index", "pages/logs/logs"],
+  "pages": [
+    "pages/assistant/index/index",
+    "pages/archive/index/index",
+
+    "pages/dt/service-list/index"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "数字良方",
     "navigationBarTextStyle": "black"
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#000",
+    "selectedColor": "#2b7bf5",
+    "list": [
+      {
+        "iconPath": "/assets/images/icon_helper.png",
+        "selectedIconPath": "/assets/images/icon_helper-active.png",
+        "pagePath": "pages/assistant/index/index",
+        "text": "数疗助手"
+      },
+      {
+        "iconPath": "/assets/images/icon_files.png",
+        "selectedIconPath": "/assets/images/icon_files_active.png",
+        "pagePath": "pages/archive/index/index",
+        "text": "健康档案"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index"
+  }
 }

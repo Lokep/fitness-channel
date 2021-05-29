@@ -1,0 +1,22 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "数疗服务——列表",
+          "pathName": "pages/dt/service-list/index",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

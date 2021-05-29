@@ -1,0 +1,75 @@
+/* margin padding */
+
+.mg(@a: 1) when(@a <= 10) {
+  @i: @a * 5;
+  .ml-@{i} {
+    margin-left: @a * 5rpx;
+  }
+
+  .mr-@{i} {
+    margin-right: @a * 5rpx;
+  }
+
+  .mt-@{i} {
+    margin-top: @a * 5rpx;
+  }
+
+  .mb-@{i} {
+    margin-bottom: @a * 5rpx;
+  }
+
+  .pl-@{i} {
+    padding-left: @a * 5rpx;
+  }
+
+  .pr-@{i} {
+    padding-right: @a * 5rpx;
+  }
+
+  .pt-@{i} {
+    padding-top: @a * 5rpx;
+  }
+
+  .pb-@{i} {
+    padding-bottom: @a * 5rpx;
+  }
+
+  .mg((@a + 1));
+}
+
+.mg();
+
+/** flex */
+.flex {
+  display: flex;
+}
+
+.align-center {
+  .flex;
+  align-items: center;
+}
+
+.justify-between {
+  .flex;
+  justify-content: space-between;
+}
+
+.justify-center {
+  .flex;
+  justify-content: center;
+}
+
+image {
+  display: block;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.ov {
+  overflow: hidden;
+}

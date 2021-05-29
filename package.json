@@ -33,5 +33,9 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "@vant/weapp": "^1.6.8",
+    "regenerator-runtime": "^0.13.7"
   }
 }
