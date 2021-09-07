@@ -1,0 +1,63 @@
+.container {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 50rpx 30rpx;
+}
+.mine-topbar {
+  margin-bottom: 60rpx;
+}
+.mine-topbar .van-image {
+  display: block;
+}
+.mine-topbar--avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  overflow: hidden;
+}
+.mine-topbar--nickname {
+  margin-right: 14rpx;
+  font-size: 40rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 56rpx;
+  max-width: 8em;
+}
+.mine-topbar--sex {
+  width: 36rpx;
+  height: 36rpx;
+}
+.mine-topbar--birth {
+  font-size: 30rpx;
+  font-family: DINAlternate-Bold, DINAlternate;
+  font-weight: bold;
+  color: #bfbfbf;
+  line-height: 34rpx;
+}
+.mine-menu--item {
+  height: 120rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.mine-menu--icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 30rpx;
+}
+.mine-menu--title {
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 44rpx;
+  flex: 1;
+}
+.mine-menu .iconfont {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #c4ced6;
+}

@@ -1,0 +1,30 @@
+<view class="container">
+  <view class="wrap flex">
+    <view class="env-item" wx:for="{{4}}" wx:key="item">
+      <view class="env-item__title justify-center"> 客厅 </view>
+
+      <view
+        class="env-item__row justify-between align-center"
+        wx:for="{{envArgs}}"
+        wx:key="index"
+      >
+        <view class="env-item__label align-center">
+          <image class="env-item__label-icon" src="{{item.icon}}" />
+          {{item.label}}
+        </view>
+        <view class="env-item__value {{item.warn ? 'warn' : ''}}"
+          >{{item.value || '优'}}</view
+        >
+      </view>
+
+      <view
+        class="env-item__link align-center justify-center"
+        data-room=""
+        bindtap="handleRoomNavigation"
+      >
+        查看更多
+        <view class="iconfont iconarrow-right"></view>
+      </view>
+    </view>
+  </view>
+</view>

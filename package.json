@@ -5,7 +5,8 @@
   "scripts": {
     "pretty": "yarn prettier --write .",
     "lint": "./node_modules/.bin/eslint .eslintrc.js  --fix",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "mock": "nodemon ./server/index.js"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -13,7 +14,9 @@
     "husky": "^6.0.0",
     "lint-staged": ">=10",
     "prettier": "2.3.0",
-    "pretty-quick": "^3.1.0"
+    "pretty-quick": "^3.1.0",
+    "express": "^4.17.1",
+    "mockjs": "^1.1.0"
   },
   "lint-staged": {
     "*.{js,wxss,md,json,less, wxml}": "prettier --write"

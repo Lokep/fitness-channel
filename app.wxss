@@ -1,9 +1,19 @@
 @import "./assets/styles/common.wxss";
 @import "./assets/styles/cover.wxss";
+@import "./assets/styles/iconfont.wxss";
 
 .container {
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  background: #f3f5f9;
+  background: #f9fafb;
+}
+
+.gradient {
+  width: 100vw;
+  height: 400rpx;
+  background: linear-gradient(360deg, #f9fafb 0%, #75acff 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
 }

@@ -1,0 +1,17 @@
+.container {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 20rpx 30rpx 70rpx;
+}
+.card {
+  height: 300rpx;
+  background-color: #eee;
+  border-radius: 40rpx;
+}
+.card-img {
+  width: 100%;
+  height: 100%;
+}
+.card + .card {
+  margin-top: 20rpx;
+}

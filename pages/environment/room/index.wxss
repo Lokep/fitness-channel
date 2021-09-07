@@ -1,0 +1,43 @@
+.wrap {
+  flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+.room-item {
+  box-sizing: border-box;
+  padding: 34rpx 30rpx;
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin-bottom: 20rpx;
+  width: 334rpx;
+}
+.room-item:nth-child(2n) {
+  margin-left: 20rpx;
+}
+.room-item__icon {
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 16rpx;
+}
+.room-item__label {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 36rpx;
+  margin-bottom: 12rpx;
+}
+.room-item__value {
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #5fd8ab;
+  line-height: 44rpx;
+}
+.warn .room-item__value {
+  color: #ffa95a;
+}
+.danger .room-item__value {
+  color: #ff6565;
+}

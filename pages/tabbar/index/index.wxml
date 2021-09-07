@@ -1,0 +1,166 @@
+<view class="container">
+  <navigation-bar title="健康管理" color="#fff" background="transparent" />
+
+  <!---bg --->
+  <view class="gradient"></view>
+
+  <view class="wrap mt-20 ml-30 mr-30">
+    <!-- 环境信息 -->
+    <view class="card">
+      <view class="justify-between mb-40">
+        <view class="flex card-topbar__left">
+          <view class="card-topbar__title">环境信息</view>
+          <view class="card-topbar__sub-title ml-20"></view>
+        </view>
+
+        <view class="card-topbar__right align-center">
+          查看更多
+          <view class="iconfont iconarrow-right"></view>
+        </view>
+      </view>
+
+      <view class="card-list justify-around align-center">
+        <view class="card-item">
+          <image class="env-icon" src="../../../assets/images/icon_air.png" />
+          <view class="env-level">优</view>
+          <view class="env-label">空气质量</view>
+        </view>
+
+        <view class="card-item">
+          <image class="env-icon" src="../../../assets/images/icon_pm.png" />
+          <view class="env-level">19优</view>
+          <view class="env-label">pm2.5</view>
+        </view>
+
+        <view class="card-item">
+          <image
+            class="env-icon"
+            src="../../../assets/images/icon_formaldehyde.png"
+          />
+          <view class="env-level">0.01优</view>
+          <view class="env-label">甲醛</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 饮食计划 -->
+    <view class="card">
+      <view class="justify-between mb-40">
+        <view class="flex card-topbar__left">
+          <view class="card-topbar__title">饮食计划</view>
+          <view class="card-topbar__sub-title ml-20"></view>
+        </view>
+
+        <view class="card-topbar__right align-center">
+          <view class="iconfont iconarrow-right"></view>
+        </view>
+      </view>
+
+      <!---<view class="calories card-list justify-around align-center">
+
+        <view class="card-item">
+          <view class="calories-label">推荐摄入</view>
+          <view class="calories-data">1747</view>
+          <view class="calories-desc">蛋白质 \r\n 0/10.2g</view>
+        </view>
+
+        <view class="card-item">
+          <view class="calories-label">还可摄入</view>
+          <view class="calories-data warning">500</view>
+          <view class="calories-desc">脂肪 \r\n 0/10.2g</view>
+        </view>
+
+        <view class="card-item">
+          <view class="calories-label">摄入</view>
+          <view class="calories-data">1747</view>
+          <view class="calories-desc">碳水化合物 \r\n 0/10.2g</view>
+        </view>
+
+      </view>-->
+      <view class="card-empty">
+        <van-empty
+          class="custom-image"
+          image="/assets/images/bg_empty.png"
+          description="暂无进行中的饮食计划~前往领取您的饮食计划吧！"
+        />
+        <view class="justify-center">
+          <van-button size="small" type="info" round>领取计划</van-button>
+        </view>
+      </view>
+    </view>
+
+    <!-- 健康运动 -->
+    <view class="card">
+      <view class="justify-between mb-40">
+        <view class="flex card-topbar__left">
+          <view class="card-topbar__title">健康运动</view>
+          <view class="card-topbar__sub-title ml-20">热量(千卡)</view>
+        </view>
+
+        <view class="card-topbar__right align-center">
+          <view class="iconfont iconarrow-right"></view>
+        </view>
+      </view>
+
+      <view class="card-list justify-around align-center">
+        <view class="card-item">
+          <view class="calories-label">运动目标</view>
+          <view class="calories-data">1747</view>
+        </view>
+
+        <view class="card-item">
+          <view class="calories-label">还需消耗</view>
+          <view class="calories-data warning">500</view>
+        </view>
+
+        <view class="card-item">
+          <view class="calories-label">已消耗</view>
+          <view class="calories-data">1747</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 健康信息 -->
+    <view class="card">
+      <view class="justify-between mb-40">
+        <view class="flex card-topbar__left">
+          <view class="card-topbar__title">环境信息</view>
+          <view class="card-topbar__sub-title ml-20">热量(千卡)</view>
+        </view>
+
+        <view class="card-topbar__right align-center">
+          完善信息
+          <view class="iconfont iconarrow-right"></view>
+        </view>
+      </view>
+
+      <view class="card-list justify-around align-center">
+        <view class="card-item">
+          <view class="info-data">
+            <view>48.0</view>
+            <text>kg</text>
+          </view>
+          <view class="info-desc">体重</view>
+        </view>
+
+        <view class="card-item">
+          <view class="info-data">
+            <view>184</view>
+            <text>cm</text>
+          </view>
+          <view class="info-desc">身高</view>
+        </view>
+
+        <view class="card-item">
+          <view class="info-data">21.5</view>
+          <view class="info-desc">BMI</view>
+        </view>
+
+        <view class="card-item">
+          <view class="info-data">A</view>
+          <view class="info-desc">血型</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

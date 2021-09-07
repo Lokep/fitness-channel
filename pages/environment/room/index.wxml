@@ -1,0 +1,20 @@
+<view class="container">
+  <navigation-bar title="空气检测" color="#fff" background="transparent" />
+
+  <!---bg --->
+  <view class="gradient"></view>
+
+  <view class="wrap flex">
+    <view
+      class="room-item align-center {{item.state}}"
+      wx:for="{{list}}"
+      wx:key="index"
+    >
+      <image class="room-item__icon" src="{{item.icon}}" />
+      <view>
+        <view class="room-item__label"> {{item.label}} </view>
+        <view class="room-item__value"> {{item.value || '优'}} </view>
+      </view>
+    </view>
+  </view>
+</view>

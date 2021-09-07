@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="card" wx:for="{{LIST}}" wx:key="index">
+    <!---<van-image
+      custom-class="article-item__img mr-25"
+      src="{{article.coverPicture}}"
+      lazy-load
+      use-loading-slot
+      use-error-slot
+    >
+      <van-loading slot="loading" type="spinner" size="20" vertical />
+      <text slot="error">加载失败</text>
+    </van-image>-->
+
+    <image class="card-img" src="{{item.imgUrl}}" />
+  </view>
+</view>
+
+<view class=""></view>

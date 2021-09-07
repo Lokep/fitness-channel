@@ -1,0 +1,61 @@
+.container {
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.env-item {
+  background-color: #fff;
+  padding: 40rpx 20rpx;
+  box-sizing: border-box;
+  width: 335rpx;
+  height: 472rpx;
+  border-radius: 40rpx;
+  margin-bottom: 20rpx;
+}
+.env-item:nth-child(2n) {
+  margin-left: 20rpx;
+}
+.env-item__title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 44rpx;
+  margin-bottom: 36rpx;
+}
+.env-item__row + .env-item__row {
+  margin-top: 43rpx;
+}
+.env-item__label {
+  font-size: 26rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 36rpx;
+}
+.env-item__label-icon {
+  width: 52rpx;
+  height: 52rpx;
+  margin-right: 16rpx;
+}
+.env-item__value {
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #5fd8ab;
+}
+.env-item__link {
+  margin-top: 36rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #c4ced6;
+  line-height: 34rpx;
+}
+.env-item__link .iconfont {
+  font-size: 24rpx;
+}
+.warn {
+  color: #ffa95a;
+}

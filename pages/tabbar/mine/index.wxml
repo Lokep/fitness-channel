@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="mine-topbar align-center">
+    <van-image
+      custom-class="mine-topbar--avatar mr-40"
+      src="/assets/images/img_diet.png"
+      lazy-load
+      use-loading-slot
+      use-error-slot
+    >
+      <van-loading slot="loading" type="spinner" size="20" vertical />
+      <text slot="error">加载失败</text>
+    </van-image>
+
+    <view>
+      <view class="align-center">
+        <view class="mine-topbar--nickname ellipsis">Lokep</view>
+        <image
+          class="mine-topbar--sex"
+          src="/assets/images/icon_mine_woman.png"
+        />
+      </view>
+      <view class="mine-topbar--birth mt-10"> 1995-01-09 </view>
+    </view>
+  </view>
+
+  <view class="mine-menu">
+    <view class="mine-menu--item align-center" wx:for="{{MENU}}" wx:key="index">
+      <image class="mine-menu--icon" src="{{item.imgUrl}}" />
+      <view class="mine-menu--title">{{item.title}}</view>
+      <view class="iconfont iconarrow-right"></view>
+    </view>
+  </view>
+</view>

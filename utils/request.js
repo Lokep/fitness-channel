@@ -1,12 +1,14 @@
-import { env, getNetworkType } from "./wx-api";
+import { OFFLINE, WHITE_MENU } from "./constant";
+import { getCache, saveCache } from "./util";
+import { getNetworkType } from "./wx-api";
+import { handleRequestURL } from "./proxyTable";
 
-const baseApi = {
-  develop: "",
-  trial: "",
-  release: "",
-};
 const TIMEOUT = 10000;
-const apiBaseUrl = baseApi[env];
+
+let LOGIN_STATUS = true;
+
+const MOCK_SERVER = "http://localhost:3000";
+
 export function request({
   url,
   data,
@@ -14,12 +16,16 @@ export function request({
   showLoading = true,
   showErrMsg,
   checkToken = true,
+  delay = 0,
+  isMock = false,
 }) {
+  if (!LOGIN_STATUS && checkToken) return;
+
   return new Promise(async (resolve) => {
     const { networkType } = await getNetworkType();
     if (networkType === "unknow" || networkType === "none") {
       Toast("网络似乎走丢了...");
-      resolve({});
+      resolve(OFFLINE);
     }
 
     if (showLoading) {
@@ -27,16 +33,30 @@ export function request({
         title: "加载中",
       });
     }
+    const t0 = Date.now();
 
     wx.request({
       data,
-      url: apiBaseUrl + url,
+      url: isMock ? MOCK_SERVER + url : handleRequestURL(url),
       header: handleHeader(checkToken),
       timeout: TIMEOUT,
       method,
       success: (res) => {
-        handleResponse(showErrMsg, res.data);
-        resolve(res.data);
+        // console.log(res, typeof res.data)
+        const t1 = Date.now();
+        const delta = t1 - t0;
+
+        if (delay && delta < delay) {
+          let timeOut = setTimeout(() => {
+            console.log("[delay]:", delay - delta);
+            clearTimeout(timeOut);
+            handleResponse(showErrMsg, res.data, url);
+            resolve(res.data);
+          }, delay - delta);
+        } else {
+          handleResponse(showErrMsg, res.data, url);
+          resolve(res.data);
+        }
       },
       fail: (err) => {
         handleError(err, showErrMsg);
@@ -55,16 +75,35 @@ export const axios = request;
 export const fetch = request;
 
 function handleHeader(checkToken = true) {
-  const token = wx.getStorageSync("token");
+  const { token } = getCache("loginInfo");
   let headers = {};
   if (token && checkToken) {
-    headers.token = token;
+    headers.Authorization = "Bearer" + token;
   }
   return headers;
 }
 
-function handleResponse(showErrMsg = true, response) {
+function handleResponse(showErrMsg = true, response, url) {
   const { res, msg = "请求出错" } = response;
+  const LOGIN_PATH = "pages/common/login/index";
+  const routes = getCurrentPages();
+  const { route } = routes[routes.length - 1];
+  if (
+    res === 801 &&
+    route != LOGIN_PATH &&
+    WHITE_MENU.findIndex((item) => url == item.url) < 0
+  ) {
+    const app = getApp();
+    LOGIN_STATUS = false;
+    app.globalData.hasToken = false;
+    saveCache("lastPage", "/" + route);
+    wx.redirectTo({
+      url: "/pages/common/login/index",
+    });
+  }
+
+  LOGIN_STATUS = true;
+
   if (showErrMsg && res !== 0) {
     setTimeout(() => {
       Toast(msg);

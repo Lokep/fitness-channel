@@ -1,14 +1,35 @@
 {
   "pages": [
-    "pages/assistant/index/index",
-    "pages/archive/index/index",
-
-    "pages/dt/service-list/index"
+    "pages/tabbar/index/index",
+    "pages/tabbar/life/index",
+    "pages/tabbar/mine/index"
+  ],
+  "subpackages": [
+    {
+      "root": "pages/dish",
+      "pages": ["index/index"]
+    },
+    {
+      "root": "pages/sleep",
+      "pages": ["index/index"]
+    },
+    {
+      "root": "pages/sport",
+      "pages": ["index/index"]
+    },
+    {
+      "root": "pages/health",
+      "pages": ["index/index"]
+    },
+    {
+      "root": "pages/environment",
+      "pages": ["index/index", "room/index"]
+    }
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "数字良方",
+    "navigationBarTitleText": "安健宝",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -17,21 +38,31 @@
     "selectedColor": "#2b7bf5",
     "list": [
       {
-        "iconPath": "/assets/images/icon_helper.png",
-        "selectedIconPath": "/assets/images/icon_helper-active.png",
-        "pagePath": "pages/assistant/index/index",
-        "text": "数疗助手"
+        "iconPath": "/assets/images/tabbar_icon_home_default.png",
+        "selectedIconPath": "/assets/images/tabbar_icon_home_selected.png",
+        "pagePath": "pages/tabbar/index/index",
+        "text": "首页"
       },
       {
-        "iconPath": "/assets/images/icon_files.png",
-        "selectedIconPath": "/assets/images/icon_files_active.png",
-        "pagePath": "pages/archive/index/index",
-        "text": "健康档案"
+        "iconPath": "/assets/images/tabbar_icon_health_default.png",
+        "selectedIconPath": "/assets/images/tabbar_icon_health_selected.png",
+        "pagePath": "pages/tabbar/life/index",
+        "text": "健康生活"
+      },
+      {
+        "iconPath": "/assets/images/tabbar_icon_me_default.png",
+        "selectedIconPath": "/assets/images/tabbar_icon_home_selected.png",
+        "pagePath": "pages/tabbar/mine/index",
+        "text": "我的"
       }
     ]
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index"
+    "van-button": "@vant/weapp/button/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "navigation-bar": "./components/custom-navigation-bar/index"
   }
 }

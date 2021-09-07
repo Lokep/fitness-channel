@@ -1,0 +1,31 @@
+<view class="nav" style="height: {{statusBarHeight + navigationHeight}}px">
+  <view
+    class="nav-wrap"
+    style="height: {{statusBarHeight + navigationHeight}}px"
+  >
+    <view
+      class="statusBarHeight"
+      style="height: {{statusBarHeight}}px;{{containerStyle}}"
+    ></view>
+
+    <view
+      class="navbar align-center"
+      style="height:{{navigationHeight}}px;{{containerStyle}}"
+    >
+      <view
+        class="navbar-leftbar align-center"
+        style="height: {{height-2}}px; margin-left: calc({{leftGap}});color: {{color}}"
+      >
+        <view
+          wx:if="{{!isTabbar}}"
+          class="back-icon iconfont iconarrow-left-bold"
+          bindtap="back"
+        ></view>
+      </view>
+
+      <view class="nav-title" wx:if="{{title}}">
+        <text style="{{textStyle}}">{{title}}</text>
+      </view>
+    </view>
+  </view>
+</view>

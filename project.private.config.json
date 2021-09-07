@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -12,8 +13,26 @@
     "miniprogram": {
       "list": [
         {
-          "name": "数疗服务——列表",
-          "pathName": "pages/dt/service-list/index",
+          "name": "健康生活",
+          "pathName": "pages/tabbar/life/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/tabbar/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "环境信息",
+          "pathName": "pages/environment/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "客厅",
+          "pathName": "pages/environment/room/index",
           "scene": null
         }
       ]
