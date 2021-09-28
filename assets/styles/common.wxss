@@ -383,3 +383,12 @@ image {
   background-color: #e6f7f1;
   color: #72ddb6;
 }
+.f-orange {
+  color: #ffab5f;
+}
+.f-green {
+  color: #7adeb9;
+}
+.f-blue {
+  color: #78adff;
+}

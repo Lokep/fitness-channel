@@ -11,7 +11,7 @@
   </view>
   <!-- 图表区域-->
   <view class="charts-container mt-30">
-    <empty title="暂无进行中的计划~" />
+    <empty wx:if="{{true}}" title="暂无进行中的计划~" />
     <block wx:if="{{true}}">
       <view class="charts-title">平均消耗热量</view>
       <view class="charts-message num flex justify-center"><text class="f38 f-number">800</text> <text
@@ -25,6 +25,22 @@
         图表canvas区域
         图表canvas区域
         图表canvas区域
+      </view>
+    </block>
+    <block wx:if="{{true}}">
+      <view class="flex justify-between">
+        <view class="day-message">
+          <view class="mb-10 f30">运动目标</view>
+          <view><text class="f-number f34">1747</text><text class="ml-10 f22 text-lighter">千卡</text></view>
+        </view>
+        <view class="day-message">
+          <view class="mb-10 f30">还需消耗</view>
+          <view><text class="f-number f34 f-orange">1747</text><text class="ml-10 f22 text-lighter">千卡</text></view>
+        </view>
+        <view class="day-message">
+          <view class="mb-10 f30">已消耗</view>
+          <view><text class="f-number f34">1747</text><text class="ml-10 f22 text-lighter">千卡</text></view>
+        </view>
       </view>
     </block>
   </view>
