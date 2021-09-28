@@ -24,6 +24,10 @@
     {
       "root": "pages/environment",
       "pages": ["index/index", "room/index"]
+    },
+    {
+      "root": "pages/course",
+      "pages": ["index/index", "detail/index"]
     }
   ],
   "window": {

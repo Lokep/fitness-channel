@@ -1,0 +1,44 @@
+page {
+  background-color: #f8f8f8;
+}
+
+@shadow-light : 0 0 10px rgba(#000, 0.1);
+
+.shadow-light {
+  box-shadow: @shadow-light;
+  border-bottom: var(safe-area-bottom);
+}
+
+@num: 30rpx;
+
+.page {
+  padding: @num 0 calc(constant(safe-area-inset-bottom, @num) / 2 ) 0;
+  padding: @num 0 calc(env(safe-area-inset-bottom, @num) / 2 ) 0;
+}
+
+.course {
+
+  // &-container {}
+
+  &-slide {
+    margin: 0 @num @num @num;
+    padding: @num + 12rpx;
+    border-radius: 18rpx;
+    background-color: #fff;
+    .shadow-light()
+  }
+
+  &-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 42rpx;
+    color: #222;
+    margin-bottom: 12rpx;
+  }
+
+  &-text {
+    font-size: 26rpx;
+    color: #666;
+    line-height: 1.5;
+  }
+}

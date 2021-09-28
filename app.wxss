@@ -17,3 +17,10 @@
   left: 0;
   top: 0;
 }
+view,
+picker,
+navigator,
+input,
+text{
+  font-family: PingFangSC-Regular, PingFang SC;
+}

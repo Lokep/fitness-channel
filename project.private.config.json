@@ -63,6 +63,13 @@
         {
           "name": "饮食打卡",
           "pathName": "pages/dish/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "课程-课程列表",
+          "pathName": "pages/course/index/index",
+          "query": "",
           "scene": null
         }
       ]

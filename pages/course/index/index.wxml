@@ -1,0 +1,13 @@
+<!--pages/course/index/index.wxml-->
+<view class="page">
+  <view class="course-container">
+    <navigator class="course-slide" wx:for="{{ 10 }}">
+      <view class="course-title ellipsis">
+        标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题
+      </view>
+      <view class="course-text ellipsis-3">
+        文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+      </view>
+    </navigator>
+  </view>
+</view>

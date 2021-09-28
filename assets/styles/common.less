@@ -1,7 +1,8 @@
 /* margin padding */
 
-.mg(@a: 1) when(@a <= 10) {
+.mg(@a: 1) when(@a <=10) {
   @i: @a * 5;
+
   .ml-@{i} {
     margin-left: @a * 5rpx;
   }
@@ -68,12 +69,26 @@ image {
   display: block;
 }
 
-.ellipsis {
+.ellipsis,
+.line-1 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   word-break: break-all;
 }
+
+each(range(5), {
+  & when (@value>1) {
+    .ellipsis-@{value},
+    .line-@{value} {
+      overflow:hidden;
+      text-overflow:ellipsis;
+      display:-webkit-box;
+      -webkit-line-clamp:@value;
+      -webkit-box-orient:vertical;
+    }
+  }
+})
 
 .ov {
   overflow: hidden;

@@ -1,0 +1,9 @@
+<!--pages/course/detail/index.wxml-->
+<view>
+  <view class="course-container">
+    <view class="course-slide">
+      <view class="course-title"></view>
+      <view class="course-text"></view>
+    </view>
+  </view>
+</view>
