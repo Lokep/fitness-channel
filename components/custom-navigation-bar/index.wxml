@@ -1,17 +1,11 @@
 <view class="nav" style="height: {{statusBarHeight + navigationHeight}}px">
   <view
     class="nav-wrap"
-    style="height: {{statusBarHeight + navigationHeight}}px"
+    style="height: {{statusBarHeight + navigationHeight}}px;background: {{background}}"
   >
-    <view
-      class="statusBarHeight"
-      style="height: {{statusBarHeight}}px;{{containerStyle}}"
-    ></view>
+    <view class="statusBarHeight" style="height: {{statusBarHeight}}px;"></view>
 
-    <view
-      class="navbar align-center"
-      style="height:{{navigationHeight}}px;{{containerStyle}}"
-    >
+    <view class="navbar align-center" style="height:{{navigationHeight}}px;">
       <view
         class="navbar-leftbar align-center"
         style="height: {{height-2}}px; margin-left: calc({{leftGap}});color: {{color}}"

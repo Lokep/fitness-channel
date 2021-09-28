@@ -1,5 +1,9 @@
 <view class="container">
-  <navigation-bar title="健康管理" color="#fff" background="transparent" />
+  <navigation-bar
+    title="健康管理"
+    color="#fff"
+    background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)"
+  />
 
   <!---bg --->
   <view class="gradient"></view>

@@ -1,2 +1,47 @@
-<!--pages/health/index/index.wxml-->
-<text>pages/health/index/index.wxml</text>
+<view class="container">
+  <view class="board">
+    <image
+      class="board-bg"
+      mode="widthFix"
+      src="/assets/images/img_health.png"
+    />
+
+    <view class="board-wrap">
+      <view class="board-title">定制健康饮食</view>
+
+      <view class="justify-between">
+        <navigator
+          class="board-item align-center"
+          hover-class="none"
+          url="/pages/health/info/index"
+        >
+          <image
+            class="board-item__dot"
+            src="/assets/images/tag_finished.png"
+          />
+          <view class="board-item__content">完善基础信息</view>
+        </navigator>
+
+        <navigator
+          class="board-item align-center"
+          hover-class="none"
+          url="/pages/health/habbit/index"
+        >
+          <image
+            class="board-item__dot"
+            src="/assets/images/tag_nofinished.png"
+          />
+          <view class="board-item__content">饮食偏好记录</view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <view class="plan">
+    <view class="plan-title"> 健康均衡饮食计划 </view>
+
+    <view class="plan-list">
+      <Cell />
+    </view>
+  </view>
+</view>

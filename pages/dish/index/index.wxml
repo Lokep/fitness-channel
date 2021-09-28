@@ -1,2 +1,36 @@
-<!--pages/dish/index/index.wxml-->
-<text>pages/dish/index/index.wxml</text>
+<view class="container">
+  <navigation-bar
+    title="健康管理"
+    color="#fff"
+    background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)"
+  />
+  <!---bg --->
+  <view class="gradient"></view>
+
+  <view class="wrap" wx:if="{{hasPlan}}"> </view>
+
+  <view class="wrap" wx:else>
+    <van-empty
+      class="custom-image"
+      image="/assets/images/bg_empty.png"
+      description="暂无进行中的饮食计划~前往领取您的饮食计划吧！"
+    />
+    <Cell />
+  </view>
+
+  <view class="wrap">
+    <!-- 日 周 月 -->
+
+    <!-- ------- -->
+    <view class="cell justify-between align-center">
+      <view class="cell__title align-center">
+        <image
+          class="cell__title-icon"
+          src="/assets/images/icon-dish-plan.png"
+        />
+        7天健康均衡饮食计划
+      </view>
+      <view class="cell__right"> </view>
+    </view>
+  </view>
+</view>

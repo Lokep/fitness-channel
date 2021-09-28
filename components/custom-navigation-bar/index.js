@@ -66,8 +66,8 @@ Component({
     },
 
     setStyle() {
-      const { background, color, fontSize, iconHeight, iconWidth } = this.data;
-      let containerStyle = ["background:" + background].join(";");
+      const { color, fontSize, iconHeight, iconWidth } = this.data;
+
       let textStyle = ["color:" + color, "font-size:" + fontSize + "px"].join(
         ";"
       );
@@ -76,7 +76,6 @@ Component({
         "height: " + iconHeight + "px",
       ].join(";");
       this.setData({
-        containerStyle,
         textStyle,
         iconStyle,
       });

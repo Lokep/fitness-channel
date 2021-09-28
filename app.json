@@ -19,7 +19,7 @@
     },
     {
       "root": "pages/health",
-      "pages": ["index/index"]
+      "pages": ["index/index", "plan/index", "info/index", "habbit/index"]
     },
     {
       "root": "pages/environment",
@@ -63,6 +63,7 @@
     "van-image": "@vant/weapp/image/index",
     "van-empty": "@vant/weapp/empty/index",
     "van-loading": "@vant/weapp/loading/index",
-    "navigation-bar": "./components/custom-navigation-bar/index"
+    "navigation-bar": "./components/custom-navigation-bar/index",
+    "Cell": "./components/cell/index"
   }
 }

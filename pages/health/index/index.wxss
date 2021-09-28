@@ -1,1 +1,66 @@
-/* pages/health/index/index.wxss */
+.container {
+  box-sizing: border-box;
+  padding: 28rpx 30rpx;
+}
+.board {
+  width: 690rpx;
+  height: 308rpx;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 60rpx;
+}
+.board-bg {
+  display: block;
+  position: absolute;
+  width: 690rpx;
+  left: 0;
+  top: 0;
+}
+.board-wrap {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 40rpx;
+  width: 100%;
+}
+.board-title {
+  margin-bottom: 40rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #fff;
+  line-height: 50rpx;
+}
+.board-item {
+  width: 296rpx;
+  height: 138rpx;
+  background: #ffffff;
+  border-radius: 16rpx;
+  position: relative;
+}
+.board-item__dot {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 106rpx;
+  height: 40rpx;
+}
+.board-item__content {
+  width: 100%;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #75acff;
+  line-height: 42rpx;
+  text-align: center;
+}
+.plan-title {
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 50rpx;
+  margin-bottom: 40rpx;
+}

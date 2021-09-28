@@ -1,0 +1,106 @@
+<view class="container">
+  <view class="cell align-center justify-between">
+    <view class="cell-label">性别</view>
+    <view class="cell-ipt" data-type="SEX" bindtap="handleCellTap">
+      <view class="align-center" style="justify-content: flex-end">
+        {{sex.label}}
+        <view class="iconfont icon iconarrow-right"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cell align-center justify-between">
+    <view class="cell-label">出生日期</view>
+    <view class="cell-ipt" data-type="BIRTH_DATE" bindtap="handleCellTap">
+      <view class="align-center" style="justify-content: flex-end">
+        {{birthDate}}
+        <view class="iconfont icon iconarrow-right"></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cell align-center justify-between">
+    <view class="cell-label">身高</view>
+    <view class="cell-ipt">
+      <view class="align-center">
+        <input
+          class="cell-ipt--input"
+          type="number"
+          value="{{height}}"
+          placeholder="未填写"
+          data-type="height"
+          bindinput="handleInput"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="cell align-center justify-between">
+    <view class="cell-label">最新体重</view>
+    <view class="cell-ipt">
+      <view class="align-center">
+        <input
+          class="cell-ipt--input"
+          type="number"
+          value="{{weight}}"
+          placeholder="未填写"
+          data-type="weight"
+          bindinput="handleInput"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="cell align-center justify-between">
+    <view class="cell-label">BMI</view>
+    <view class="cell-ipt">
+      <view class="align-center">
+        <input
+          class="cell-ipt--input"
+          type="number"
+          value="bmi"
+          disabled
+          placeholder="未填写"
+        />
+      </view>
+    </view>
+  </view>
+
+  <view class="cell align-center justify-between">
+    <view class="cell-label">标准体重</view>
+    <view class="cell-ipt">
+      <view class="align-center">
+        <input
+          class="cell-ipt--input"
+          type="number"
+          value="{{idealWeight}}"
+          disabled
+          placeholder="未填写"
+        />
+      </view>
+    </view>
+  </view>
+
+  <van-popup show="{{ show }}" position="bottom" bind:close="hidePopup">
+    <van-picker
+      wx:if="{{type == 'SEX'}}"
+      value="{{sex}}"
+      columns="{{ SEX_OPTIONS }}"
+      value-key="label"
+      title="性别"
+      show-toolbar
+      bind:cancel="hidePopup"
+      bind:confirm="handleSexSelector"
+    />
+    <van-datetime-picker
+      title="出生年月"
+      value="{{timeStamp}}"
+      wx:else
+      type="date"
+      min-date="{{ dateOptions.minDate }}"
+      max-date="{{ dateOptions.maxDate }}"
+      bind:confirm="handleDateSelector"
+      bind:cancel="hidePopup"
+    />
+  </van-popup>
+</view>

@@ -1,0 +1,43 @@
+<view class="container">
+  <view class="mt-50">
+    <view class="title mb-30">口味偏好</view>
+    <view class="wrap">
+      <view class="taste">
+        <view class="taste-title mb-25">甜味</view>
+        <view class="mb-30 flex" style="flex-wrap: wrap">
+          <view class="taste-item is-active"> 无糖 </view>
+          <view class="taste-item"> 无糖 </view>
+          <view class="taste-item"> 无糖 </view>
+          <view class="taste-item"> 无糖 </view>
+        </view>
+      </view>
+
+      <view class="taste">
+        <view class="taste-title mb-25">甜味</view>
+        <view class="mb-30 flex" style="flex-wrap: wrap">
+          <view class="taste-item is-active"> 无糖 </view>
+          <view class="taste-item"> 无糖 </view>
+          <view class="taste-item"> 无糖 </view>
+          <view class="taste-item"> 无糖 </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="mt-30">
+    <view class="title mb-30">习惯偏好</view>
+    <view class="habbit justify-between">
+      <view
+        class="habbit-item justify-center align-center"
+        wx:for="{{HABBIT_LIST}}"
+        wx:key="index"
+      >
+        <image class="habbit-item__icon" src="{{item.icon}}" />
+        <view class="habbit-item__label">{{item.label}}</view>
+        <view class="habbit-item__desc">{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="habbit-btn">保存</view>
+</view>

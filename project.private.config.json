@@ -33,6 +33,36 @@
         {
           "name": "客厅",
           "pathName": "pages/environment/room/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "健康打卡",
+          "pathName": "pages/health/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "健康计划",
+          "pathName": "pages/health/plan/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "健康信息",
+          "pathName": "pages/health/info/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "饮食偏好",
+          "pathName": "pages/health/habbit/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "饮食打卡",
+          "pathName": "pages/dish/index/index",
           "scene": null
         }
       ]

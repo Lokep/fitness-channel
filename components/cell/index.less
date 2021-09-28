@@ -1,0 +1,37 @@
+.cell {
+  height: 114rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+
+  &__title {
+    flex: 1;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #1e1e1e;
+    line-height: 42rpx;
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    margin-left: 20rpx;
+    width: 116rpx;
+    height: 54rpx;
+    background-color: #75acff;
+    border-radius: 26rpx;
+
+    font-size: 24rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #fff;
+    line-height: 54rpx;
+    text-align: center;
+
+    .disable & {
+      background-color: #d8e1e8;
+    }
+  }
+}

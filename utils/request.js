@@ -2,6 +2,7 @@ import { OFFLINE, WHITE_MENU } from "./constant";
 import { getCache, saveCache } from "./util";
 import { getNetworkType } from "./wx-api";
 import { handleRequestURL } from "./proxyTable";
+import { debug } from "./debug";
 
 const TIMEOUT = 10000;
 
@@ -9,16 +10,17 @@ let LOGIN_STATUS = true;
 
 const MOCK_SERVER = "http://localhost:3000";
 
-export function request({
-  url,
-  data,
-  method = "GET",
-  showLoading = true,
-  showErrMsg,
-  checkToken = true,
-  delay = 0,
-  isMock = false,
-}) {
+export function request(config) {
+  const {
+    url,
+    data,
+    method = "GET",
+    showLoading = true,
+    showErrMsg,
+    checkToken = true,
+    delay = 0,
+    isMock = false,
+  } = config;
   if (!LOGIN_STATUS && checkToken) return;
 
   return new Promise(async (resolve) => {
@@ -34,7 +36,7 @@ export function request({
       });
     }
     const t0 = Date.now();
-
+    debug(config, { ...res, delta });
     wx.request({
       data,
       url: isMock ? MOCK_SERVER + url : handleRequestURL(url),

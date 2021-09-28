@@ -1,0 +1,35 @@
+.wrap {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.cell {
+  height: 114rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+
+  &__title {
+    flex: 1;
+    font-size: 30rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #1e1e1e;
+    line-height: 42rpx;
+
+    &-icon {
+      width: 48rpx;
+      height: 48rpx;
+      margin-right: 24rpx;
+    }
+  }
+
+  &__right {
+    flex-shrink: 0;
+    margin-left: 20rpx;
+  }
+}

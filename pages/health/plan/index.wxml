@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="bg"></view>
+
+  <view class="wrap">
+    <view class="plan-topbar align-center justify-between">
+      <view class="plan-topbar__title">健康均衡饮食计划</view>
+      <navigator class="plan-topbar__link align-center" hover-class="none">
+        查看其他计划
+        <view class="iconfont iconarrow-right"></view>
+      </navigator>
+    </view>
+
+    <view class="plan-content">
+      <view class="plan-content__title">食谱</view>
+
+      <view class="plan-meal" wx:for="{{DIET_LIST}}" wx:key="type">
+        <view class="plan-meal__title align-center">
+          <image class="plan-meal__icon" src="{{item.icon}}" />
+          {{item.title}}
+        </view>
+        <view class="plan-meal__content">{{item.content}}</view>
+        <view class="plan-meal__calorie flex">
+          <view
+            class="plan-meal__calorie-item"
+            wx:for="{{item.calories}}"
+            wx:for-item="it"
+            wx:key="index"
+            >{{it}}</view
+          >
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="plan-btn" bindtap="acceptPlan"> 领取 </view>
+</view>

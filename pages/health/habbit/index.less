@@ -1,0 +1,107 @@
+.container {
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 50rpx;
+}
+
+.taste {
+  &-title {
+    font-size: 28rpx;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: #1e1e1e;
+    line-height: 40rpx;
+  }
+  &-item {
+    width: 212rpx;
+    height: 72rpx;
+    background: #f4f6f9;
+    border-radius: 12rpx;
+    line-height: 76rpx;
+    text-align: center;
+
+    font-size: 28rpx;
+    font-family: PingFangSC-Regular, PingFang SC;
+    font-weight: 400;
+    color: #1e1e1e;
+    border: 2rpx solid #f4f6f9;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    flex-shrink: 0;
+
+    &:nth-child(3n + 3) {
+      margin-right: 0;
+    }
+
+    &:nth-child(n + 4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.habbit {
+  flex-wrap: wrap;
+  margin-bottom: 60rpx;
+
+  &-item {
+    margin-bottom: 20rpx;
+    width: 212rpx;
+    height: 212rpx;
+    background: #f4f6f9;
+    border-radius: 12rpx;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 30rpx 0 32rpx;
+
+    &__icon {
+      width: 86rpx;
+      height: 86rpx;
+    }
+
+    &__label {
+      font-size: 28rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #1e1e1e;
+      line-height: 40rpx;
+    }
+
+    &__desc {
+      font-size: 22rpx;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #666;
+      line-height: 32rpx;
+    }
+  }
+
+  &-btn {
+    // width: calc(100vw - 60rpx);
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    height: 88rpx;
+    background: #75acff;
+    border-radius: 44rpx;
+    text-align: center;
+    line-height: 88rpx;
+    color: #fff;
+    font-size: 32rpx;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    margin-bottom: 50rpx;
+  }
+}
+
+.is-active {
+  background: #e5efff;
+  border: 2rpx solid #75acff;
+  color: #75acff;
+}
