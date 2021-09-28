@@ -74,13 +74,19 @@
         },
         {
           "name": "运动打卡详情",
-          "pathName": "pages/sport/clock/index",
+          "pathName": "pages/sport/clock/detail",
           "query": "",
           "scene": null
         },
         {
           "name": "运动打卡-周-空状态",
           "pathName": "pages/sport/clock/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "运动打卡-未记录-立即打卡",
+          "pathName": "pages/sport/clock/clock",
           "query": "",
           "scene": null
         }

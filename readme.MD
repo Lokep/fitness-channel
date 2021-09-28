@@ -17,7 +17,7 @@ lokep: [x]
 lokep: [x]
 运动打卡-周：https://alipic.lanhuapp.com/SketchCoverc87fd81c95766b8aff2148fbc86d82589e55bdeadbe82c2e35ca880e46e56481?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep: [x]
 运动打卡-未记录：https://alipic.lanhuapp.com/SketchCover5c0b6e9d4cf284882f7429f6f2af49f25709701f6b2af4925d8aa12d9e2ea579?x-oss-process=image/quality,q_lossless/format,webp
 
 lokep: [x]

@@ -51,3 +51,45 @@ page {
   content: '';
   display: block;
 }
+.input-inline-block {
+  width: 100px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -2px;
+  text-align: right;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  padding: 0 20rpx;
+}
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.checkbox-container .checkbox-item {
+  width: 32%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  background-color: #f3f3f3;
+  border-radius: 4px;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  font-size: 30rpx;
+  height: 60rpx;
+}
+.checkbox-container .checkbox-item.active {
+  color: #79aeff;
+  border: 1px solid #79aeff;
+}
+.checkbox-container .checkbox-item:nth-child(3n) {
+  margin-right: 0;
+}
+.checkbox-container .checkbox-item .checkbox {
+  position: absolute;
+  left: -100vw;
+  top: 0;
+}

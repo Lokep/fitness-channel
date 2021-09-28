@@ -362,7 +362,6 @@ image {
   overflow: hidden;
 }
 .media-wrap {
-  background-color: #eee;
   overflow: hidden;
 }
 .media-wrap video,

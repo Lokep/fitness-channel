@@ -1,0 +1,36 @@
+<!--pages/sport/clock/clock.wxml-->
+<view class="page">
+  <view class="car-container">
+    <view class="car-container-title bold"><text class="required f-orange f22">*</text> 拍照上传</view>
+    <view class="media-wrap clock-img mt-30">
+      <image src="" mode="aspectFill"></image>
+    </view>
+  </view>
+  <view class="car-container">
+    <view class="car-container-title bold">运动类型</view>
+    <view class="mt-25"></view>
+    <checkbox-group class="checkbox-container">
+      <label wx:for="{{11}}" class="{{index%2==0?'active':''}} checkbox-item" data-index="index" wx:key="key">
+        <checkbox class="checkbox" checked="{{true}}"></checkbox>
+        <view class="">慢跑</view>
+      </label>
+    </checkbox-group>
+  </view>
+  <view class="car-container">
+    <view class="car-container-title bold">消耗热量</view>
+    <view class="mt-25"></view>
+    <view class="pt-5 pb-5">
+      <input type="number" class="f24 f-number input-inline-block" placeholder="请输入"
+        placeholder-class="text-lighter"></input>
+      <text class="f24 text-light ml-10"> 千卡</text>
+    </view>
+  </view>
+  <view class="car-container">
+    <view class="car-container-title bold">描述内容 <text class="f22 text-lighter">0/100</text></view>
+    <view class="mt-25"></view>
+    <view class="pt-5 pb-5 ">
+      <textarea class="f24" style="min-height:100px" maxlength="100" auto-height="{{true}}"
+        placeholder="请输入内容..."></textarea>
+    </view>
+  </view>
+</view>
