@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "运动打卡",
-  "usingComponents": {}
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "empty": "../../../components/empty/empty"
+  }
 }

@@ -77,6 +77,12 @@
           "pathName": "pages/sport/clock/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "运动打卡-周-空状态",
+          "pathName": "pages/sport/clock/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

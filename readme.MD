@@ -14,17 +14,17 @@ lokep:[x] 健康打卡 pages/health/index/index
 lokep: [x]
 运动打卡详情：https://alipic.lanhuapp.com/SketchCover8c675ab1101046dce0550d76e3124adea24b0558a117fb23272c1c6b974c307c?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep: [x]
 运动打卡-周：https://alipic.lanhuapp.com/SketchCoverc87fd81c95766b8aff2148fbc86d82589e55bdeadbe82c2e35ca880e46e56481?x-oss-process=image/quality,q_lossless/format,webp
 
 lokep:
 运动打卡-未记录：https://alipic.lanhuapp.com/SketchCover5c0b6e9d4cf284882f7429f6f2af49f25709701f6b2af4925d8aa12d9e2ea579?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep: [x]
 运动打卡-空状态：https://alipic.lanhuapp.com/SketchCover97befda7d23d7b650ebe2b041a22d22cd24065501fa3f0b8b3fa184d65144eea?x-oss-process=image/quality,q_lossless/format,webp
 
 lokep:
-运动打卡：https://alipic.lanhuapp.com/SketchCovered824851d98c1e456665f216929839179b83247cd642255ed1f9f518fe1d7cf4?x-oss-process=image/quality,q_lossless/format,webp
+运动打卡-日：https://alipic.lanhuapp.com/SketchCovered824851d98c1e456665f216929839179b83247cd642255ed1f9f518fe1d7cf4?x-oss-process=image/quality,q_lossless/format,webp
 
 lokep:
 个人中心：https://alipic.lanhuapp.com/SketchCover5adeb769a3a359df8710992d19c344898cc419160f7a1a19f4c3a495e1dad95b?x-oss-process=image/quality,q_lossless/format,webp

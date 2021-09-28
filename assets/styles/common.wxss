@@ -346,6 +346,18 @@ image {
 .f36 {
   font-size: 36rpx;
 }
+.f37 {
+  font-size: 37rpx;
+}
+.f38 {
+  font-size: 38rpx;
+}
+.f39 {
+  font-size: 39rpx;
+}
+.f40 {
+  font-size: 40rpx;
+}
 .ov {
   overflow: hidden;
 }
@@ -358,4 +370,16 @@ image {
   width: 100%;
   height: 100%;
   display: block;
+}
+.tag {
+  padding: 0 6rpx;
+  display: inline-block;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 4rpx;
+  font-size: 22rpx;
+}
+.tag.success {
+  background-color: #e6f7f1;
+  color: #72ddb6;
 }

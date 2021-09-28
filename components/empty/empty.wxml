@@ -1,0 +1,5 @@
+<!--components/empty/empty.wxml-->
+<view>
+  <image class="empty" src="{{ picurl }}"></image>
+  <view class="text-center">{{ title }}</view>
+</view>

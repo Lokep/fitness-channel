@@ -21,6 +21,19 @@ view,
 picker,
 navigator,
 input,
-text{
+text {
   font-family: PingFangSC-Regular, PingFang SC;
+}
+/* 预留的数字特殊字体，如果没必要可以删除 */
+.f-number {
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+.text-center {
+  text-align:center;
+}
+.text-light {
+  color: #666;
+}
+.text-lighter {
+  color: #999;
 }

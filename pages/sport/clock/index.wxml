@@ -1,39 +1,82 @@
 <!--pages/sport/clock/index.wxml-->
-<view class="page">
-  <view class="car-container">
-    <view class="car-container-title bold">拍照上传</view>
-    <view class="media-wrap clock-img mt-30">
-      <image
-        src="https://alipic.lanhuapp.com/SketchCover8c675ab1101046dce0550d76e3124adea24b0558a117fb23272c1c6b974c307c?x-oss-process=image/quality,q_lossless/format,webp">
-      </image>
+<navigation-bar title="运动打卡" color="#fff" background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)" />
+<!---bg --->
+<view class="gradient"></view>
+<view class="wrap mt-20 ml-30 mr-30">
+  <!-- 切换 -->
+  <view class="flex charts-toggle-bar">
+    <view class="charts-btn">日</view>
+    <view class="charts-btn current">周</view>
+    <view class="charts-btn">月</view>
+  </view>
+  <!-- 图表区域-->
+  <view class="charts-container mt-30">
+    <empty title="暂无进行中的计划~" />
+    <block wx:if="{{true}}">
+      <view class="charts-title">平均消耗热量</view>
+      <view class="charts-message num flex justify-center"><text class="f38 f-number">800</text> <text
+          class="ml-10">千卡</text> </view>
+      <view class="charts-text">2021年8月1日-8月7日</view>
+      <view class="">
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+      </view>
+    </block>
+  </view>
+  <button wx:if="{{true}}" class="full-btn fixed">运动打卡</button>
+  <!--  -->
+  <view class="mt-30">
+    <!-- 运动列表 切换 -->
+    <view class="flex justify-between align-center">
+      <view class="swiper-btn swiper-btn-prev"></view>
+      <view class="text-center">
+        <view class="f26 mb-10">
+          <text class="dot blue"></text> 5km训练计划
+        </view>
+        <view class="f22 text-lighter">
+          从2021-07-01开始
+        </view>
+      </view>
+      <view class="swiper-btn swiper-btn-next"></view>
     </view>
-  </view>
-  <view class="car-container">
-    <view class="car-container-title bold">运动类型</view>
-    <view class="mt-25"></view>
-    <view class="pt-5 pb-5 f26 li">散步</view>
-    <view class="pt-5 pb-5 f26 li">太极拳</view>
-  </view>
-  <view class="car-container">
-    <view class="car-container-title bold">消耗热量</view>
-    <view class="mt-25"></view>
-    <view class="pt-5 pb-5 ">
-      <text class="bold f30">360</text>
-      <text class="f24 text-light"> 千卡</text>
-    </view>
-  </view>
-  <view class="car-container">
-    <view class="car-container-title bold">描述内容</view>
-    <view class="mt-25"></view>
-    <view class="pt-5 pb-5 ">
-      <text class="f24 text-light">无</text>
-    </view>
-  </view>
-  <view class="car-container">
-    <view class="car-container-title bold">营养师建议</view>
-    <view class="mt-25"></view>
-    <view class="pt-5 pb-5 ">
-      <text class="f24 text-light">营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议</text>
+    <!--  -->
+    <view class="mt-30">
+      <block wx:for="{{5}}" wx:key="key">
+        <view class="clock-item flex justify-between">
+          <view class="media-wrap icon">
+            <image src=""></image>
+          </view>
+          <view class="text-container">
+            <view class="top cb flex algin-center justify-between">
+              <view>
+                <text class="f30">全身放松</text>
+                <text class="f24 text-lighter ml-10">800千卡</text>
+              </view>
+              <view class="flex">
+                <view class="fr f22 day text-lighter">第三天</view>
+                <view class="ml-10 arrow-right"></view>
+              </view>
+            </view>
+            <view class="text text-light f24 ellipsis-2 mt-10 mt-10">
+              文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+            </view>
+            <view class="top">
+              <text class="f-number f40">1747</text>
+              <text class="f24 text-lighter ml-10">千卡</text>
+              <text class="f24 text-lighter ml-10">——</text>
+              <text class="tag success ml-10">慢跑</text>
+            </view>
+            <view class="sport-clock mt-10">
+              运动打卡
+            </view>
+          </view>
+        </view>
+      </block>
     </view>
   </view>
 </view>
