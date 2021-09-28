@@ -89,7 +89,25 @@ each(range(5), {
     }
   }
 })
+each(range(36), {
+  & when (@value>=22) {
+    .f@{value} {
+      font-size: @value*1rpx;
+    }
+  }
+})
 
 .ov {
   overflow: hidden;
+}
+.media-wrap {
+  background-color: #eee;
+  overflow: hidden;
+
+  video,
+  image {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 }

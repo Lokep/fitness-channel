@@ -301,6 +301,61 @@ image {
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
 }
+.f22 {
+  font-size: 22rpx;
+}
+.f23 {
+  font-size: 23rpx;
+}
+.f24 {
+  font-size: 24rpx;
+}
+.f25 {
+  font-size: 25rpx;
+}
+.f26 {
+  font-size: 26rpx;
+}
+.f27 {
+  font-size: 27rpx;
+}
+.f28 {
+  font-size: 28rpx;
+}
+.f29 {
+  font-size: 29rpx;
+}
+.f30 {
+  font-size: 30rpx;
+}
+.f31 {
+  font-size: 31rpx;
+}
+.f32 {
+  font-size: 32rpx;
+}
+.f33 {
+  font-size: 33rpx;
+}
+.f34 {
+  font-size: 34rpx;
+}
+.f35 {
+  font-size: 35rpx;
+}
+.f36 {
+  font-size: 36rpx;
+}
 .ov {
   overflow: hidden;
+}
+.media-wrap {
+  background-color: #eee;
+  overflow: hidden;
+}
+.media-wrap video,
+.media-wrap image {
+  width: 100%;
+  height: 100%;
+  display: block;
 }

@@ -15,7 +15,7 @@
     },
     {
       "root": "pages/sport",
-      "pages": ["index/index"]
+      "pages": ["index/index","clock/index"]
     },
     {
       "root": "pages/health",

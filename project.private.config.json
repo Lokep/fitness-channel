@@ -71,6 +71,12 @@
           "pathName": "pages/course/index/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "运动打卡详情",
+          "pathName": "pages/sport/clock/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -2,16 +2,16 @@ wx12f0465e5cf955ac
 lokep:[x]
 课程：https://alipic.lanhuapp.com/SketchCover34b295f2e91b8eb31f4fff12f12e3e4d63c78001644946ac72d0811f5d0b3272?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:[x] 已有
+lokep:[x] 健康信息 pages/health/info/index
 健康信息：https://alipic.lanhuapp.com/SketchCover2213b93dd0d1c1f78dc5cc8b3656ef4affbceb675ee3a77a7a92b26a2afad0e8?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep:[x] 健康计划 pages/health/plan/index
 健康食谱：https://alipic.lanhuapp.com/SketchCover3be34a4262773cae139a82cb8b4500510512f401af4027026bfc0a95f3f4a0a5?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep:[x] 健康打卡 pages/health/index/index
 健康打卡：https://alipic.lanhuapp.com/SketchCoverfc99421cdded5c29e749d42747e2d0bb5293b9b43a194964b2812e90a568cbf6?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep: [x]
 运动打卡详情：https://alipic.lanhuapp.com/SketchCover8c675ab1101046dce0550d76e3124adea24b0558a117fb23272c1c6b974c307c?x-oss-process=image/quality,q_lossless/format,webp
 
 lokep:
