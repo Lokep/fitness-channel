@@ -79,27 +79,27 @@ https://alipic.lanhuapp.com/SketchCoverdd03121e4af8c2a1d32b98acb077c5257921d3146
 
 https://alipic.lanhuapp.com/SketchCoverbf0579b6a7716c4fcde453e2827b1607fabd31d62aaf8450172c986ede2efeef?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食偏好：
+饮食偏好：[x]
 
 https://alipic.lanhuapp.com/SketchCover2dc7bff975d07906b5a894a78158602d78f892e232e7832f8890b3e0b4eff94b?x-oss-process=image/quality,q_lossless/format,webp
 
-空气监测-客厅：
+空气监测-客厅：[x]
 
 https://alipic.lanhuapp.com/SketchCover51d0e9c7578c557c74bbb7372652b8c360f6f1c4266ea25d4e117adee06a83c4?x-oss-process=image/quality,q_lossless/format,webp
 
-环境：
+环境：[x] pages/environment/index/index
 
 https://alipic.lanhuapp.com/SketchCover8ef4fa22361ce02b1da5d8302dcb95e90aab44a7fac1789aafdf17a49e6c737b?x-oss-process=image/quality,q_lossless/format,webp
 
-首页-空状态：
+首页-空状态：[x] pages/tabbar/index/index
 
 https://alipic.lanhuapp.com/SketchCoverf44590506928f963ca19c0153bd81879ac8673449293fae6fb06b31929cae504?x-oss-process=image/quality,q_lossless/format,webp
 
-健康生活： 
+健康生活： [x] pages/tabbar/life/index
 
 https://alipic.lanhuapp.com/SketchCoverd8195280d0e942abc72502ef27f81f5df423431cb10818c1ff2bece7b4fa3211?x-oss-process=image/quality,q_lossless/format,webp
 
-首页：
+首页：[x] pages/tabbar/index/index
 
 https://alipic.lanhuapp.com/SketchCovera17dc6f097186c7d24e63c9dd4cde835814558257ac5fd30eb2be86a6e7d9311?x-oss-process=image/quality,q_lossless/format,webp
 
