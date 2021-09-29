@@ -73,7 +73,7 @@
           "scene": null
         },
         {
-          "name": "运动打卡详情",
+          "name": "运动打卡详情-打卡后",
           "pathName": "pages/sport/clock/detail",
           "query": "",
           "scene": null
@@ -87,6 +87,12 @@
         {
           "name": "运动打卡-未记录-立即打卡",
           "pathName": "pages/sport/clock/clock",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "睡眠记录—睡眠记录·周—&空记录",
+          "pathName": "pages/sleep/index/index",
           "query": "",
           "scene": null
         }

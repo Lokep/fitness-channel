@@ -91,8 +91,8 @@ each(range(5), {
     }
   }
 
-) each(range(40), {
-    & when (@value>=22) {
+) each(range(60), {
+    & when (@value>=22){
       .f@{value} {
         font-size: @value*1rpx;
       }
@@ -127,18 +127,41 @@ each(range(5), {
     color: #72ddb6;
   }
 }
-.f-orange{
+.text-dark {
+  color: #555;
+}
+.text-darker {
+  color: #333;
+}
+.f-orange {
   color: #ffab5f;
 }
-.f-green{
+
+.f-green {
   color: #7adeb9;
 }
-.f-blue{
+
+.f-blue {
   color: #78adff;
 }
-.ivon-camera-fill {
+
+.ivon {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+}
+
+.ivon-camera-fill {
+  .ivon();
   background-image: url('data:image/svg+xml;utf8,%3Csvg%20t%3D%221632874346117%22%20class%3D%22icon%22%20viewBox%3D%220%200%201024%201024%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20p-id%3D%2212228%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cpath%20d%3D%22M505.122871%20403.977751c-74.251098%200-134.672212%2060.389392-134.672212%20134.672212%200%2074.227562%2060.422138%20134.672212%20134.672212%20134.672212%2074.255191%200%20134.672212-60.444651%20134.672212-134.672212C639.795083%20464.367143%20579.378062%20403.977751%20505.122871%20403.977751z%22%20p-id%3D%2212229%22%20fill%3D%22%23e3e3e3%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M814.870494%20242.425332l-134.672212%200-80.804351-81.864496-188.541097%200-80.804351%2081.864496-134.672212%200c-44.63457%200-74.859965%2022.669302-74.859965%2067.280336l0%20457.889615c0%2044.611034%2030.225395%2094.953605%2074.859965%2094.953605l619.495246%200c44.64071%200%2087.449701-50.342572%2087.449701-94.953605l0-457.889615C902.320195%20265.095657%20859.511203%20242.425332%20814.870494%20242.425332zM505.122871%20754.128573c-118.811989%200-215.477586-96.694249-215.477586-215.477586%200-118.841665%2096.665597-215.477586%20215.477586-215.477586%20118.810966%200%20215.477586%2096.636944%20215.477586%20215.477586C720.600457%20657.434324%20623.933837%20754.128573%20505.122871%20754.128573z%22%20p-id%3D%2212230%22%20fill%3D%22%23e3e3e3%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E');
+}
+
+.ivon-date {
+  .ivon();
+  background-image: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22%20fill-opacity%3D%220.01%22%2F%3E%3Cpath%20d%3D%22M5%2019H43V40C43%2041.1046%2042.1046%2042%2041%2042H7C5.89543%2042%205%2041.1046%205%2040V19Z%22%20fill%3D%22none%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M5%209C5%207.89543%205.89543%207%207%207H41C42.1046%207%2043%207.89543%2043%209V19H5V9Z%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M16%204V12%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M32%204V12%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M28%2034H34%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14%2034H20%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M28%2026H34%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14%2026H20%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+}
+
+.ivon-down {
+  .ivon();
+  background-image: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22%20fill-opacity%3D%220.01%22%2F%3E%3Cpath%20d%3D%22M37%2018L25%2030L13%2018%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
 }

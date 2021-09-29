@@ -1,6 +1,7 @@
 @import "./assets/styles/common.wxss";
 @import "./assets/styles/cover.wxss";
 @import "./assets/styles/iconfont.wxss";
+@import "./assets/styles/font-number.wxss";
 
 .container {
   width: 100vw;
@@ -26,7 +27,7 @@ text {
 }
 /* 预留的数字特殊字体，如果没必要可以删除 */
 .f-number {
-  font-family: PingFangSC-Regular, PingFang SC;
+  font-family: Guildford Pro;
 }
 .text-center {
   text-align:center;

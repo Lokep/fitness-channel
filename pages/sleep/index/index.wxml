@@ -1,2 +1,127 @@
-<!--pages/sleep/index/index.wxml-->
-<text>pages/sleep/index/index.wxml</text>
+<navigation-bar title="运动打卡" color="#fff" background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)" />
+<!---bg --->
+<view class="gradient"></view>
+<view class="wrap mt-20 ml-30 mr-30">
+  <!-- 切换 -->
+  <view class="flex charts-toggle-bar">
+    <view class="charts-btn">日</view>
+    <view class="charts-btn current">周</view>
+    <view class="charts-btn">月</view>
+  </view>
+  <!-- 图表区域-->
+  <view class="charts-container mt-30">
+    <block wx:if="{{true}}">
+      <picker mode="date">
+        <view class="text-center flex justify-center align-center">
+          <view class="ivon-date"></view>
+          <text class="f-number pl-20 pr-20 f38">2021-08-17</text>
+          <view class="ivon-down"></view>
+        </view>
+      </picker>
+      <view class="mt-30">
+        <view class="charts-message num flex justify-center">
+          <text class="f50 f-number text-darker">6</text>
+          <text class="ml-10 mr-10">小时</text>
+          <text class="f50 f-number text-darker">56</text>
+          <text class="ml-10">分钟</text>
+        </view>
+      </view>
+      <view class="media-wrap clock-img mt-30">
+        <image mode="aspectFill" src=""></image>
+      </view>
+      <view class="mt-30 text-center">
+        <navigator url="/pages/sleep/detail" class="link">查看详情</navigator>
+      </view>
+    </block>
+    <block wx:if="{{true}}">
+      <empty title="今日还未上传睡眠记录哦~" />
+      <view class="text-center mt-30">
+        <navigator class="btn-normal">添加记录</navigator>
+      </view>
+    </block>
+    <block wx:if="{{true}}">
+      <view class="charts-title">平均睡眠时间</view>
+      <view class="charts-message num flex justify-center">
+        <text class="f38 f-number">6</text>
+        <text class="ml-10 mr-10">小时</text>
+        <text class="f38 f-number">56</text>
+        <text class="ml-10">分钟</text>
+      </view>
+      <view class="charts-text">2021年8月1日-8月7日</view>
+      <view class="">
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+        图表canvas区域
+      </view>
+    </block>
+    <!-- <block wx:if="{{true}}">
+      <view class="flex justify-between">
+        <view class="day-message">
+          <view class="mb-10 f30">运动目标</view>
+          <view><text class="f-number f34">1747</text><text class="ml-10 f22 text-lighter">千卡</text></view>
+        </view>
+        <view class="day-message">
+          <view class="mb-10 f30">还需消耗</view>
+          <view><text class="f-number f34 f-orange">1747</text><text class="ml-10 f22 text-lighter">千卡</text></view>
+        </view>
+        <view class="day-message">
+          <view class="mb-10 f30">已消耗</view>
+          <view><text class="f-number f34">1747</text><text class="ml-10 f22 text-lighter">千卡</text></view>
+        </view>
+      </view>
+    </block> -->
+  </view>
+  <button wx:if="{{true}}" class="full-btn fixed">添加记录</button>
+  <!--  -->
+  <!-- <view class="mt-30">
+    <view class="flex justify-between align-center">
+      <view class="swiper-btn swiper-btn-prev"></view>
+      <view class="text-center">
+        <view class="f26 mb-10">
+          <text class="dot blue"></text> 5km训练计划
+        </view>
+        <view class="f22 text-lighter">
+          从2021-07-01开始
+        </view>
+      </view>
+      <view class="swiper-btn swiper-btn-next"></view>
+    </view>
+    <view class="mt-30">
+      <block wx:for="{{5}}" wx:key="key">
+        <view class="clock-item flex justify-between">
+          <view class="media-wrap icon">
+            <image src=""></image>
+          </view>
+          <view class="text-container">
+            <view class="top cb flex algin-center justify-between">
+              <view>
+                <text class="f30">全身放松</text>
+                <text class="f24 text-lighter ml-10">800千卡</text>
+              </view>
+              <view class="flex">
+                <view class="fr f22 day text-lighter">第三天</view>
+                <view class="ml-10 arrow-right"></view>
+              </view>
+            </view>
+            <view class="text text-light f24 ellipsis-2 mt-10 mt-10">
+              文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字
+            </view>
+            <view class="top">
+              <text class="f-number f40">1747</text>
+              <text class="f24 text-lighter ml-10">千卡</text>
+              <text class="f24 text-lighter ml-10">——</text>
+              <text class="tag success ml-10">慢跑</text>
+            </view>
+            <view class="sport-clock mt-10">
+              运动打卡
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view> -->
+</view>
