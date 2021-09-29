@@ -59,23 +59,23 @@ https://alipic.lanhuapp.com/SketchCovera9b3d6a9da6be16639961c67799776a2dde73bc7a
 
 https://alipic.lanhuapp.com/SketchCovera1c8f5b34beca9f74ae1d5b5e5765c47f3ec80028c0ee12505edd8211e3a9662?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡-周：
+饮食打卡-周：[x]
 
 https://alipic.lanhuapp.com/SketchCoverc2696dab11df7e1102561b02b1890b8f9054f5be9d7d8752be4adf2ea39cb6bd?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡-日：
+饮食打卡-日：[x]
 
 https://alipic.lanhuapp.com/SketchCover65c319b8ea33c25b25d4ae2672060e40a1c841c0bda127e8369ebabd081ff735?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡-日-待记录：
+饮食打卡-日-待记录：[x]
 
 https://alipic.lanhuapp.com/SketchCovera5aca8f58e907caf9bd979a44ee69c54cb0c5d80c4848ce41f2d75b6cc5c9845?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡-已结束：
+饮食打卡-已结束：[x]
 
 https://alipic.lanhuapp.com/SketchCoverdd03121e4af8c2a1d32b98acb077c5257921d314623abd8a9e2af7793a0263d6?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡-空：
+饮食打卡-空：[x]
 
 https://alipic.lanhuapp.com/SketchCoverbf0579b6a7716c4fcde453e2827b1607fabd31d62aaf8450172c986ede2efeef?x-oss-process=image/quality,q_lossless/format,webp
 

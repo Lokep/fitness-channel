@@ -1,4 +1,4 @@
-// pages/diet/index/index.js
+
 Page({
 
   /**

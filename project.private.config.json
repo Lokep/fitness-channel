@@ -119,6 +119,12 @@
           "pathName": "pages/diet/clock/detail",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "饮食打卡-新",
+          "pathName": "pages/diet/index/index",
+          "query": "",
+          "scene": null
         }
       ]
     }

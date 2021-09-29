@@ -99,18 +99,19 @@ each(range(5), {
     }
   }
 
-)
-each(range(10), {
-  .flex-@{value} {
-    .flex();
-    flex-wrap: wrap;
-    // flex: 0 1 auto;
-    .flex-item {
-      width: percentage((1/@value));
+) each(range(10), {
+    .flex-@{value} {
+      .flex();
+      flex-wrap: wrap;
+
+      // flex: 0 1 auto;
+      .flex-item {
+        width: percentage((1/@value));
+      }
     }
   }
-})
-.ov {
+
+) .ov {
   overflow: hidden;
 }
 
@@ -133,9 +134,43 @@ each(range(10), {
   border-radius: 4rpx;
   font-size: 22rpx;
 
+  &.radius {
+    border-radius: 24rpx;
+  }
+  &.radius-light {
+    border-radius: 10rpx;
+  }
   &.success {
     background-color: #e6f7f1;
     color: #72ddb6;
+
+    &.border {
+      background-color: transparent;
+      color: #72ddb6;
+      border: 1px solid #72ddb6;
+    }
+
+  }
+
+  &.warning {
+    background-color: #e6a23c;
+    color: #e6a23c;
+
+    &.border {
+      background-color: transparent;
+      color: #e6a23c;
+      border: 1px solid #e6a23c;
+    }
+  }
+  &.info {
+    background-color: #909399;
+    color: #fff;
+
+    &.border {
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid #909399;
+    }
   }
 }
 
@@ -180,6 +215,11 @@ each(range(10), {
   background-image: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22%20fill-opacity%3D%220.01%22%2F%3E%3Cpath%20d%3D%22M37%2018L25%2030L13%2018%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
 }
 
+.ivon-arrow-right {
+  .ivon();
+  background-image: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22%20fill-opacity%3D%220.01%22%2F%3E%3Cpath%20d%3D%22M19%2012L31%2024L19%2036%22%20stroke%3D%22%23999%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
+}
+
 .full-btn {
   @num: 30px;
   @height: 84rpx;
@@ -206,4 +246,9 @@ each(range(10), {
 
 .text-noraml {
   font-weight: normal;
+}
+.btn-normal{
+  &.mini{
+    width: 120rpx;
+  }
 }
