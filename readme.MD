@@ -47,15 +47,15 @@ lokep: [x]
 lokep: [x]
 睡眠记录-空记录：https://alipic.lanhuapp.com/SketchCover3aac41fd63aa343b7d9d027a9a7dd0f32a5a91877e65c7e19c527fc46b293d0d?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡：
+饮食打卡：[x]
 
 https://alipic.lanhuapp.com/SketchCover412d4325c0eeb00ef037d677be41e1010060d5ba3011fa64f12f9b208144b779?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡-已记录：
+饮食打卡-已记录：[x]
 
 https://alipic.lanhuapp.com/SketchCovera9b3d6a9da6be16639961c67799776a2dde73bc7a5cc7b0e7fadfa40d10682c2?x-oss-process=image/quality,q_lossless/format,webp
 
-饮食打卡-已填写：
+饮食打卡-已填写：[x]
 
 https://alipic.lanhuapp.com/SketchCovera1c8f5b34beca9f74ae1d5b5e5765c47f3ec80028c0ee12505edd8211e3a9662?x-oss-process=image/quality,q_lossless/format,webp
 

@@ -99,7 +99,18 @@ each(range(5), {
     }
   }
 
-) .ov {
+)
+each(range(10), {
+  .flex-@{value} {
+    .flex();
+    flex-wrap: wrap;
+    // flex: 0 1 auto;
+    .flex-item {
+      width: percentage((1/@value));
+    }
+  }
+})
+.ov {
   overflow: hidden;
 }
 

@@ -418,6 +418,76 @@ image {
 .f60 {
   font-size: 60rpx;
 }
+.flex-1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-1 .flex-item {
+  width: 100%;
+}
+.flex-2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-2 .flex-item {
+  width: 50%;
+}
+.flex-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-3 .flex-item {
+  width: 33.33333333%;
+}
+.flex-4 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-4 .flex-item {
+  width: 25%;
+}
+.flex-5 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-5 .flex-item {
+  width: 20%;
+}
+.flex-6 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-6 .flex-item {
+  width: 16.66666667%;
+}
+.flex-7 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-7 .flex-item {
+  width: 14.28571429%;
+}
+.flex-8 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-8 .flex-item {
+  width: 12.5%;
+}
+.flex-9 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-9 .flex-item {
+  width: 11.11111111%;
+}
+.flex-10 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-10 .flex-item {
+  width: 10%;
+}
 .ov {
   overflow: hidden;
 }

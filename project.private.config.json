@@ -107,6 +107,18 @@
           "pathName": "pages/sleep/clock/detail",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "饮食打卡-打卡",
+          "pathName": "pages/diet/clock/clock",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "饮食打卡-打卡详情-已打卡",
+          "pathName": "pages/diet/clock/detail",
+          "query": "",
+          "scene": null
         }
       ]
     }
