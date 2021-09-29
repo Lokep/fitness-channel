@@ -32,16 +32,16 @@ lokep: [x]
 lokep: [x]
 睡眠记录-周：https://alipic.lanhuapp.com/SketchCover0418940de4e4c9467439a72a054ec5fa2884a0cc84bcbec123d4e4acf68222f6?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep: [x]
 睡眠记录-已记录：https://alipic.lanhuapp.com/SketchCover775de1df923172807dfaa81f55c640ded46dc390100028e76e1801eef37e5d23?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep: [x]
 睡眠记录-已填写：https://alipic.lanhuapp.com/SketchCover023558198f617e3cce18f604c31e5997691594e585814d6ef2d40e12b189fa8d?x-oss-process=image/quality,q_lossless/format,webp
 
 lokep: [x]
 睡眠记录：https://alipic.lanhuapp.com/SketchCover6fe7de9f697e8e67f032ac36e666650b99f42b4232b8554731e25a20040389e9?x-oss-process=image/quality,q_lossless/format,webp
 
-lokep:
+lokep: [x]
 睡眠记录-未填写：https://alipic.lanhuapp.com/SketchCoverc325c65f8c87d78dceb0f598064821106609d7c7670d4f46e6db4505fcde8a7d?x-oss-process=image/quality,q_lossless/format,webp
 
 lokep: [x]

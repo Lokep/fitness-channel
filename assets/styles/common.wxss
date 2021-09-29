@@ -480,3 +480,26 @@ image {
   background-size: contain;
   background-image: url('data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22%20fill-opacity%3D%220.01%22%2F%3E%3Cpath%20d%3D%22M37%2018L25%2030L13%2018%22%20stroke%3D%22%23666666%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E');
 }
+.full-btn {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 42rpx;
+  height: 84rpx;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 30rpx;
+  background-color: #75acff;
+  width: calc(100% - 30rpx * 2);
+}
+.full-btn.fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  /* 34  17 */
+  bottom: calc((constant(safe-area-inset-bottom) / 2) + 20rpx);
+  bottom: calc((env(safe-area-inset-bottom) / 2) + 20rpx);
+}
+.text-noraml {
+  font-weight: normal;
+}

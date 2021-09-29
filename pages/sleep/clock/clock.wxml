@@ -6,7 +6,7 @@
       <image src="" mode="aspectFill"></image>
     </view>
   </view>
-  <view class="car-container">
+  <!-- <view class="car-container">
     <view class="car-container-title bold">运动类型</view>
     <view class="mt-25"></view>
     <checkbox-group class="checkbox-container">
@@ -15,18 +15,21 @@
         <view class="">慢跑</view>
       </label>
     </checkbox-group>
-  </view>
+  </view> -->
   <view class="car-container">
-    <view class="car-container-title bold">消耗热量</view>
+    <view class="car-container-title bold">睡眠时长</view>
     <view class="mt-25"></view>
     <view class="pt-5 pb-5">
       <input type="number" class="f24 f-number input-inline-block" placeholder="请输入"
         placeholder-class="text-lighter"></input>
-      <text class="f24 text-light ml-10"> 千卡</text>
+      <text class="f24 text-light ml-10 mr-10"> 小时</text>
+      <input type="number" class="f24 f-number input-inline-block" placeholder="请输入"
+        placeholder-class="text-lighter"></input>
+      <text class="f24 text-light ml-10"> 分钟</text>
     </view>
   </view>
   <view class="car-container">
-    <view class="car-container-title bold">描述内容 <text class="f22 text-lighter text-noraml">0/100</text></view>
+    <view class="car-container-title bold">描述内容 <text class="f22 text-lighter">0/100</text></view>
     <view class="mt-25"></view>
     <view class="pt-5 pb-5 ">
       <textarea class="f24" style="min-height:100px" maxlength="100" auto-height="{{true}}"

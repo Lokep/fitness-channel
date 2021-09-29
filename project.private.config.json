@@ -95,6 +95,18 @@
           "pathName": "pages/sleep/index/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "睡眠记录-未填写",
+          "pathName": "pages/sleep/clock/clock",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "睡眠记录-已记录",
+          "pathName": "pages/sleep/clock/detail",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -11,7 +11,7 @@
     },
     {
       "root": "pages/sleep",
-      "pages": ["index/index"]
+      "pages": ["index/index","clock/clock","clock/detail"]
     },
     {
       "root": "pages/sport",
