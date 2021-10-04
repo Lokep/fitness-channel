@@ -24,7 +24,13 @@
   </view>
 
   <view class="mine-menu">
-    <view class="mine-menu--item align-center" wx:for="{{MENU}}" wx:key="index">
+    <view
+      class="mine-menu--item align-center"
+      wx:for="{{MENU}}"
+      wx:key="index"
+      data-url="{{item.path}}"
+      bindtap="handleMenuNavigation"
+    >
       <image class="mine-menu--icon" src="{{item.imgUrl}}" />
       <view class="mine-menu--title">{{item.title}}</view>
       <view class="iconfont iconarrow-right"></view>

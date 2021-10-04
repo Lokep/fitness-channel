@@ -49,3 +49,16 @@ export function debounce(fn, delay) {
     timer = setTimeout(fn, delay);
   };
 }
+
+export const isWebViewUrl = (url) => url.startsWith("http");
+
+export const saveCache = (k, v) => wx.setStorageSync(k, v);
+
+export const getCache = (k) => wx.getStorageSync(k);
+
+export const deleteCache = (k) => wx.removeStorageSync(k);
+
+export const validPhone = (phone) => {
+  const reg = /^1(3\d|4[5-9]|5[0-35-9]|6[2567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
+  return reg.test(phone);
+};

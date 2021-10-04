@@ -36,10 +36,10 @@ export function request(config) {
       });
     }
     const t0 = Date.now();
-    debug(config, { ...res, delta });
+
     wx.request({
       data,
-      url: isMock ? MOCK_SERVER + url : handleRequestURL(url),
+      url: (isMock ? MOCK_SERVER + url : handleRequestURL(url)) + qs(data),
       header: handleHeader(checkToken),
       timeout: TIMEOUT,
       method,
@@ -47,6 +47,8 @@ export function request(config) {
         // console.log(res, typeof res.data)
         const t1 = Date.now();
         const delta = t1 - t0;
+
+        debug(config, { ...res, delta });
 
         if (delay && delta < delay) {
           let timeOut = setTimeout(() => {
@@ -93,6 +95,7 @@ function handleResponse(showErrMsg = true, response, url) {
   if (
     res === 801 &&
     route != LOGIN_PATH &&
+    WHITE_MENU &&
     WHITE_MENU.findIndex((item) => url == item.url) < 0
   ) {
     const app = getApp();
@@ -129,4 +132,12 @@ function Toast(msg, icon = "none", duration = 2000) {
     icon,
     duration,
   });
+}
+
+function qs(obj) {
+  let result = "?";
+  for (let key in obj) {
+    result += `${key}=${obj[key]}&`;
+  }
+  return result.slice(0, -1);
 }
