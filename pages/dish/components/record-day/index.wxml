@@ -1,0 +1,89 @@
+<view class="day">
+  <view class="day-block mb-30">
+    <view class="align-center mb-30">
+      <image class="icon-calendar" src="/assets/images/calendar.png" />
+      <view class="day-date">2021-10-08</view>
+      <view class="iconfont iconarrow-down"></view>
+    </view>
+
+    <view
+      class="calories card-list justify-around align-center"
+      wx:if="{{dietPlan}}"
+    >
+      <view class="calories-item">
+        <view class="calories-label">推荐摄入</view>
+        <view class="calories-data">{{dietPlan.suggestTake|| '0' }}</view>
+        <view class="calories-desc"
+          >蛋白质 \r\n {{dietPlan.protein|| '0' }}/{{dietPlan.suggestProtein||
+          '0' }}g</view
+        >
+      </view>
+
+      <view class="calories-item">
+        <view class="calories-label">还可摄入</view>
+        <view class="calories-data warning">{{dietPlan.canTake|| '0' }}</view>
+        <view class="calories-desc"
+          ><text style="display: block">脂肪</text> \r\n {{dietPlan.fat|| '0'
+          }}/{{dietPlan.suggestFat|| '0' }}g</view
+        >
+      </view>
+
+      <view class="calories-item">
+        <view class="calories-label">摄入</view>
+        <view class="calories-data">{{dietPlan.heat|| '0' }}</view>
+        <view class="calories-desc"
+          >碳水化合物 \r\n {{dietPlan.carbonWater|| '0'
+          }}/{{dietPlan.suggestCarbonWater|| '0' }}g</view
+        >
+      </view>
+    </view>
+    <view class="card-empty" wx:else>
+      <van-empty
+        class="custom-image"
+        image="/assets/images/bg_empty.png"
+        description="暂无进行中的饮食计划~前往领取您的饮食计划吧！"
+      />
+      <view class="justify-center" bindtap="handleDietPlanNavigation">
+        <van-button size="small" type="info" round>领取计划</van-button>
+      </view>
+    </view>
+  </view>
+
+  <view class="cell justify-between align-center">
+    <view class="cell__title align-center">
+      <image class="cell__title-icon" src="/assets/images/icon-dish-plan.png" />
+      7天健康均衡饮食计划
+    </view>
+    <view class="cell__right align-center">
+      <view class="cell__right--progress">1/7天</view>
+      <view class="iconfont iconarrow-right"></view>
+    </view>
+  </view>
+
+  <van-tabs
+    active="{{ mealType }}"
+    color="#75ACFF"
+    line-width="28"
+    title-active-color="#75ACFF"
+    bind:change="handleMealTypeChange"
+  >
+    <van-tab title="早餐">
+      <view class="day-meal mt-20">
+        <Empty title="今天还未打卡哦~" picurl="/assets/images/bg_empty.png" />
+      </view>
+    </van-tab>
+    <van-tab title="午餐">
+      <view class="day-meal mt-20"> </view>
+    </van-tab>
+    <van-tab title="晚餐">
+      <view class="day-meal mt-20"> </view>
+    </van-tab>
+    <van-tab title="加餐">
+      <view class="day-meal mt-20"> </view>
+    </van-tab>
+  </van-tabs>
+
+  <navigator class="day-btn" hover-class="none" url="/pages/diet/clock/clock"
+    >饮食打卡</navigator
+  >
+</view>

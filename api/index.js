@@ -1,14 +1,5 @@
+import { CDN_PREFIX } from "../utils/constant";
 import { axios } from "../utils/request";
-
-// export const loginByCode = (data) =>
-//   axios({
-//     url: "/celina-wechat/app-user/login-by-code",
-//     method: "post",
-//     data,
-//     showErrMsg: false,
-//     showLoading: false,
-//     checkToken: false,
-//   });
 
 /** 获取手机号 */
 
@@ -55,10 +46,8 @@ export const getOpenId = (data) =>
   });
 
 /** 上传 */
-export const uploadFile = (data) =>
-  axios({
-    url: "/FileUpLoad/Oos/Upload/uploadImgBySize",
-  });
+export const uploadImage =
+  CDN_PREFIX + "/testApi/FileUpLoad/Oos/Upload/uploadImgBySize";
 
 /** 检查会员信息是否完善 **/
 export const checkIsMemberInfoComplete = (data) =>

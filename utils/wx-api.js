@@ -125,8 +125,8 @@ export const uploadSingleFile = async ({
     name,
     success: (res) => {
       if (res.statusCode == 200 && res.data) {
-        const fileUrlList = JSON.parse(res.data).data || [];
-        handleUploadSuccess && handleUploadSuccess(fileUrlList);
+        const fileUrl = JSON.parse(res.data).data || [];
+        handleUploadSuccess && handleUploadSuccess([{ url: fileUrl.url }]);
       } else {
         showFailToast();
       }

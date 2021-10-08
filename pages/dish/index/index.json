@@ -1,5 +1,9 @@
 {
   "navigationBarTitleText": "饮食打卡",
-  "usingComponents": {},
+  "usingComponents": {
+    "Day": "../components/record-day/index",
+    "Week": "../components/record-week/index",
+    "Month": "../components/record-month/index"
+  },
   "navigationStyle": "custom"
 }

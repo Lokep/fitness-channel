@@ -1,66 +1,80 @@
+import { updateDietRecord } from "../../../api/dish";
+import { uploadSingleFile } from "../../../utils/wx-api";
+
 // pages/sport/clock/clock.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    fileList: [],
+    content: "",
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad({ id = "" }) {
+    this.setData({
+      id,
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  handleUpload(e) {
+    const { url } = e.detail.file;
 
+    if (!url) return;
+
+    uploadSingleFile({
+      filePath: url,
+      showLoading: true,
+      compressQuality: 80,
+      handleUploadSuccess: (list) => this.handleUploadSuccess(list),
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleDeleteUpload() {
+    this.setData({
+      fileList: [],
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleUploadSuccess(list = []) {
+    this.setData({
+      fileList: list,
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  handleInput(e) {
+    this.setData({
+      content: e.detail.value,
+    });
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  handleSubmit() {
+    const { fileList, content, id = "" } = this.data;
 
+    if (fileList.length === 0) {
+      wx.showToast({
+        title: "请选择您要上传的图片",
+        icon: "none",
+      });
+      return;
+    }
+
+    if (content.length > 100) {
+      wx.showToast({
+        title: "最多输入100个字",
+        icon: "none",
+      });
+      return;
+    }
+
+    updateDietRecord({
+      id,
+      describe: content,
+      picUrl: fileList[0].url,
+    }).then((res) => {
+      if (res.result === 1) {
+        wx.showToast({
+          title: "保存成功",
+          icon: "none",
+        });
+      }
+    });
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});
