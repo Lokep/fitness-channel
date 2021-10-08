@@ -7,15 +7,15 @@
   "subpackages": [
     {
       "root": "pages/dish",
-      "pages": ["index/index"]
+      "pages": ["index/index", "detail/index"]
     },
     {
       "root": "pages/sleep",
-      "pages": ["index/index","clock/clock","clock/detail"]
+      "pages": ["index/index", "clock/clock", "clock/detail"]
     },
     {
       "root": "pages/sport",
-      "pages": ["index/index","clock/clock","clock/detail","clock/index"]
+      "pages": ["index/index", "clock/clock", "clock/detail", "clock/index"]
     },
     {
       "root": "pages/health",
@@ -23,7 +23,7 @@
     },
     {
       "root": "pages/diet",
-      "pages": ["index/index","clock/clock","clock/detail"]
+      "pages": ["index/index", "clock/clock", "clock/detail"]
     },
     {
       "root": "pages/environment",

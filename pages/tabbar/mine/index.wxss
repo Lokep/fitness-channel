@@ -14,6 +14,11 @@
   height: 120rpx;
   border-radius: 60rpx;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+.mine-topbar--avatar::after {
+  border: none;
 }
 .mine-topbar--nickname {
   margin-right: 14rpx;

@@ -78,4 +78,23 @@ Page({
       });
     }
   },
+  checkOtherPlans() {
+    const url = "pages/health/index/index";
+    const routes = getCurrentPages();
+    console.log(routes);
+    if (routes.length < 2) {
+      wx.navigateTo({
+        url: "/" + url,
+      });
+    } else {
+      const { route } = routes[routes.length - 2];
+      if (route === url) {
+        wx.navigateBack();
+      } else {
+        wx.navigateTo({
+          url: "/" + url,
+        });
+      }
+    }
+  },
 });

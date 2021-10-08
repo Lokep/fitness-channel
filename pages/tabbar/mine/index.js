@@ -25,7 +25,7 @@ const MENU = [
   },
   {
     id: 5,
-    imgUrl: "../../../assets/images/icon_mine_sport.png",
+    imgUrl: "../../../assets/images/icon_mine_course.png",
     title: "我的课程",
     path: "/pages/course/index/index",
   },
@@ -41,5 +41,18 @@ Page({
     if (!url) return;
 
     wx.navigateTo({ url });
+  },
+
+  getUserProfile() {
+    wx.getUserProfile({
+      desc: "用于完善会员资料", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        this.getUserInfo(res.userInfo);
+      },
+    });
+  },
+
+  getUserInfo(e) {
+    console.log(e);
   },
 });

@@ -121,13 +121,17 @@
         <navigator
           class="card-topbar__right align-center"
           hover-class="none"
+          wx:if="{{suggestConsume}}"
           url="/pages/sport/index/index"
         >
           <view class="iconfont iconarrow-right"></view>
         </navigator>
       </view>
 
-      <view class="card-list justify-around align-center">
+      <view
+        class="card-list justify-around align-center"
+        wx:if="{{suggestConsume}}"
+      >
         <view class="card-item">
           <view class="calories-label">运动目标</view>
           <view class="calories-data">{{suggestConsume || '--'}}</view>
@@ -142,6 +146,13 @@
           <view class="calories-label">已消耗</view>
           <view class="calories-data">{{consumeFeat || '--'}}</view>
         </view>
+      </view>
+      <view class="card-empty" wx:else>
+        <van-empty
+          class="custom-image"
+          image="/assets/images/bg_empty.png"
+          description="暂无进行中的运动计划"
+        />
       </view>
     </view>
 
@@ -165,28 +176,32 @@
 
       <view class="card-list justify-around align-center">
         <view class="card-item">
-          <view class="info-data">
+          <view class="info-data" wx:if="{{weight}}">
             <view>{{weight || '--'}}</view>
             <text>kg</text>
           </view>
+          <view class="info-data--placeholder" wx:else> 未填写 </view>
           <view class="info-desc">体重</view>
         </view>
 
         <view class="card-item">
-          <view class="info-data">
+          <view class="info-data" wx:if="{{height}}">
             <view>{{height || '--'}}</view>
             <text>cm</text>
           </view>
+          <view class="info-data--placeholder" wx:else> 未填写 </view>
           <view class="info-desc">身高</view>
         </view>
 
         <view class="card-item">
-          <view class="info-data">{{bmi || '--'}}</view>
+          <view class="info-data" wx:if="{{bmi}}">{{bmi || '--'}}</view>
+          <view class="info-data--placeholder" wx:else> 未填写 </view>
           <view class="info-desc">BMI</view>
         </view>
 
         <view class="card-item">
-          <view class="info-data">{{blood || '--'}}</view>
+          <view class="info-data" wx:if="{{blood}}">{{blood || '--'}}</view>
+          <view class="info-data--placeholder" wx:else> 未填写 </view>
           <view class="info-desc">血型</view>
         </view>
       </view>

@@ -74,6 +74,10 @@ Page({
           title: "保存成功",
           icon: "none",
         });
+        let timeOut = setTimeout(() => {
+          wx.navigateBack();
+          clearTimeout(timeOut);
+        });
       }
     });
   },

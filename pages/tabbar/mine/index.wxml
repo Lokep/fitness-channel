@@ -1,25 +1,41 @@
 <view class="container">
   <view class="mine-topbar align-center">
+    <!--- 头像 --->
     <van-image
-      custom-class="mine-topbar--avatar mr-40"
+      custom-class="mine-topbar--avatar"
       src="/assets/images/img_diet.png"
       lazy-load
       use-loading-slot
       use-error-slot
+      wx:if="{{avatar}}"
     >
       <van-loading slot="loading" type="spinner" size="20" vertical />
       <text slot="error">加载失败</text>
     </van-image>
 
-    <view>
+    <button class="mine-topbar--avatar" wx:else bindtap="getUserProfile">
+      <van-image
+        custom-class="mine-topbar--avatar"
+        lazy-load
+        round
+        src="{{DEFAULT_AVATAR}}"
+      >
+      </van-image>
+    </button>
+
+    <view class="ml-40">
       <view class="align-center">
-        <view class="mine-topbar--nickname ellipsis">Lokep</view>
+        <view class="mine-topbar--nickname ellipsis"
+          >{{wechatName || '微信昵称'}}</view
+        >
         <image
           class="mine-topbar--sex"
-          src="/assets/images/icon_mine_woman.png"
+          src="/assets/images/{{sex == 1 ? 'icon_mine_man' : 'icon_mine_woman'}}.png"
         />
       </view>
-      <view class="mine-topbar--birth mt-10"> 1995-01-09 </view>
+      <view class="mine-topbar--birth mt-10" wx:if="{{birth}}">
+        {{birth}}
+      </view>
     </view>
   </view>
 

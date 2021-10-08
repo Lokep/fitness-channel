@@ -74,7 +74,12 @@ Page({
 
     return getMemberInfo({ memberId }).then((res) => {
       if (res.result === 1 || res.data) {
-        const { height, bmi, weight, blood } = res.data;
+        const {
+          height = "",
+          bmi = "",
+          weight = "",
+          blood = "",
+        } = res.data || {};
         this.setData({
           height,
           bmi,

@@ -52,14 +52,14 @@
   <view class="cell justify-between align-center">
     <view class="cell__title align-center">
       <image class="cell__title-icon" src="/assets/images/icon-dish-plan.png" />
-      7天健康均衡饮食计划
+      {{planName}}
     </view>
     <navigator
       class="cell__right align-center"
       hover-class="none"
-      url="/pages/health/plan/index?id="
+      url="/pages/health/plan/index?id={{planId}}"
     >
-      <view class="cell__right--progress">1/7天</view>
+      <view class="cell__right--progress">{{dayNum}}/{{dayCount}}天</view>
       <view class="iconfont iconarrow-right"></view>
     </navigator>
   </view>
@@ -73,23 +73,182 @@
   >
     <van-tab title="早餐" name="1">
       <view class="day-meal mt-20">
-        <Empty title="今天还未打卡哦~" picurl="/assets/images/bg_empty.png" />
+        <view
+          class="day-meal-item justify-between"
+          wx:if="{{mealRecords[0].picUrl}}"
+        >
+          <image
+            class="day-meal-item__img mr-40"
+            src="{{mealRecords[0].picUrl || ''}}"
+          />
+          <view style="flex: 1">
+            <view
+              class="day-meal-item__status mb-20"
+              wx:if="{{!mealRecords[0].isRecord}}"
+              >待记录</view
+            >
+            <view
+              class="day-meal-item__link mb-20 justify-between ellipsis"
+              data-id="{{mealRecords[0].id}}"
+              bindtap="handleRecordDetailNavigation"
+              wx:else
+            >
+              <view class="ellipsis" style="flex: 1"> asdfasdfasdfasd </view>
+              <view class="iconfont iconarrow-right"></view>
+            </view>
+
+            <view class="day-meal-item__args flex">
+              <view class="day-meal-item__arg"
+                >热量 {{mealRecords[0].heat}}千卡</view
+              >
+              <view class="day-meal-item__arg"
+                >蛋白 {{mealRecords[0].protein}}克</view
+              >
+              <view class="day-meal-item__arg"
+                >脂肪 {{mealRecords[0].fat}}克</view
+              >
+              <view class="day-meal-item__arg"
+                >碳水 {{mealRecords[0].carbonWater}}克</view
+              >
+            </view>
+          </view>
+        </view>
+
+        <Empty
+          wx:else
+          title="今天还未打卡哦~"
+          picurl="/assets/images/bg_empty.png"
+        />
+
+        <navigator
+          class="day-btn"
+          hover-class="none"
+          url="/pages/diet/clock/clock?id={{mealRecords[0].id}}"
+        >
+          饮食打卡
+        </navigator>
       </view>
     </van-tab>
+
     <van-tab title="午餐" name="2">
-      <view class="day-meal mt-20"> </view>
+      <view class="day-meal mt-20">
+        <view
+          class="day-meal-item justify-between"
+          wx:if="{{mealRecords[1].picUrl}}"
+        >
+          <image
+            class="day-meal-item__img mr-40"
+            src="{{mealRecords[1].picUrl || ''}}"
+          />
+          <view style="flex: 1">
+            <view
+              class="day-meal-item__status mb-20"
+              wx:if="{{!mealRecords[1].isRecord}}"
+              >待记录</view
+            >
+            <view
+              class="day-meal-item__link mb-20 justify-between ellipsis"
+              data-id="{{mealRecords[0].id}}"
+              bindtap="handleRecordDetailNavigation"
+              wx:else
+            >
+              <view class="ellipsis" style="flex: 1"> asdfasdfasdfasd </view>
+              <view class="iconfont iconarrow-right"></view>
+            </view>
+
+            <view class="day-meal-item__args flex">
+              <view class="day-meal-item__arg"
+                >热量 {{mealRecords[1].heat}}千卡</view
+              >
+              <view class="day-meal-item__arg"
+                >蛋白 {{mealRecords[1].protein}}克</view
+              >
+              <view class="day-meal-item__arg"
+                >脂肪 {{mealRecords[1].fat}}克</view
+              >
+              <view class="day-meal-item__arg"
+                >碳水 {{mealRecords[1].carbonWater}}克</view
+              >
+            </view>
+          </view>
+        </view>
+
+        <Empty
+          wx:else
+          title="今天还未打卡哦~"
+          picurl="/assets/images/bg_empty.png"
+        />
+
+        <navigator
+          class="day-btn"
+          hover-class="none"
+          url="/pages/diet/clock/clock?id={{mealRecords[1].id}}"
+        >
+          饮食打卡
+        </navigator>
+      </view>
     </van-tab>
     <van-tab title="晚餐" name="3">
-      <view class="day-meal mt-20"> </view>
-    </van-tab>
-    <van-tab title="加餐" name="4">
-      <view class="day-meal mt-20"> </view>
-    </van-tab>
-  </van-tabs>
+      <view class="day-meal mt-20">
+        <view
+          class="day-meal-item justify-between"
+          wx:if="{{mealRecords[2].picUrl}}"
+        >
+          <image
+            class="day-meal-item__img mr-40"
+            src="{{mealRecords[2].picUrl || ''}}"
+          />
+          <view style="flex: 1">
+            <view
+              class="day-meal-item__status mb-20"
+              wx:if="{{!mealRecords[2].isRecord}}"
+              >待记录</view
+            >
+            <view
+              class="day-meal-item__link mb-20 justify-between ellipsis"
+              data-id="{{mealRecords[0].id}}"
+              bindtap="handleRecordDetailNavigation"
+              wx:else
+            >
+              <view class="ellipsis" style="flex: 1"> asdfasdfasdfasd </view>
+              <view class="iconfont iconarrow-right"></view>
+            </view>
+            <view class="day-meal-item__args flex">
+              <view class="day-meal-item__arg"
+                >热量 {{mealRecords[2].heat}}千卡</view
+              >
+              <view class="day-meal-item__arg"
+                >蛋白 {{mealRecords[2].protein}}克</view
+              >
+              <view class="day-meal-item__arg"
+                >脂肪 {{mealRecords[2].fat}}克</view
+              >
+              <view class="day-meal-item__arg"
+                >碳水 {{mealRecords[2].carbonWater}}克</view
+              >
+            </view>
+          </view>
+        </view>
 
-  <navigator class="day-btn" hover-class="none" url="/pages/diet/clock/clock"
-    >饮食打卡</navigator
-  >
+        <Empty
+          wx:else
+          title="今天还未打卡哦~"
+          picurl="/assets/images/bg_empty.png"
+        />
+
+        <navigator
+          class="day-btn"
+          hover-class="none"
+          url="/pages/diet/clock/clock?id={{mealRecords[2].id}}"
+        >
+          饮食打卡
+        </navigator>
+      </view>
+    </van-tab>
+    <!--<van-tab title="加餐" name="4">
+      <view class="day-meal mt-20"> </view>
+    </van-tab>-->
+  </van-tabs>
 
   <van-calendar
     color="#256cfa"

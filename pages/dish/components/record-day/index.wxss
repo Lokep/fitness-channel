@@ -31,6 +31,43 @@
   border-radius: 40rpx;
   background-color: #fff;
 }
+.day-meal-item__status {
+  width: 80rpx;
+  height: 40rpx;
+  background: #c4ced6;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color: #fff;
+  font-size: 20rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #fff;
+}
+.day-meal-item__link {
+  font-size: 28rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 40rpx;
+}
+.day-meal-item__img {
+  width: 120rpx;
+  height: 120rpx;
+  flex-shrink: 0;
+  background-color: #eee;
+}
+.day-meal-item__arg {
+  flex-basis: 50%;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #bfbfbf;
+  line-height: 34rpx;
+}
+.day-meal-item__args {
+  flex-wrap: wrap;
+}
 .day-btn {
   width: calc(100vw - 64rpx);
   box-sizing: border-box;

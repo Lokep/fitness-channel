@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { getMemberInfo, updateMemberInfo } from "../../../api/index";
 import { formatDate, getCache } from "../../../utils/util";
 
@@ -71,7 +72,7 @@ Page({
       id: 1,
       memberId,
       sex: sex.value,
-      birth: birthDate,
+      birth: dayjs(birthDate).format("YYYY-MM-DD hh:mm:ss"),
       height,
       standardWeight,
       bmi,
