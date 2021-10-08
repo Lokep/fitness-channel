@@ -1,66 +1,45 @@
 // pages/sport/clock/clock.js
+// import { getCache } from "../../../utils/util";
+import { uploadSingleFile } from "../../../utils/wx-api";
+import {} from "../../../api/sport";
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id: '',
+    fileList: []
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  handleUpload(e) {
+    const { url } = e.detail.file;
 
+    if (!url) return;
+
+    uploadSingleFile({
+      filePath: url,
+      showLoading: true,
+      compressQuality: 80,
+      handleUploadSuccess: (list) => this.handleUploadSuccess(list),
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleDeleteUpload() {
+    this.setData({
+      fileList: [],
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  handleUploadSuccess(list = []) {
+    this.setData({
+      fileList: list,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onLoad: function ({
+    id = ""
+  }) {
+    this.setData({
+      id
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

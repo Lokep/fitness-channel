@@ -4,21 +4,20 @@
     <view class="car-container-title bold">拍照上传</view>
     <view class="media-wrap clock-img mt-30">
       <image
-        src="https://alipic.lanhuapp.com/SketchCover8c675ab1101046dce0550d76e3124adea24b0558a117fb23272c1c6b974c307c?x-oss-process=image/quality,q_lossless/format,webp">
+        src="{{detail.picUrl}}">
       </image>
     </view>
   </view>
   <view class="car-container">
     <view class="car-container-title bold">运动类型</view>
     <view class="mt-25"></view>
-    <view class="pt-5 pb-5 f26 li">散步</view>
-    <view class="pt-5 pb-5 f26 li">太极拳</view>
+    <view class="pt-5 pb-5 f26 li" wx:for="{{typeNameArr}}" data-index="index" wx:key="index">{{item}}</view>
   </view>
   <view class="car-container">
     <view class="car-container-title bold">消耗热量</view>
     <view class="mt-25"></view>
     <view class="pt-5 pb-5">
-      <text class="bold f30 f-number">360</text>
+      <text class="bold f30 f-number">{{detail.consumeFeat}}</text>
       <text class="f24 text-light ml-10"> 千卡</text>
     </view>
   </view>
@@ -26,14 +25,14 @@
     <view class="car-container-title bold">描述内容</view>
     <view class="mt-25"></view>
     <view class="pt-5 pb-5 ">
-      <text class="f24 text-light">无</text>
+      <text class="f24 text-light">{{detail.describe?detail.describe:"无"}}</text>
     </view>
   </view>
   <view class="car-container">
     <view class="car-container-title bold">营养师建议</view>
     <view class="mt-25"></view>
     <view class="pt-5 pb-5 ">
-      <text class="f24 text-light">营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议营养师建议</text>
+      <text class="f24 text-light">{{detail.advice?detail.advice:"无"}}</text>
     </view>
   </view>
 </view>

@@ -21,7 +21,7 @@ const MENU = [
     id: 4,
     imgUrl: "../../../assets/images/icon_mine_sport.png",
     title: "我的运动计划",
-    path: "/pages/sport/index/index",
+    path: "/pages/sport/clock/index",
   },
   {
     id: 5,
