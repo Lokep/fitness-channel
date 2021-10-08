@@ -4,24 +4,9 @@
 <view class="wrap mt-20 ml-30 mr-30">
   <!-- 切换 -->
   <view class="flex charts-toggle-bar">
-    <view
-      class="charts-btn {{current==0?'current':''}}"
-      data-index="{{0}}"
-      bindtap="toggleSelect"
-      >日</view
-    >
-    <view
-      class="charts-btn {{current==1?'current':''}}"
-      data-index="{{1}}"
-      bindtap="toggleSelect"
-      >周</view
-    >
-    <view
-      class="charts-btn {{current==2?'current':''}}"
-      data-index="{{2}}"
-      bindtap="toggleSelect"
-      >月</view
-    >
+    <view class="charts-btn {{current==0?'current':''}}" data-index="{{0}}" bindtap="toggleSelect">日</view>
+    <view class="charts-btn {{current==1?'current':''}}" data-index="{{1}}" bindtap="toggleSelect">周</view>
+    <view class="charts-btn {{current==2?'current':''}}" data-index="{{2}}" bindtap="toggleSelect">月</view>
   </view>
   <!-- 图表区域-->
   <view class="charts-container mt-30">
@@ -52,7 +37,8 @@
           <image mode="aspectFill" src="{{todayInfo.picUrl}}"></image>
         </view>
         <view class="mt-30 text-center">
-          <navigator class="link" data-id="{{todayInfo.id}}" bindtap="toDetailView">查看详情</navigator>
+          <navigator url="/pages/sleep/clock/detail?date={{today}}" class="link" data-id="{{todayInfo.id}}"
+            >查看详情</navigator>
         </view>
       </block>
     </block>
