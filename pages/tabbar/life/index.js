@@ -15,7 +15,7 @@ const LIST = [
     id: 3,
     imgUrl: "../../../assets/images/img_sport.png",
     title: "",
-    path: "/pages/sport/index/index",
+    path: "/pages/sport/clock/index",
   },
   {
     id: 4,

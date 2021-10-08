@@ -1,0 +1,22 @@
+.chart {
+  position: relative;
+  overflow: hidden;
+}
+.chart,
+.chart-loading,
+.chart-empty {
+  height: 350rpx;
+  width: 100%;
+}
+.chart-empty {
+  background-color: #eee;
+  font-size: 24rpx;
+  color: #666;
+}
+.f2-chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

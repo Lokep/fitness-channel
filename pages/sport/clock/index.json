@@ -1,6 +1,7 @@
 {
   "navigationStyle": "custom",
   "usingComponents": {
-    "empty": "../../../components/empty/empty"
+    "empty": "../../../components/empty/empty",
+    "Chart": "../../../components/chart/index"
   }
 }

@@ -4,8 +4,10 @@
   color="#fff"
   background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)"
 />
+
 <!---bg --->
 <view class="gradient"></view>
+
 <view class="wrap mt-20 ml-30 mr-30">
   <!-- 切换 -->
   <view class="flex charts-toggle-bar">
@@ -28,9 +30,10 @@
       >月</view
     >
   </view>
+
   <!-- 图表区域-->
   <view class="charts-container mt-30">
-    <block wx:if="{{current==0}}">
+    <block wx:if="{{current == 0}}">
       <empty wx:if="{{!suggestConsume}}" title="暂无进行中的计划~" />
       <view wx:else class="flex justify-between">
         <view class="day-message">
@@ -56,23 +59,14 @@
         </view>
       </view>
     </block>
-    <block wx:if="{{current==1}}">
-      <view class="charts-title">平均消耗热量</view>
-      <view class="charts-message num flex justify-center"
-        ><text class="f38 f-number">800</text> <text class="ml-10">千卡</text>
+
+    <block wx:else>
+      <view>
+        <Chart list="{{sportRecords}}" onInitChart="{{onInitChart}}" />
       </view>
-      <view class="charts-text">2021年8月1日-8月7日</view>
-      <view class=""> 周 周 周 周 周 </view>
-    </block>
-    <block wx:if="{{current==2}}">
-      <view class="charts-title">平均消耗热量</view>
-      <view class="charts-message num flex justify-center"
-        ><text class="f38 f-number">800</text> <text class="ml-10">千卡</text>
-      </view>
-      <view class="charts-text">2021年8月1日-8月7日</view>
-      <view class=""> 月 月 月 月 月 </view>
     </block>
   </view>
+
   <button wx:if="{{true}}" class="full-btn fixed">运动打卡</button>
   <!--  -->
   <view class="mt-30">

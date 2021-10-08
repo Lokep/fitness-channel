@@ -1,0 +1,19 @@
+<view class="chart">
+  <view class="chart-loading justify-center align-center" wx:if="{{loading}}">
+    <van-loading color="#1989fa" />
+  </view>
+
+  <view
+    class="chart-empty justify-center align-center"
+    wx:elif="{{list.length === 0}}"
+  >
+    暂无数据~
+  </view>
+
+  <f2
+    class="f2-chart"
+    style="{{list.length === 0 ? 'top: -100vh;' : 'top: 0;'}}"
+    list="{{list}}"
+    onInit="{{onInitChart}}"
+  />
+</view>
