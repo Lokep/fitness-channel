@@ -55,4 +55,14 @@ Page({
   getUserInfo(e) {
     console.log(e);
   },
+
+  getUserPhone(e) {
+    if (e.detail.errMsg && e.detail.errMsg.indexOf("deny") > -1) {
+      wx.showToast({
+        title: "您已拒绝了手机号授权",
+        icon: "none",
+      });
+      return;
+    }
+  },
 });

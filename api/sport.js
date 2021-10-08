@@ -60,3 +60,12 @@ export const clockRecordUpdate = (data) =>
     showErrMsg: false,
     showLoading: false,
   });
+
+export const getSportRecordsByDate = (data) =>
+  axios({
+    url: "/Ma/Motion/listClockRecord",
+    data,
+    method: "post",
+    showErrMsg: false,
+    showLoading: false,
+  });
