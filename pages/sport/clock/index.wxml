@@ -1,13 +1,32 @@
 <!--pages/sport/clock/index.wxml-->
-<navigation-bar title="运动打卡" color="#fff" background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)" />
+<navigation-bar
+  title="运动打卡"
+  color="#fff"
+  background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)"
+/>
 <!---bg --->
 <view class="gradient"></view>
 <view class="wrap mt-20 ml-30 mr-30">
   <!-- 切换 -->
   <view class="flex charts-toggle-bar">
-    <view class="charts-btn {{current==0?'current':''}}" data-index="{{0}}" bindtap="toggleSelect">日</view>
-    <view class="charts-btn {{current==1?'current':''}}" data-index="{{1}}" bindtap="toggleSelect">周</view>
-    <view class="charts-btn {{current==2?'current':''}}" data-index="{{2}}" bindtap="toggleSelect">月</view>
+    <view
+      class="charts-btn {{current==0?'current':''}}"
+      data-index="{{0}}"
+      bindtap="toggleSelect"
+      >日</view
+    >
+    <view
+      class="charts-btn {{current==1?'current':''}}"
+      data-index="{{1}}"
+      bindtap="toggleSelect"
+      >周</view
+    >
+    <view
+      class="charts-btn {{current==2?'current':''}}"
+      data-index="{{2}}"
+      bindtap="toggleSelect"
+      >月</view
+    >
   </view>
   <!-- 图表区域-->
   <view class="charts-container mt-30">
@@ -16,28 +35,42 @@
       <view wx:else class="flex justify-between">
         <view class="day-message">
           <view class="mb-10 f30">运动目标</view>
-          <view><text class="f-number f34">{{suggestConsume}}</text><text class="ml-10 f22 text-lighter">千卡</text>
+          <view
+            ><text class="f-number f34">{{suggestConsume}}</text
+            ><text class="ml-10 f22 text-lighter">千卡</text>
           </view>
         </view>
         <view class="day-message">
           <view class="mb-10 f30">还需消耗</view>
-          <view><text class="f-number f34 f-orange">{{needConsume}}</text><text class="ml-10 f22 text-lighter">千卡</text>
+          <view
+            ><text class="f-number f34 f-orange">{{needConsume}}</text
+            ><text class="ml-10 f22 text-lighter">千卡</text>
           </view>
         </view>
         <view class="day-message">
           <view class="mb-10 f30">已消耗</view>
-          <view><text class="f-number f34">{{consumeFeat}}</text><text class="ml-10 f22 text-lighter">千卡</text></view>
+          <view
+            ><text class="f-number f34">{{consumeFeat}}</text
+            ><text class="ml-10 f22 text-lighter">千卡</text></view
+          >
         </view>
       </view>
     </block>
-    <block wx:if="{{current!==0}}">
+    <block wx:if="{{current==1}}">
       <view class="charts-title">平均消耗热量</view>
-      <view class="charts-message num flex justify-center"><text class="f38 f-number">800</text> <text
-          class="ml-10">千卡</text> </view>
-      <view class="charts-text">2021年8月1日-8月7日</view>
-      <view class="">
-        周--月
+      <view class="charts-message num flex justify-center"
+        ><text class="f38 f-number">800</text> <text class="ml-10">千卡</text>
       </view>
+      <view class="charts-text">2021年8月1日-8月7日</view>
+      <view class=""> 周 周 周 周 周 </view>
+    </block>
+    <block wx:if="{{current==2}}">
+      <view class="charts-title">平均消耗热量</view>
+      <view class="charts-message num flex justify-center"
+        ><text class="f38 f-number">800</text> <text class="ml-10">千卡</text>
+      </view>
+      <view class="charts-text">2021年8月1日-8月7日</view>
+      <view class=""> 月 月 月 月 月 </view>
     </block>
   </view>
   <button wx:if="{{true}}" class="full-btn fixed">运动打卡</button>
@@ -46,37 +79,61 @@
     <block wx:if="{{sportList.length>0}}">
       <!-- 运动列表 切换 -->
       <view class="flex justify-between align-center">
-        <view class="swiper-btn swiper-btn-prev" wx:if="{{sportListCurrent > 0}}" data-toggle="prev"
-          bindtap="sportToggle"></view>
+        <view
+          class="swiper-btn swiper-btn-prev"
+          wx:if="{{sportListCurrent > 0}}"
+          data-toggle="prev"
+          bindtap="sportToggle"
+        ></view>
         <view class="swiper-btn swiper-btn-prev disable" wx:else></view>
         <view class="text-center">
           <view class="f26 mb-10">
-            <text class="dot blue"></text> {{sportList[sportListCurrent].planName}}
+            <text class="dot blue"></text>
+            {{sportList[sportListCurrent].planName}}
           </view>
-          <view class="f22 text-lighter">
-            从2021-07-01开始
-          </view>
+          <view class="f22 text-lighter"> 从2021-07-01开始 </view>
         </view>
-        <view class="swiper-btn swiper-btn-next" wx:if="{{sportListCurrent < sportList.length-1}}" data-toggle="next"
-          bindtap="sportToggle"></view>
+        <view
+          class="swiper-btn swiper-btn-next"
+          wx:if="{{sportListCurrent < sportList.length-1}}"
+          data-toggle="next"
+          bindtap="sportToggle"
+        ></view>
         <view class="swiper-btn swiper-btn-next disable" wx:else></view>
       </view>
       <!--  -->
       <view class="mt-30">
-        <block wx:for="{{listClockRecordByPlan}}" wx:key="index" data-index="index">
-          <view class="clock-item flex justify-between" data-index="{{index}}" data-id="{{item.id}}"
-            data-isrecord="{{item.isRecord}}" data-issubmit="{{item.isSubmit}}" bindtap="toView" url="">
+        <block
+          wx:for="{{listClockRecordByPlan}}"
+          wx:key="index"
+          data-index="index"
+        >
+          <view
+            class="clock-item flex justify-between"
+            data-index="{{index}}"
+            data-id="{{item.id}}"
+            data-isrecord="{{item.isRecord}}"
+            data-issubmit="{{item.isSubmit}}"
+            bindtap="toView"
+            url=""
+          >
             <view class="media-wrap icon">
               <image src="../../../assets/images/icon_mine_sport.png"></image>
             </view>
             <view class="text-container">
               <view class="top cb flex algin-center justify-between">
                 <view>
-                  <text class="f30">{{item.suggestContent?item.suggestContent:'—'}}</text>
-                  <text class="f24 text-lighter ml-10">{{item.suggestConsume?item.suggestConsume:'/'}}千卡</text>
+                  <text class="f30"
+                    >{{item.suggestContent?item.suggestContent:'—'}}</text
+                  >
+                  <text class="f24 text-lighter ml-10"
+                    >{{item.suggestConsume?item.suggestConsume:'/'}}千卡</text
+                  >
                 </view>
                 <view class="flex">
-                  <view class="fr f22 day text-lighter">第{{item.dayNum}}天</view>
+                  <view class="fr f22 day text-lighter"
+                    >第{{item.dayNum}}天</view
+                  >
                   <view class="ml-10 arrow-right"></view>
                 </view>
               </view>
@@ -84,17 +141,25 @@
                 {{item.suggestContent ? item.suggestContent : ''}}
               </view>
               <view class="top">
-                <text class="f-number f40">{{item.consumeFeat ? item.consumeFeat : "/"}}</text>
+                <text class="f-number f40"
+                  >{{item.consumeFeat ? item.consumeFeat : "/"}}</text
+                >
                 <text class="f24 text-lighter ml-10">千卡</text>
                 <block wx:if="{{item.typeName}}">
                   <text class="f24 text-lighter ml-10">——</text>
-                  <text class="tag success ml-10">{{item.typeName?item.typeName:''}}</text>
+                  <text class="tag success ml-10"
+                    >{{item.typeName?item.typeName:''}}</text
+                  >
                 </block>
               </view>
               <view class="sport-clock mt-10" wx:if="{{item.isSubmit!==1}}">
                 运动打卡
               </view>
-              <view class="sport-clock mt-10 disable" wx:else catchtap="catchtap">
+              <view
+                class="sport-clock mt-10 disable"
+                wx:else
+                catchtap="catchtap"
+              >
                 无需打卡
               </view>
             </view>
