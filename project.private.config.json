@@ -45,7 +45,7 @@
         {
           "name": "健康计划",
           "pathName": "pages/health/plan/index",
-          "query": "",
+          "query": "id=d44afe52bdaf474d8aa894dddb205cff",
           "scene": null
         },
         {

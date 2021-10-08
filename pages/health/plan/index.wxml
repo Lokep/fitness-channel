@@ -4,7 +4,11 @@
   <view class="wrap">
     <view class="plan-topbar align-center justify-between">
       <view class="plan-topbar__title">健康均衡饮食计划</view>
-      <navigator class="plan-topbar__link align-center" hover-class="none">
+      <navigator
+        class="plan-topbar__link align-center"
+        open-type="navigateBack"
+        hover-class="none"
+      >
         查看其他计划
         <view class="iconfont iconarrow-right"></view>
       </navigator>

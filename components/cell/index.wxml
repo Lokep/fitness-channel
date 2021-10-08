@@ -1,7 +1,11 @@
 <view class="cell justify-between align-center">
-  <view class="cell__title">7天健康均衡饮食计划</view>
-  <view class="cell__btn disable">已领取</view>
-  <navigator class="cell__btn" hover-class="none" url="/pages/health/plan/index"
-    >领取</navigator
+  <view class="cell__title">{{ info.planName }}</view>
+  <!-- <view class="cell__btn disable">已领取</view> -->
+  <navigator
+    class="cell__btn"
+    hover-class="none"
+    url="/pages/health/plan/index?id={{info.id}}"
   >
+    领取
+  </navigator>
 </view>

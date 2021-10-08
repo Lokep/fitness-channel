@@ -58,7 +58,7 @@
         <input
           class="cell-ipt--input"
           type="number"
-          value="bmi"
+          value="{{bmi}}"
           disabled
           placeholder="未填写"
         />
@@ -73,7 +73,7 @@
         <input
           class="cell-ipt--input"
           type="number"
-          value="{{idealWeight}}"
+          value="{{standardWeight}}"
           disabled
           placeholder="未填写"
         />

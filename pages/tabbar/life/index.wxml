@@ -1,5 +1,11 @@
 <view class="container">
-  <view class="card" wx:for="{{LIST}}" wx:key="index">
+  <view
+    class="card"
+    wx:for="{{LIST}}"
+    wx:key="index"
+    data-path="{{item.path}}"
+    bindtap="handleNavigation"
+  >
     <!---<van-image
       custom-class="article-item__img mr-25"
       src="{{article.coverPicture}}"

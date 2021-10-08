@@ -1,5 +1,4 @@
 import { axios } from "../utils/request";
-import { env } from "../utils/wx-api";
 
 // export const loginByCode = (data) =>
 //   axios({
@@ -59,4 +58,32 @@ export const getOpenId = (data) =>
 export const uploadFile = (data) =>
   axios({
     url: "/FileUpLoad/Oos/Upload/uploadImgBySize",
+  });
+
+/** 检查会员信息是否完善 **/
+export const checkIsMemberInfoComplete = (data) =>
+  axios({
+    url: "/Ma/Member/checkPerfect",
+    data,
+    method: "post",
+    showErrMsg: false,
+    showLoading: false,
+  });
+
+export const getMemberInfo = (data) =>
+  axios({
+    url: "/Ma/Member/get",
+    data,
+    method: "post",
+    showErrMsg: false,
+    showLoading: false,
+  });
+
+export const updateMemberInfo = (data) =>
+  axios({
+    url: "/Ma/Member/update",
+    data,
+    method: "post",
+    showErrMsg: false,
+    showLoading: false,
   });

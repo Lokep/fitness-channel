@@ -1,6 +1,6 @@
 import { OFFLINE, WHITE_MENU } from "./constant";
 import { getCache, saveCache } from "./util";
-import { getNetworkType } from "./wx-api";
+import { env, getNetworkType } from "./wx-api";
 import { handleRequestURL } from "./proxyTable";
 import { debug } from "./debug";
 
@@ -38,8 +38,10 @@ export function request(config) {
     const t0 = Date.now();
 
     wx.request({
-      data,
-      url: (isMock ? MOCK_SERVER + url : handleRequestURL(url)) + qs(data),
+      data: handleData(data),
+      url:
+        (isMock ? MOCK_SERVER + url : handleRequestURL(url)) +
+        qs(handleData(data)),
       header: handleHeader(checkToken),
       timeout: TIMEOUT,
       method,
@@ -140,4 +142,13 @@ function qs(obj) {
     result += `${key}=${obj[key]}&`;
   }
   return result.slice(0, -1);
+}
+
+function handleData(data) {
+  if (env !== "develop") return data;
+
+  return {
+    ...data,
+    memberId: 1,
+  };
 }

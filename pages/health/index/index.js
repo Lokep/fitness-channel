@@ -1,47 +1,63 @@
-// pages/health/index/index.js
+import { checkIsDietHabbitComplete, getDietPlanList } from "../../../api/dish";
+import { checkIsMemberInfoComplete } from "../../../api/index";
+import { getCache } from "../../../utils/util";
+
 Page({
-  /**
-   * 页面的初始数据
-   */
-  data: {},
+  data: {
+    planList: [],
+    isDone: false,
+    pageNum: 0,
+    pageSize: 10,
+    total: 0,
+    isMemberInfoComplete: false,
+    isDietHabbitComplete: false,
+  },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {},
+  onShow() {
+    this.checkIsMemberInfoComplete();
+    this.getDietPlanList();
+  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
+  checkIsMemberInfoComplete() {
+    const { memberId = "" } = getCache("loginInfo");
+    checkIsMemberInfoComplete({
+      memberId,
+    }).then((res) => {
+      if (res.result === 1) {
+        this.setData({
+          isMemberInfoComplete: res.data,
+        });
+      }
+    });
+  },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
+  checkIsDietHabbitComplete() {
+    const { memberId = "" } = getCache("loginInfo");
+    checkIsDietHabbitComplete({ memberId }).then((res) => {
+      if (res.result === 1) {
+        this.setData({
+          isDietHabbitComplete: res.data,
+        });
+      }
+    });
+  },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
+  getDietPlanList() {
+    this.setData({ isDone: false });
+    getDietPlanList({
+      pageNum: 1,
+      pageSize: 10,
+    }).then((res) => {
+      if (res.result === 1) {
+        this.setData({
+          planList: res.data,
+          total: res.total,
+        });
+      }
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
+      this.setData({
+        isDone: true,
+      });
+    });
+  },
 });

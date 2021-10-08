@@ -1,4 +1,5 @@
-import { throttle } from "../../../utils/util";
+import { getDietPlanDetail, receiveDietPlan } from "../../../api/dish";
+import { getCache, throttle } from "../../../utils/util";
 
 const DIET_LIST = [
   {
@@ -26,8 +27,55 @@ const DIET_LIST = [
 
 Page({
   data: {
+    id: null,
     DIET_LIST,
+    info: {},
+  },
+
+  onLoad({ id = "" }) {
+    if (id) {
+      this.setData({
+        id,
+      });
+      this.getDietPlanDetail();
+    }
   },
 
   acceptPlan: throttle(() => {}, 1000),
+
+  getDietPlanDetail() {
+    const { id = "" } = this.data;
+    if (id) {
+      getDietPlanDetail({ id }).then((res) => {
+        if (res.result === 1) {
+          this.setData({
+            info: res.data,
+          });
+        }
+      });
+    }
+  },
+
+  receiveDietPlan() {
+    const { id = "" } = this.data;
+    const { memberId = "" } = getCache("loginInfo");
+    if (id) {
+      receiveDietPlan({
+        id,
+        memberId,
+      }).then((res) => {
+        if (res.result === 1) {
+          wx.showToast({
+            title: "领取成功",
+            icon: "none",
+          });
+
+          let timeOut = setTimeout(() => {
+            wx.navigateBack();
+            clearTimeout(timeOut);
+          }, 1000);
+        }
+      });
+    }
+  },
 });

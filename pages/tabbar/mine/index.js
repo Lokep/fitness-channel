@@ -23,6 +23,12 @@ const MENU = [
     title: "我的运动计划",
     path: "/pages/sport/index/index",
   },
+  {
+    id: 5,
+    imgUrl: "../../../assets/images/icon_mine_sport.png",
+    title: "我的课程",
+    path: "/pages/course/index/index",
+  },
 ];
 
 Page({

@@ -16,8 +16,14 @@
           url="/pages/health/info/index"
         >
           <image
+            wx:if="{{isMemberInfoComplete}}"
             class="board-item__dot"
             src="/assets/images/tag_finished.png"
+          />
+          <image
+            class="board-item__dot"
+            wx:else
+            src="/assets/images/tag_nofinished.png"
           />
           <view class="board-item__content">完善基础信息</view>
         </navigator>
@@ -28,7 +34,13 @@
           url="/pages/health/habbit/index"
         >
           <image
+            wx:if="{{isDietHabbitComplete}}"
             class="board-item__dot"
+            src="/assets/images/tag_finished.png"
+          />
+          <image
+            class="board-item__dot"
+            wx:else
             src="/assets/images/tag_nofinished.png"
           />
           <view class="board-item__content">饮食偏好记录</view>
@@ -41,7 +53,7 @@
     <view class="plan-title"> 健康均衡饮食计划 </view>
 
     <view class="plan-list">
-      <Cell />
+      <Cell wx:for="{{planList}}" wx:key="index" info="{{item}}" />
     </view>
   </view>
 </view>

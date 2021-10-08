@@ -55,7 +55,7 @@ function handleTimeConsuming(
   { statusCode, data: res, delta }
 ) {
   if (statusCode == 200) {
-    if (res.res == 0) {
+    if (res.result == 1) {
       console.log(
         `%c ${method.toUpperCase()} %c ${handleOutputUrl(url)}  %c ${delta}ms `,
         handleStyle("success"),
@@ -79,7 +79,7 @@ function handleTimeConsuming(
 }
 
 function handleCallback({ method, url }, { data: res, delta }) {
-  if (res.res == 0) {
+  if (res.result == 1) {
     if (res.data && Array.isArray(res.data) && res.data.length > 0) {
       if (typeof res.data[0] == "number" || typeof res.data[0] == "string") {
         console.groupCollapsed(
@@ -127,7 +127,7 @@ function handleCallback({ method, url }, { data: res, delta }) {
 }
 
 function handleResonse(res) {
-  if (res.res == 0 && res.data) {
+  if (res.result === 1 && res.data) {
     if (Array.isArray(res.data) && res.data.length > 0) {
       if (typeof res.data[0] == "number" || typeof res.data[0] == "string") {
         console.table(res.data);
@@ -200,7 +200,7 @@ export function performanceWatcher() {
   const performance = wx.getPerformance();
   const observer = performance.createObserver((entryList) => {
     const entries = entryList.getEntries();
-    console.log("[entries]: ", entries);
+
     if (isArray(entries) && entries.length > 0) {
       const tableHeader = isObject(entries[2]) ? Object.keys(entries[2]) : null;
       const timeConsuming = entries.reduce((total, item) => {

@@ -17,10 +17,14 @@
           <view class="card-topbar__sub-title ml-20"></view>
         </view>
 
-        <view class="card-topbar__right align-center">
+        <navigator
+          class="card-topbar__right align-center"
+          hover-class="none"
+          url="/pages/environment/index/index"
+        >
           查看更多
           <view class="iconfont iconarrow-right"></view>
-        </view>
+        </navigator>
       </view>
 
       <view class="card-list justify-around align-center">
@@ -55,39 +59,52 @@
           <view class="card-topbar__sub-title ml-20"></view>
         </view>
 
-        <view class="card-topbar__right align-center">
+        <view
+          class="card-topbar__right align-center"
+          bindtap="handleDietPlanNavigation"
+        >
           <view class="iconfont iconarrow-right"></view>
         </view>
       </view>
 
-      <!---<view class="calories card-list justify-around align-center">
-
+      <view
+        class="calories card-list justify-around align-center"
+        wx:if="{{dietPlan}}"
+      >
         <view class="card-item">
           <view class="calories-label">推荐摄入</view>
-          <view class="calories-data">1747</view>
-          <view class="calories-desc">蛋白质 \r\n 0/10.2g</view>
+          <view class="calories-data">{{dietPlan.suggestTake|| '0' }}</view>
+          <view class="calories-desc"
+            >蛋白质 \r\n {{dietPlan.protein|| '0' }}/{{dietPlan.suggestProtein||
+            '0' }}g</view
+          >
         </view>
 
         <view class="card-item">
           <view class="calories-label">还可摄入</view>
-          <view class="calories-data warning">500</view>
-          <view class="calories-desc">脂肪 \r\n 0/10.2g</view>
+          <view class="calories-data warning">{{dietPlan.canTake|| '0' }}</view>
+          <view class="calories-desc"
+            ><text style="display: block">脂肪</text> \r\n {{dietPlan.fat|| '0'
+            }}/{{dietPlan.suggestFat|| '0' }}g</view
+          >
         </view>
 
         <view class="card-item">
           <view class="calories-label">摄入</view>
-          <view class="calories-data">1747</view>
-          <view class="calories-desc">碳水化合物 \r\n 0/10.2g</view>
+          <view class="calories-data">{{dietPlan.heat|| '0' }}</view>
+          <view class="calories-desc"
+            >碳水化合物 \r\n {{dietPlan.carbonWater|| '0'
+            }}/{{dietPlan.suggestCarbonWater|| '0' }}g</view
+          >
         </view>
-
-      </view>-->
-      <view class="card-empty">
+      </view>
+      <view class="card-empty" wx:else>
         <van-empty
           class="custom-image"
           image="/assets/images/bg_empty.png"
           description="暂无进行中的饮食计划~前往领取您的饮食计划吧！"
         />
-        <view class="justify-center">
+        <view class="justify-center" bindtap="handleDietPlanNavigation">
           <van-button size="small" type="info" round>领取计划</van-button>
         </view>
       </view>
@@ -101,25 +118,29 @@
           <view class="card-topbar__sub-title ml-20">热量(千卡)</view>
         </view>
 
-        <view class="card-topbar__right align-center">
+        <navigator
+          class="card-topbar__right align-center"
+          hover-class="none"
+          url="/pages/sport/index/index"
+        >
           <view class="iconfont iconarrow-right"></view>
-        </view>
+        </navigator>
       </view>
 
       <view class="card-list justify-around align-center">
         <view class="card-item">
           <view class="calories-label">运动目标</view>
-          <view class="calories-data">1747</view>
+          <view class="calories-data">{{suggestConsume || '--'}}</view>
         </view>
 
         <view class="card-item">
           <view class="calories-label">还需消耗</view>
-          <view class="calories-data warning">500</view>
+          <view class="calories-data warning">{{ needConsume || '--'}}</view>
         </view>
 
         <view class="card-item">
           <view class="calories-label">已消耗</view>
-          <view class="calories-data">1747</view>
+          <view class="calories-data">{{consumeFeat || '--'}}</view>
         </view>
       </view>
     </view>
@@ -128,20 +149,24 @@
     <view class="card">
       <view class="justify-between mb-40">
         <view class="flex card-topbar__left">
-          <view class="card-topbar__title">环境信息</view>
-          <view class="card-topbar__sub-title ml-20">热量(千卡)</view>
+          <view class="card-topbar__title">健康信息</view>
+          <view class="card-topbar__sub-title ml-20"></view>
         </view>
 
-        <view class="card-topbar__right align-center">
+        <navigator
+          class="card-topbar__right align-center"
+          hover-class="none"
+          url="/pages/health/info/index"
+        >
           完善信息
           <view class="iconfont iconarrow-right"></view>
-        </view>
+        </navigator>
       </view>
 
       <view class="card-list justify-around align-center">
         <view class="card-item">
           <view class="info-data">
-            <view>48.0</view>
+            <view>{{weight || '--'}}</view>
             <text>kg</text>
           </view>
           <view class="info-desc">体重</view>
@@ -149,19 +174,19 @@
 
         <view class="card-item">
           <view class="info-data">
-            <view>184</view>
+            <view>{{height || '--'}}</view>
             <text>cm</text>
           </view>
           <view class="info-desc">身高</view>
         </view>
 
         <view class="card-item">
-          <view class="info-data">21.5</view>
+          <view class="info-data">{{bmi || '--'}}</view>
           <view class="info-desc">BMI</view>
         </view>
 
         <view class="card-item">
-          <view class="info-data">A</view>
+          <view class="info-data">{{blood || '--'}}</view>
           <view class="info-desc">血型</view>
         </view>
       </view>

@@ -1,47 +1,110 @@
-// pages/tabbar/index/index.js
+import { getMemberInfo } from "../../../api/index";
+import { checkIsDietHabbitComplete, getTodayDietPlan } from "../../../api/dish";
+import { getCache } from "../../../utils/util";
+import { getSportInfo } from "../../../api/sport";
+
 Page({
-  /**
-   * 页面的初始数据
-   */
-  data: {},
+  data: {
+    dietPlan: null,
+    isDietPlanComplete: false,
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {},
+    height: null,
+    bmi: null,
+    weight: null,
+    blood: null,
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {},
+    suggestConsume: null,
+    consumeFeat: null,
+    needConsume: null,
+  },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {},
+  onShow() {
+    Promise.all([
+      /** *********** 饮食相关 ************************ */
+      this.getTodayDietPlan(),
+      this.checkIsDietHabbitComplete(),
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
+      /********************************************** */
+      this.getMemberInfo(),
+      this.getSportInfo(),
+    ]);
+  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
+  /** 饮食相关 */
+  getTodayDietPlan() {
+    const { memberId = "" } = getCache("loginInfo");
+    return getTodayDietPlan({
+      memberId,
+    }).then((res) => {
+      if (res.result === 1) {
+        this.setData({
+          dietPlan: res.data,
+        });
+      }
+    });
+  },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
+  checkIsDietHabbitComplete() {
+    const { memberId = "" } = getCache("loginInfo");
+    return checkIsDietHabbitComplete({
+      memberId,
+    }).then((res) => {
+      if (res.result === 1) {
+        this.setData({
+          isDietPlanComplete: res.data,
+        });
+      }
+    });
+  },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
+  handleDietPlanNavigation() {
+    // const { memberId } = getCache('loginInfo')
+    const { isDietPlanComplete } = this.data;
+    if (isDietPlanComplete) {
+      wx.navigateTo({ url: "/pages/dish/index/index" });
+    } else {
+      wx.navigateTo({ url: "/pages/health/index/index" });
+    }
+  },
+  /** **************************************** */
+  getMemberInfo() {
+    const { memberId = "" } = getCache("loginInfo");
+    /** "blood|血型 1:A 2:B 3:AB 4:O 5:未知" */
+    const enum_blood = ["--", "A", "B", "AB", "O", "未知"];
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
+    return getMemberInfo({ memberId }).then((res) => {
+      if (res.result === 1 || res.data) {
+        const { height, bmi, weight, blood } = res.data;
+        this.setData({
+          height,
+          bmi,
+          weight,
+          blood: enum_blood[blood],
+        });
+      }
+    });
+  },
+
+  getSportInfo() {
+    const { memberId = "" } = getCache("loginInfo");
+    getSportInfo({
+      memberId,
+    }).then((res) => {
+      if (res.result === 1 || res.data) {
+        // "suggestConsume|推荐消耗": 1000,
+        // "consumeFeat|已消耗热量": 500,
+        // "needConsume|还需消耗热量": 500,
+        const {
+          suggestConsume = "",
+          consumeFeat = "",
+          needConsume = "",
+        } = res.data || {};
+        this.setData({
+          suggestConsume,
+          consumeFeat,
+          needConsume,
+        });
+      }
+    });
+  },
 });

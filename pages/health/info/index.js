@@ -1,4 +1,5 @@
-import { formatDate } from "../../../utils/util";
+import { getMemberInfo, updateMemberInfo } from "../../../api/index";
+import { formatDate, getCache } from "../../../utils/util";
 
 const SEX_OPTIONS = [
   {
@@ -22,10 +23,60 @@ Page({
     sex: "",
     birthDate: "",
     height: "",
-    idealWeight: "",
+    standardWeight: "",
     bmi: "",
     weight: "",
     type: "", // 用于区分展示日期组件还是性别下拉框
+  },
+
+  onShow() {
+    this.getMemberInfo();
+  },
+
+  onUnload() {
+    this.updateMemberInfo();
+  },
+
+  getMemberInfo() {
+    const { memberId = "" } = getCache("loginInfo");
+    getMemberInfo({ memberId }).then((res) => {
+      if (res.result === 1 || res.data) {
+        const {
+          sex,
+          birth: birthDate,
+          height,
+          bmi,
+          weight,
+          standardWeight,
+        } = res.data;
+        this.setData({
+          sex: {
+            value: sex,
+            label: sex === 1 ? "男" : "女",
+          },
+          birth: birthDate,
+          height,
+          bmi,
+          weight,
+          standardWeight,
+        });
+      }
+    });
+  },
+
+  updateMemberInfo() {
+    const { memberId = "" } = getCache("loginInfo");
+    const { sex, birthDate, height, standardWeight, bmi, weight } = this.data;
+    updateMemberInfo({
+      id: 1,
+      memberId,
+      sex: sex.value,
+      birth: birthDate,
+      height,
+      standardWeight,
+      bmi,
+      weight,
+    });
   },
 
   handleCellTap({ currentTarget }) {
@@ -43,10 +94,12 @@ Page({
     this.hidePopup();
   },
   handleSexSelector(e) {
+    console.log(e);
     this.setData({
       sex: e.detail.value,
     });
     this.hidePopup();
+    // this.updateMemberInfo()
   },
   hidePopup() {
     this.setData({
@@ -58,8 +111,22 @@ Page({
     const { type = "" } = currentTarget.dataset;
     if (type) {
       this.setData({
-        [`${type}`]: detail,
+        [`${type}`]: detail.value,
       });
+    }
+
+    this.checkBMI();
+  },
+
+  checkBMI() {
+    const { weight, height } = this.data;
+    if (weight && height) {
+      const standardWeight = height - 105;
+      let process = weight / ((height / 100) * (height / 100));
+      const bmi = Math.round(process * 10) / 10;
+      this.setData({ bmi, standardWeight });
+    } else {
+      this.setData({ bmi: null, standardWeight: null });
     }
   },
 });

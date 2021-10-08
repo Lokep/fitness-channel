@@ -1,66 +1,48 @@
-// pages/course/index/index.js
+import { getCourseList } from "../../../api/course";
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    pageNum: 0,
+    pageSize: 10,
+    isDone: true,
+    canPullDown: true,
+    courseList: [],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onShow() {
+    this.getCourseList();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onReachBottom() {
+    this.getCourseList();
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  getCourseList() {
+    const { pageNum, pageSize, isDone, canPullDown, courseList } = this.data;
 
+    if (!isDone) return;
+
+    if (!canPullDown) {
+      wx.showToast({
+        title: "已加载全部",
+        icon: "none",
+      });
+      return;
+    }
+
+    getCourseList({
+      pageNum: pageNum + 1,
+      pageSize,
+    }).then((res) => {
+      if (res.result === 1) {
+        const list = res.data || [];
+
+        this.setData({
+          courseList: [...courseList, ...list],
+          canPullDown: list.length >= pageSize,
+          isDone: true,
+        });
+      }
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
-})
+});

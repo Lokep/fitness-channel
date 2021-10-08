@@ -5,20 +5,45 @@
       <view class="taste">
         <view class="taste-title mb-25">甜味</view>
         <view class="mb-30 flex" style="flex-wrap: wrap">
-          <view class="taste-item is-active"> 无糖 </view>
-          <view class="taste-item"> 无糖 </view>
-          <view class="taste-item"> 无糖 </view>
-          <view class="taste-item"> 无糖 </view>
+          <view
+            class="taste-item {{item.isActive && 'is-active'}}"
+            wx:for="{{sugarList}}"
+            wx:key="index"
+            data-index="{{index}}"
+            bindtap="changeSugarOption"
+          >
+            {{item.label}}
+          </view>
         </view>
       </view>
 
       <view class="taste">
-        <view class="taste-title mb-25">甜味</view>
+        <view class="taste-title mb-25">咸味</view>
         <view class="mb-30 flex" style="flex-wrap: wrap">
-          <view class="taste-item is-active"> 无糖 </view>
-          <view class="taste-item"> 无糖 </view>
-          <view class="taste-item"> 无糖 </view>
-          <view class="taste-item"> 无糖 </view>
+          <view
+            class="taste-item {{item.isActive && 'is-active'}}"
+            wx:for="{{saltyList}}"
+            wx:key="index"
+            data-index="{{index}}"
+            bindtap="changeSaltyOption"
+          >
+            {{item.label}}
+          </view>
+        </view>
+      </view>
+
+      <view class="taste">
+        <view class="taste-title mb-25">辣味</view>
+        <view class="mb-30 flex" style="flex-wrap: wrap">
+          <view
+            class="taste-item {{item.isActive && 'is-active'}}"
+            wx:for="{{hotList}}"
+            wx:key="index"
+            data-index="{{index}}"
+            bindtap="changeHotOption"
+          >
+            {{item.label}}
+          </view>
         </view>
       </view>
     </view>
@@ -28,9 +53,11 @@
     <view class="title mb-30">习惯偏好</view>
     <view class="habbit justify-between">
       <view
-        class="habbit-item justify-center align-center"
-        wx:for="{{HABBIT_LIST}}"
+        class="habbit-item justify-center align-center {{item.isActive && 'is-active'}}"
+        wx:for="{{habbitList}}"
         wx:key="index"
+        data-index="{{index}}"
+        bindtap="changeHabbitOption"
       >
         <image class="habbit-item__icon" src="{{item.icon}}" />
         <view class="habbit-item__label">{{item.label}}</view>
@@ -39,5 +66,5 @@
     </view>
   </view>
 
-  <view class="habbit-btn">保存</view>
+  <view class="habbit-btn" bindtap="saveDietHabbit">保存</view>
 </view>
