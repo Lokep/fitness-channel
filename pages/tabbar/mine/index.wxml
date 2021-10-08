@@ -7,7 +7,7 @@
       lazy-load
       use-loading-slot
       use-error-slot
-      wx:if="{{avatar}}"
+      wx:if="{{userInfo.headPic}}"
     >
       <van-loading slot="loading" type="spinner" size="20" vertical />
       <text slot="error">加载失败</text>
@@ -26,15 +26,15 @@
     <view class="ml-40">
       <view class="align-center">
         <view class="mine-topbar--nickname ellipsis"
-          >{{wechatName || '微信昵称'}}</view
+          >{{userInfo.wechatName || '微信昵称'}}</view
         >
         <image
           class="mine-topbar--sex"
-          src="/assets/images/{{sex == 1 ? 'icon_mine_man' : 'icon_mine_woman'}}.png"
+          src="/assets/images/{{userInfo.sex == 1 ? 'icon_mine_man' : 'icon_mine_woman'}}.png"
         />
       </view>
       <view class="mine-topbar--birth mt-10" wx:if="{{birth}}">
-        {{birth}}
+        {{userInfo.birth}}
       </view>
     </view>
   </view>
@@ -52,4 +52,26 @@
       <view class="iconfont iconarrow-right"></view>
     </view>
   </view>
+
+  <van-dialog
+    use-slot
+    message="请授权您的手机号，方便为您提供更高的服务"
+    show="{{ !hasPhone }}"
+    show-confirm-button="{{false}}"
+    bind:close="onClose"
+  >
+    <view class="dialog-message">
+      请授权您的手机号，方便为您提供更高的服务
+    </view>
+    <view class="dialog-btns flex">
+      <view class="dialog-btn__cancel" bindtap="onClose"> 取消 </view>
+      <button
+        class="dialog-btn__confirm"
+        open-type="getPhoneNumber"
+        bindgetphonenumber="getPhoneNumber"
+      >
+        确定
+      </button>
+    </view>
+  </van-dialog>
 </view>

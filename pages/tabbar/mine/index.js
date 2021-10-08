@@ -1,3 +1,6 @@
+import { getMemberInfo, updateMemberInfo } from "../../../api/index";
+import { getCache } from "../../../utils/util";
+
 const MENU = [
   {
     id: 1,
@@ -31,9 +34,48 @@ const MENU = [
   },
 ];
 
+const app = getApp();
+
 Page({
   data: {
     MENU,
+    userInfo: {},
+    hasPhone: true,
+  },
+
+  async onShow() {
+    await app.getOpenId();
+    await this.getUserInfo();
+
+    this.checkHasPhone();
+  },
+
+  checkHasPhone() {
+    const { mobile = "" } = this.data.userInfo;
+    if (!mobile) {
+      this.setData({
+        hasPhone: false,
+      });
+    }
+  },
+
+  onClose() {
+    this.setData({
+      hasPhone: true,
+    });
+  },
+
+  getUserInfo() {
+    const { memberId } = getCache("loginInfo");
+    return getMemberInfo({
+      memberId,
+    }).then((res) => {
+      if (res.result === 1) {
+        this.setData({
+          userInfo: res.data,
+        });
+      }
+    });
   },
 
   handleMenuNavigation({ currentTarget }) {
@@ -47,16 +89,25 @@ Page({
     wx.getUserProfile({
       desc: "用于完善会员资料", // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
       success: (res) => {
-        this.getUserInfo(res.userInfo);
+        this.updateUserInfo(res.userInfo);
       },
     });
   },
 
-  getUserInfo(e) {
-    console.log(e);
+  updateUserInfo({ nickName, avatarUrl }) {
+    const { userInfo } = this.data;
+    updateMemberInfo({
+      ...userInfo,
+      wechatName: nickName,
+      headPic: avatarUrl,
+    }).then((res) => {
+      if (res.result === 1) {
+        this.getUserInfo();
+      }
+    });
   },
 
-  getUserPhone(e) {
+  getPhoneNumber(e) {
     if (e.detail.errMsg && e.detail.errMsg.indexOf("deny") > -1) {
       wx.showToast({
         title: "您已拒绝了手机号授权",
@@ -64,5 +115,16 @@ Page({
       });
       return;
     }
+
+    const { memberId } = getCache("loginInfo");
+
+    getUserPhone({
+      ...e.detail,
+      memberId,
+    }).then((res) => {
+      if (res.result === 1) {
+        this.getUserInfo();
+      }
+    });
   },
 });

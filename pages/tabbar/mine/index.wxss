@@ -66,3 +66,32 @@
   font-weight: bold;
   color: #c4ced6;
 }
+.dialog-message {
+  height: 160rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  padding: 50rpx 30rpx;
+  text-align: center;
+}
+.dialog-btns {
+  border-top: 1rpx solid #eee;
+}
+.dialog-btn__cancel,
+.dialog-btn__confirm {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 90rpx;
+  background-color: transparent;
+  border-radius: 0;
+}
+.dialog-btn__cancel::after,
+.dialog-btn__confirm::after {
+  border: none;
+}
+.dialog-btn__confirm {
+  background-color: #75acff;
+  color: #fff;
+}
