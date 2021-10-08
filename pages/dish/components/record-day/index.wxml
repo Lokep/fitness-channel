@@ -1,8 +1,8 @@
 <view class="day">
   <view class="day-block mb-30">
-    <view class="align-center mb-30">
+    <view class="align-center mb-30" bindtap="showCalendar">
       <image class="icon-calendar" src="/assets/images/calendar.png" />
-      <view class="day-date">2021-10-08</view>
+      <view class="day-date">{{date}}</view>
       <view class="iconfont iconarrow-down"></view>
     </view>
 
@@ -54,10 +54,14 @@
       <image class="cell__title-icon" src="/assets/images/icon-dish-plan.png" />
       7天健康均衡饮食计划
     </view>
-    <view class="cell__right align-center">
+    <navigator
+      class="cell__right align-center"
+      hover-class="none"
+      url="/pages/health/plan/index?id="
+    >
       <view class="cell__right--progress">1/7天</view>
       <view class="iconfont iconarrow-right"></view>
-    </view>
+    </navigator>
   </view>
 
   <van-tabs
@@ -67,18 +71,18 @@
     title-active-color="#75ACFF"
     bind:change="handleMealTypeChange"
   >
-    <van-tab title="早餐">
+    <van-tab title="早餐" name="1">
       <view class="day-meal mt-20">
         <Empty title="今天还未打卡哦~" picurl="/assets/images/bg_empty.png" />
       </view>
     </van-tab>
-    <van-tab title="午餐">
+    <van-tab title="午餐" name="2">
       <view class="day-meal mt-20"> </view>
     </van-tab>
-    <van-tab title="晚餐">
+    <van-tab title="晚餐" name="3">
       <view class="day-meal mt-20"> </view>
     </van-tab>
-    <van-tab title="加餐">
+    <van-tab title="加餐" name="4">
       <view class="day-meal mt-20"> </view>
     </van-tab>
   </van-tabs>
@@ -86,4 +90,14 @@
   <navigator class="day-btn" hover-class="none" url="/pages/diet/clock/clock"
     >饮食打卡</navigator
   >
+
+  <van-calendar
+    color="#256cfa"
+    default-date="{{ date }}"
+    min-date="{{ minDate }}"
+    max-date="{{ maxDate }}"
+    show="{{ show }}"
+    bind:close="onClose"
+    bind:confirm="onConfirm"
+  />
 </view>

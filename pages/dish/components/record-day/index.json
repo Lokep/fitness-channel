@@ -3,6 +3,7 @@
   "usingComponents": {
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
-    "Empty": "../../../../components/empty/empty"
+    "Empty": "../../../../components/empty/empty",
+    "van-calendar": "@vant/weapp/calendar/index"
   }
 }

@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "@vant/weapp": "^1.6.8",
+    "dayjs": "^1.10.7",
     "regenerator-runtime": "^0.13.7"
   }
 }

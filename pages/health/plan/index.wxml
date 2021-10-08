@@ -36,5 +36,5 @@
     </view>
   </view>
 
-  <view class="plan-btn" bindtap="acceptPlan"> 领取 </view>
+  <view class="plan-btn" bindtap="receiveDietPlan"> 领取 </view>
 </view>

@@ -1,2 +1,1 @@
-<!--pages/dish/components/record-month/index.wxml-->
-<text>pages/dish/components/record-month/index.wxml</text>
+<view class="month"> </view>
