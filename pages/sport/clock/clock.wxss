@@ -9,8 +9,8 @@ page {
   background-color: #f8f8f8;
 }
 .page {
-  padding: 30rpx 0 calc(constant(safe-area-inset-bottom, 30rpx) / 2) 0;
-  padding: 30rpx 0 calc(env(safe-area-inset-bottom, 30rpx) / 2) 0;
+  padding: 30rpx 0 calc(constant(safe-area-inset-bottom, 30rpx) / 2 + 150rpx) 0;
+  padding: 30rpx 0 calc(env(safe-area-inset-bottom, 30rpx) / 2 + 150rpx) 0;
 }
 .bold {
   font-weight: bold;

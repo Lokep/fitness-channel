@@ -3,7 +3,16 @@
   <view class="car-container">
     <view class="car-container-title bold"><text class="required f-orange f22">*</text> 拍照上传</view>
     <view class="mt-30">
-      <van-uploader preview-size="200rpx" max-count="{{1}}" bind:after-read="upload"></van-uploader>
+      <van-uploader
+        class="clock-upload"
+        accept="image"
+        sizeType="['compressed']"
+        max-count="1"
+        deletable
+        file-list="{{ fileList }}"
+        bind:after-read="handleUpload"
+        bind:delete="handleDeleteUpload"
+      />
     </view>
     <!-- <view class="media-wrap clock-img mt-30 ivon-camera-fill">
       <image src="" mode="aspectFill"></image>

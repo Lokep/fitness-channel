@@ -1,8 +1,6 @@
 // pages/sport/clock/clock.js
 // import { getCache } from "../../../utils/util";
-import {
-  wxUpload
-} from "../../../utils/upload";
+import { uploadSingleFile } from "../../../utils/wx-api";
 import {} from "../../../api/sport";
 Page({
 
@@ -10,18 +8,32 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: ''
+    id: '',
+    fileList: []
   },
-  upload(e) {
-    const {
-      url: filePath
-    } = e.detail.file
-    // console.log(filePath);
-    wxUpload(filePath).then(res => {
-      console.log(res);
-    }).catch(err => {
-      console.log(err);
-    })
+
+  handleUpload(e) {
+    const { url } = e.detail.file;
+
+    if (!url) return;
+
+    uploadSingleFile({
+      filePath: url,
+      showLoading: true,
+      compressQuality: 80,
+      handleUploadSuccess: (list) => this.handleUploadSuccess(list),
+    });
+  },
+
+  handleDeleteUpload() {
+    this.setData({
+      fileList: [],
+    });
+  },
+  handleUploadSuccess(list = []) {
+    this.setData({
+      fileList: list,
+    });
   },
   onLoad: function ({
     id = ""
