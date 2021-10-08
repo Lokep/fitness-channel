@@ -44,3 +44,19 @@ export const clockRecordGet = (data) =>
     showErrMsg: false,
     showLoading: false,
   });
+/**
+ * 打卡
+ * consumeFeat 消耗热量
+ * describe 描述内容
+ * id 打卡任务id
+ * picUrl 图片
+ * typeName 运动类型 逗号字符串
+ */
+export const clockRecordUpdate = (data) =>
+  axios({
+    url: "/Ma/Motion/clockRecordUpdate",
+    data,
+    method: "post",
+    showErrMsg: false,
+    showLoading: false,
+  });
