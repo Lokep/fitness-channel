@@ -22,6 +22,8 @@ Page({
     onInitChart: null,
     sportRecords: [],
     average: 0,
+    beginTime: "",
+    endTime: "",
   },
   /* 今日统计 */
   getSportInfo() {
@@ -159,6 +161,8 @@ Page({
         this.setData({
           average: res.average || 0,
           sportRecords: res.data || [],
+          beginTime,
+          endTime,
         });
       }
     });
