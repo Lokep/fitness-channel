@@ -195,7 +195,8 @@ export function performanceWatcher() {
 
   if (env == "release" || !performanceEnable) return;
 
-  if (performanceObserver) performanceEnable.disconnect();
+  if (performanceObserver && typeof performanceObserver == "function")
+    performanceEnable.disconnect();
 
   const performance = wx.getPerformance();
   const observer = performance.createObserver((entryList) => {

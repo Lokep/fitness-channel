@@ -3,7 +3,7 @@
   border-bottom: var(safe-area-bottom);
 }
 .border-radius {
-  border-radius: 18rpx;
+  border-radius: 40rpx;
 }
 page {
   background-color: #f8f8f8;
@@ -16,16 +16,21 @@ page {
   font-weight: bold;
 }
 .car-container {
-  margin: 0 30rpx 30rpx 30rpx;
-  padding: 42rpx;
+  margin: 0 30rpx 30rpx 20rpx;
+  padding: 40rpx 30rpx;
   background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-bottom: var(safe-area-bottom);
-  border-radius: 18rpx;
+  border-radius: 40rpx;
 }
 .car-container-title {
-  font-size: 30rpx;
-  color: #333;
+  font-size: 32rpx;
+  color: #1e1e1e;
+}
+.clock-upload .van-uploader__preview-image,
+.clock-upload .van-uploader__file,
+.clock-upload .van-uploader__upload {
+  width: 200rpx !important;
+  height: 200rpx !important;
+  margin: 0 !important;
 }
 .clock-img {
   width: 200rpx;
@@ -49,7 +54,7 @@ page {
   bottom: 0;
   margin: auto 0;
   position: absolute;
-  content: '';
+  content: "";
   display: block;
 }
 .input-inline-block {
@@ -94,4 +99,11 @@ page {
   position: absolute;
   left: -100vw;
   top: 0;
+}
+.content {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  min-height: 200rpx;
 }

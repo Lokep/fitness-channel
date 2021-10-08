@@ -3,33 +3,30 @@
   z-index: 2;
   box-sizing: border-box;
   padding: 0 30rpx;
-}
 
-.cell {
-  height: 114rpx;
-  background: #fff;
-  border-radius: 20rpx;
-  margin-bottom: 20rpx;
-  box-sizing: border-box;
-  padding: 0 30rpx;
+  &-tab {
+    margin: 32rpx 0;
+    height: 70rpx;
+    box-sizing: border-box;
+    padding: 0 52rpx;
 
-  &__title {
-    flex: 1;
-    font-size: 30rpx;
-    font-family: PingFangSC-Regular, PingFang SC;
-    font-weight: 400;
-    color: #1e1e1e;
-    line-height: 42rpx;
+    &-item {
+      width: 140rpx;
+      height: 70rpx;
 
-    &-icon {
-      width: 48rpx;
-      height: 48rpx;
-      margin-right: 24rpx;
+      border-radius: 52rpx;
+      text-align: center;
+      line-height: 70rpx;
+      color: #fff;
+
+      font-size: 36rpx;
+      font-family: PingFangSC-Semibold, PingFang SC;
+      font-weight: 600;
+
+      &.is-active {
+        background: #fff;
+        color: #75acff;
+      }
     }
-  }
-
-  &__right {
-    flex-shrink: 0;
-    margin-left: 20rpx;
   }
 }

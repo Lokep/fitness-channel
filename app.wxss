@@ -30,11 +30,11 @@ text {
   font-family: Guildford Pro;
 }
 .text-center {
-  text-align:center;
+  text-align: center;
 }
 .text-light {
   color: #666;
 }
 .text-lighter {
-  color: #999;
+  color: #bfbfbf;
 }

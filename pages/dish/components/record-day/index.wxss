@@ -1,0 +1,119 @@
+.day .van-tabs__scroll {
+  background-color: transparent;
+}
+.day-block {
+  height: 328rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.day-block .icon-calendar {
+  width: 28rpx;
+  height: 28rpx;
+  margin-right: 10rpx;
+}
+.day-block .iconarrow-down {
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.day-date {
+  font-size: 28rpx;
+  font-family: DINAlternate-Bold, DINAlternate;
+  font-weight: bold;
+  color: #1e1e1e;
+  line-height: 32rpx;
+  margin-right: 10rpx;
+}
+.day-meal {
+  box-sizing: border-box;
+  padding: 40rpx;
+  border-radius: 40rpx;
+  background-color: #fff;
+}
+.day-btn {
+  width: calc(100vw - 64rpx);
+  box-sizing: border-box;
+  padding: 0 32rpx;
+  height: 88rpx;
+  background: #75acff;
+  border-radius: 44rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 32rpx;
+  position: fixed;
+  left: 32rpx;
+  bottom: 32rpx;
+}
+.calories-item {
+  text-align: center;
+}
+.calories-label {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 40rpx;
+  margin-bottom: 20rpx;
+}
+.calories-data {
+  font-size: 40rpx;
+  font-family: DINAlternate-Bold, DINAlternate;
+  font-weight: bold;
+  color: #1e1e1e;
+  margin-bottom: 10rpx;
+  height: 48rpx;
+}
+.calories-desc {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #bfbfbf;
+  line-height: 34rpx;
+  width: 120rpx;
+  margin: 0 auto;
+}
+.cell {
+  height: 114rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.cell__title {
+  flex: 1;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 42rpx;
+}
+.cell__title-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 24rpx;
+}
+.cell__right {
+  flex-shrink: 0;
+  margin-left: 20rpx;
+}
+.cell__right--progress {
+  width: 74rpx;
+  height: 32rpx;
+  border-radius: 16rpx;
+  border: 2rpx solid #ffa95a;
+  text-align: center;
+  font-size: 20rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #ffa95a;
+  line-height: 32rpx;
+}
+.cell__right .iconfont {
+  color: #c4ced6;
+}
+.warning {
+  color: #e6a23c;
+}

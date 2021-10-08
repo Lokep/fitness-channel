@@ -1,6 +1,6 @@
 <view class="container">
   <navigation-bar
-    title="健康管理"
+    title="饮食打卡"
     color="#fff"
     background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)"
   />
@@ -21,16 +21,33 @@
   <view class="wrap">
     <!-- 日 周 月 -->
 
-    <!-- ------- -->
-    <view class="cell justify-between align-center">
-      <view class="cell__title align-center">
-        <image
-          class="cell__title-icon"
-          src="/assets/images/icon-dish-plan.png"
-        />
-        7天健康均衡饮食计划
+    <view class="wrap-tab justify-between">
+      <view
+        class="wrap-tab-item {{dayType == 0 && 'is-active'}}"
+        data-index="0"
+        bindtap="handleDayTypeChange"
+      >
+        日
       </view>
-      <view class="cell__right"> </view>
+      <view
+        class="wrap-tab-item {{dayType == 1 && 'is-active'}}"
+        data-index="1"
+        bindtap="handleDayTypeChange"
+      >
+        周
+      </view>
+      <view
+        class="wrap-tab-item {{dayType == 2 && 'is-active'}}"
+        data-index="2"
+        bindtap="handleDayTypeChange"
+      >
+        月
+      </view>
     </view>
+
+    <!-- day -->
+    <Day wx:if="{{dayType == 0}}" />
+    <Week wx:if="{{dayType == 1}}" />
+    <Month wx:if="{{dayType == 2}}" />
   </view>
 </view>

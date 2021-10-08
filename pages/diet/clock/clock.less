@@ -1,5 +1,5 @@
 @num: 30rpx;
-@shadow-light : 0 0 10px rgba(#000, 0.1);
+@shadow-light: 0 0 10px rgba(#000, 0.1);
 
 .shadow-light {
   box-shadow: @shadow-light;
@@ -7,13 +7,12 @@
 }
 
 .border-radius {
-  border-radius: 18rpx;
+  border-radius: 40rpx;
 }
 
 page {
   background-color: #f8f8f8;
 }
-
 
 .page {
   padding: @num 0 calc(constant(safe-area-inset-bottom, @num) / 2) 0;
@@ -25,19 +24,28 @@ page {
 }
 
 .car-container {
-  margin: 0 @num @num @num;
-  padding: @num + 12rpx;
+  margin: 0 @num @num 20rpx;
+  padding: 40rpx 30rpx;
   background-color: #fff;
-  .shadow-light();
-  .border-radius ();
+  border-radius: 40rpx;
 
   &-title {
-    font-size: 30rpx;
-    color: #333;
+    font-size: 32rpx;
+    color: #1e1e1e;
   }
 }
 
-
+.clock {
+  &-upload {
+    .van-uploader__preview-image,
+    .van-uploader__file,
+    .van-uploader__upload {
+      width: 200rpx !important;
+      height: 200rpx !important;
+      margin: 0 !important;
+    }
+  }
+}
 
 .clock-img {
   width: 200rpx;
@@ -62,7 +70,7 @@ page {
     bottom: 0;
     margin: auto 0;
     position: absolute;
-    content: '';
+    content: "";
     display: block;
   }
 }
@@ -114,4 +122,12 @@ page {
       top: 0;
     }
   }
+}
+
+.content {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  line-height: 40rpx;
+  min-height: 200rpx;
 }
