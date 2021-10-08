@@ -761,11 +761,7 @@ try {
 }
 
 }, function(modId) {var map = {}; return __REQUIRE__(map[modId], modId); })
-<<<<<<< HEAD
 return __REQUIRE__(1632986703534);
-=======
-return __REQUIRE__(1633679125890);
->>>>>>> 80dbb3219673bcacef4d23c0639a518bed135811
 })()
 //miniprogram-npm-outsideDeps=[]
 //# sourceMappingURL=index.js.map
