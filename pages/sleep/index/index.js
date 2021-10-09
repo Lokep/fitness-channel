@@ -1,16 +1,8 @@
 import dayjs from "dayjs";
-import {
-  drawChart
-} from "../../../utils/drawChart";
-import {
-  getCache
-} from "../../../utils/util";
-import {
-  getSleepRecordsByDate,
-  getSleepRecords
-} from "../../../api/sleep"
+import { drawChart } from "../../../utils/drawChart";
+import { getCache } from "../../../utils/util";
+import { getSleepRecordsByDate, getSleepRecords } from "../../../api/sleep";
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -26,51 +18,50 @@ Page({
     beginTime: "",
     endTime: "",
   },
-  onLoad: async function (options) {
+  onLoad(options) {
+    this.getDate();
+  },
+  onShow() {
+    this.getDate();
+  },
+  async getDate() {
     this.getSleepRecordsByDate();
     await this.getSleepRecords();
     onInitChart.call(this);
   },
   /* 日周月切换 ,以及 chart*/
   toggleSelect(e) {
-    const {
-      index: current
-    } = e.currentTarget.dataset;
+    const { index: current } = e.currentTarget.dataset;
 
-    this.setData({
-      current,
-    }, function () {
-      if (current) {
-        this.getSleepRecords();
-        onInitChart.call(this);
+    this.setData(
+      {
+        current,
+      },
+      function () {
+        if (current) {
+          this.getSleepRecords();
+          onInitChart.call(this);
+        }
       }
-    });
+    );
   },
   /* 按日期获取日睡眠记录 */
   getSleepRecordsByDate() {
-    const {
-      memberId
-    } = getCache("loginInfo");
-    const {
-      today: date
-    } = this.data;
+    const { memberId } = getCache("loginInfo");
+    const { today: date } = this.data;
     getSleepRecordsByDate({
       date,
       memberId,
-    }).then(res => {
+    }).then((res) => {
       this.setData({
-        todayInfo: res.data
-      })
-    })
+        todayInfo: res.data,
+      });
+    });
   },
   /** 获取时间范围内的运动记录 */
   getSleepRecords() {
-    const {
-      current
-    } = this.data;
-    const {
-      memberId
-    } = getCache("loginInfo");
+    const { current } = this.data;
+    const { memberId } = getCache("loginInfo");
     let beginTime = "",
       endTime = "";
     // if (current) {
@@ -87,8 +78,8 @@ Page({
       memberId,
     }).then((res) => {
       if (res.result === 1) {
-        const average = res.average || 0
-        const averageArr =  average.split("-")
+        const average = res.average || 0;
+        const averageArr = average.split("-");
         this.setData({
           average,
           averageArr,
@@ -103,29 +94,22 @@ Page({
   toDetailView() {
     const {
       date,
-      todayInfo: {
-        id,
-        hour,
-        minute
-      }
-    } = this.data
+      todayInfo: { id, hour, minute },
+    } = this.data;
     if (hour && minute) {
       wx.navigateTo({
         url: `/pages/sleep/clock/detail`,
-      })
+      });
     } else {
       wx.navigateTo({
         url: `/pages/sleep/clock/clock"`,
-      })
+      });
     }
-  }
-})
+  },
+});
 /** chart */
 function onInitChart() {
-  const {
-    sportRecords: list,
-    current
-  } = this.data;
+  const { sportRecords: list, current } = this.data;
 
   this.setData({
     onInitChart: init,
@@ -161,9 +145,7 @@ function onInitChart() {
     chart.tooltip({
       custom: true,
       onChange(tip) {
-        const {
-          consumeFeat
-        } = tip.items[0].origin;
+        const { consumeFeat } = tip.items[0].origin;
         wx.showToast({
           title: `已消耗${consumeFeat}千卡`,
           icon: "none",

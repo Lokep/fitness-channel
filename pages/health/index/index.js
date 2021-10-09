@@ -15,6 +15,7 @@ Page({
 
   onShow() {
     this.checkIsMemberInfoComplete();
+    this.checkIsDietHabbitComplete();
     this.getDietPlanList();
   },
 

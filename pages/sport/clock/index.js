@@ -25,6 +25,19 @@ Page({
     beginTime: "",
     endTime: "",
   },
+  onLoad() {
+    this.getDate();
+  },
+  onShow() {
+    this.getDate();
+  },
+  async getDate() {
+    this.getSportInfo();
+    await this.getSportList();
+    await this.getListClockRecordByPlan();
+    await this.getSportRecordsByDate();
+    onInitChart.call(this);
+  },
   /* 今日统计 */
   getSportInfo() {
     const { memberId = "" } = getCache("loginInfo");
@@ -100,21 +113,17 @@ Page({
   toggleSelect(e) {
     const { index: current } = e.currentTarget.dataset;
 
-    this.setData({
-      current,
-    },function(){
-      if (current) {
-        this.getSportRecordsByDate();
-        onInitChart.call(this);
+    this.setData(
+      {
+        current,
+      },
+      function () {
+        if (current) {
+          this.getSportRecordsByDate();
+          onInitChart.call(this);
+        }
       }
-    });
-  },
-  async onLoad() {
-    this.getSportInfo();
-    await this.getSportList();
-    await this.getListClockRecordByPlan();
-    await this.getSportRecordsByDate();
-    onInitChart.call(this);
+    );
   },
 
   toView(e) {

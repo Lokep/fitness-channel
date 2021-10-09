@@ -74,7 +74,7 @@
     </block>
   </view>
 
-  <button wx:if="{{true}}" class="full-btn fixed">运动打卡</button>
+  <button wx:if="{{false}}" class="full-btn fixed">运动打卡</button>
   <!--  -->
   <view class="mt-30">
     <block wx:if="{{sportList.length>0}}">
