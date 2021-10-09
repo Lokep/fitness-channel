@@ -27,9 +27,13 @@ const DIET_LIST = [
 
 Page({
   data: {
+    swiperCurrent: 0,
     id: null,
     DIET_LIST,
-    info: {},
+    info: {
+      ruleList: [],
+    },
+    ruleListArr: [],
   },
 
   onLoad({ id = "" }) {
@@ -46,10 +50,22 @@ Page({
   getDietPlanDetail() {
     const { id = "" } = this.data;
     if (id) {
-      getDietPlanDetail({ id }).then((res) => {
+      getDietPlanDetail({
+        id,
+      }).then((res) => {
+        let ruleListArr = [];
+        if (res.plan.ruleList instanceof Array) {
+          res.plan.ruleList.forEach((item) => {
+            const idx = item.mealType;
+            ruleListArr[idx - 1] = ruleListArr[idx - 1] || [];
+            ruleListArr[idx - 1].push(item);
+          });
+        }
         if (res.result === 1) {
           this.setData({
-            info: res.data,
+            info: res.plan,
+            ruleListArr,
+            // ruleListArr:arraySplit(res.plan.ruleList, 3)
           });
         }
       });
@@ -95,6 +111,31 @@ Page({
           url: "/" + url,
         });
       }
+    }
+  },
+  bindchange(e) {
+    const { current: swiperCurrent } = e.detail;
+    console.log(e);
+    this.setData({
+      swiperCurrent,
+    });
+  },
+  prev() {
+    let { swiperCurrent } = this.data;
+    if (swiperCurrent > 0) {
+      swiperCurrent -= 1;
+      this.setData({
+        swiperCurrent,
+      });
+    }
+  },
+  next() {
+    let { swiperCurrent, ruleListArr } = this.data;
+    if (swiperCurrent < ruleListArr.length - 1) {
+      swiperCurrent += 1;
+      this.setData({
+        swiperCurrent,
+      });
     }
   },
 });
