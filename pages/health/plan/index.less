@@ -36,6 +36,7 @@
       font-weight: 400;
       color: rgba(255, 255, 255, 0.7);
       line-height: 40rpx;
+
       .iconfont {
         font-size: 24rpx;
       }
@@ -48,6 +49,7 @@
     border-radius: 20rpx;
     box-sizing: border-box;
     padding: 40rpx;
+    position: relative;
 
     &__title {
       font-size: 32rpx;
@@ -61,6 +63,7 @@
 
   &-meal {
     margin-bottom: 40rpx;
+
     &__title {
       font-size: 28rpx;
       font-family: PingFangSC-Semibold, PingFang SC;
@@ -86,6 +89,7 @@
       color: #666;
       line-height: 34rpx;
       flex-wrap: wrap;
+
       &-item {
         flex-basis: 50%;
       }
@@ -114,5 +118,50 @@
     font-size: 32rpx;
     font-family: PingFangSC-Semibold, PingFang SC;
     font-weight: 600;
+  }
+}
+
+@shadow-light: 0 0 10px rgba(#000, 0.1);
+
+.shadow-light {
+  box-shadow: @shadow-light;
+}
+
+.swiper-full {
+  height: calc(100vh - 370rpx);
+}
+
+.swiper-btn {
+  @num: 60rpx;
+  width: @num;
+  height: @num;
+  background-color: #fff;
+  border-radius: 50%;
+  .shadow-light();
+  background-size: 30rpx 30rpx;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &.disable {
+    opacity: 0.3;
+  }
+
+  &-prev {
+    background-image: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22%20fill-opacity%3D%220.01%22%2F%3E%3Cpath%20d%3D%22M5.79891%2024L41.7989%2024%22%20stroke%3D%22%23888%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M17.7988%2036L5.79883%2024L17.7988%2012%22%20stroke%3D%22%23888%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+  }
+
+  &-next {
+    margin-left: 18rpx;
+    background-image: url("data:image/svg+xml;utf8,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2048%2048%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%2248%22%20height%3D%2248%22%20fill%3D%22white%22%20fill-opacity%3D%220.01%22%2F%3E%3Cpath%20d%3D%22M41.9999%2024H5.99992%22%20stroke%3D%22%23888%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M30%2012L42%2024L30%2036%22%20stroke%3D%22%23888%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E");
+  }
+
+  /* 44 */
+  &-container {
+    @padding: 40rpx;
+    position: absolute;
+    right: @padding;
+    top: @padding - 8rpx;
+    display: flex;
+    z-index: 2;
   }
 }

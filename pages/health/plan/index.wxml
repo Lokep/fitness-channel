@@ -3,7 +3,10 @@
 
   <view class="wrap">
     <view class="plan-topbar align-center justify-between">
-      <view class="plan-topbar__title">健康均衡饮食计划</view>
+      <!-- <view class="plan-topbar__title">健康均衡饮食计划</view> -->
+      <view class="plan-topbar__title"
+        >{{info.planName || '健康均衡饮食计划'}}</view
+      >
       <view class="plan-topbar__link align-center" bindtap="checkOtherPlans">
         查看其他计划
         <view class="iconfont iconarrow-right"></view>
@@ -11,24 +14,89 @@
     </view>
 
     <view class="plan-content">
-      <view class="plan-content__title">食谱</view>
-
-      <view class="plan-meal" wx:for="{{DIET_LIST}}" wx:key="type">
-        <view class="plan-meal__title align-center">
-          <image class="plan-meal__icon" src="{{item.icon}}" />
-          {{item.title}}
-        </view>
-        <view class="plan-meal__content">{{item.content}}</view>
-        <view class="plan-meal__calorie flex">
-          <view
-            class="plan-meal__calorie-item"
-            wx:for="{{item.calories}}"
-            wx:for-item="it"
-            wx:key="index"
-            >{{it}}</view
-          >
-        </view>
+      <view class="swiper-btn-container">
+        <view class="swiper-btn swiper-btn-prev" bindtap="prev"></view>
+        <view class="swiper-btn swiper-btn-next" bindtap="next"></view>
       </view>
+      <!-- <view class="plan-content__title">食谱</view> -->
+      <swiper
+        current="{{swiperCurrent}}"
+        bindchange="bindchange"
+        class="swiper-full"
+      >
+        <swiper-item
+          wx:for="{{ruleListArr}}"
+          wx:key="index"
+          class="swiper-full"
+        >
+          <scroll-view scroll-y class="swiper-full">
+            <!-- 标题 -->
+            <block>
+              <view wx:if="{{index==0}}" class="plan-content__title">早餐</view>
+              <view wx:if="{{index==1}}" class="plan-content__title">午餐</view>
+              <view wx:if="{{index==2}}" class="plan-content__title">晚餐</view>
+              <view wx:if="{{index==3}}" class="plan-content__title">加餐</view>
+            </block>
+            <block>
+              <view class="plan-meal" wx:for="{{item}}" wx:key="type">
+                <view class="plan-meal__title align-center">
+                  <image
+                    class="plan-meal__icon"
+                    wx:if="{{item.mealType==1}}"
+                    src="/assets/images/icon_diet_breakfast.png"
+                  />
+                  <image
+                    class="plan-meal__icon"
+                    wx:if="{{item.mealType==2}}"
+                    src="/assets/images/icon_diet_lunch.png"
+                  />
+                  <image
+                    class="plan-meal__icon"
+                    wx:if="{{item.mealType==3}}"
+                    src="/assets/images/icon_diet_dinner.png"
+                  />
+                  <image
+                    class="plan-meal__icon"
+                    wx:if="{{item.mealType==4}}"
+                    src="/assets/images/icon_diet_dinner.png"
+                  />
+                  {{item.foodDetail}}
+                </view>
+                <view class="plan-meal__content">{{item.foodDetail}}</view>
+                <view class="plan-meal__calorie flex">
+                  <view class="plan-meal__calorie-item mb-10"
+                    >热量 {{item.heat}} 千卡</view
+                  >
+                  <view class="plan-meal__calorie-item mb-10"
+                    >蛋白 {{item.protein}} 克</view
+                  >
+                  <view class="plan-meal__calorie-item"
+                    >碳水 {{item.carbonWater}} 克</view
+                  >
+                  <view class="plan-meal__calorie-item"
+                    >脂肪 {{item.fat}} 克</view
+                  >
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </swiper-item>
+      </swiper>
+      <!-- <view class="plan-meal" wx:for="{{info.ruleList}}" wx:key="type">
+        <view class="plan-meal__title align-center">
+          <image class="plan-meal__icon" wx:if="{{item.mealType==1}}" src="/assets/images/icon_diet_breakfast.png" />
+          <image class="plan-meal__icon" wx:if="{{item.mealType==2}}" src="/assets/images/icon_diet_lunch.png" />
+          <image class="plan-meal__icon" wx:if="{{item.mealType==3}}" src="/assets/images/icon_diet_dinner.png" />
+          {{item.foodDetail}}
+        </view>
+        <view class="plan-meal__content">{{item.foodDetail}}</view>
+        <view class="plan-meal__calorie flex">
+          <view class="plan-meal__calorie-item mb-10">热量 {{item.heat}} 千卡</view>
+          <view class="plan-meal__calorie-item mb-10">蛋白 {{item.protein}} 克</view>
+          <view class="plan-meal__calorie-item">碳水 {{item.carbonWater}} 克</view>
+          <view class="plan-meal__calorie-item">脂肪 {{item.fat}} 克</view>
+        </view>
+      </view> -->
     </view>
   </view>
 

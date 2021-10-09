@@ -13,7 +13,12 @@ Component({
     styleIsolation: "shared",
   },
 
-  properties: {},
+  properties: {
+    count: {
+      type: [Number],
+      value: 0,
+    },
+  },
 
   data: {
     mealType: "1",
@@ -30,12 +35,15 @@ Component({
   },
 
   attached() {
-    this.getDietRecordByDate();
-    this.getDietPlanByDate();
-    this.getClockRecordByDate();
+    this.getData();
   },
 
   methods: {
+    getData() {
+      this.getDietRecordByDate();
+      this.getDietPlanByDate();
+      this.getClockRecordByDate();
+    },
     handleMealTypeChange(e) {
       this.setData({
         mealType: e.detail.name,
@@ -145,9 +153,14 @@ Component({
 
   observers: {
     date(v) {
-      this.attached();
+      this.getData();
       // this.getDietPlanByDate()
       // this.getClockRecordByDate();
+    },
+    count(v) {
+      /* 默认开始以及第一次不必获取数据 */
+      if (v == 0 || v == 1) return;
+      this.getData();
     },
   },
 });

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "运动打卡",
+  "navigationBarTitleText": "睡眠打卡",
   "usingComponents": {
     "van-uploader": "@vant/weapp/uploader/index"
   }

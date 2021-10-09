@@ -1,22 +1,10 @@
-// pages/dish/components/record-week/index.js
+// pages/sleep/components/week.js
 import { drawChart } from "../../../../utils/drawChart";
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    average: {
-      type: [Number, String],
-      value: 0,
-    },
-    beginTime: {
-      type: [String],
-      value: "",
-    },
-    endTime: {
-      type: [String],
-      value: "",
-    },
     sportRecords: {
       type: Array,
       value: () => [],
@@ -28,7 +16,7 @@ Component({
    */
   data: {
     onInitChart: function () {},
-    current: 1,
+    current: 2,
   },
   attached() {
     onInitChart.call(this);
@@ -56,13 +44,18 @@ function onInitChart() {
       range: [0.2, 0.8],
     });
 
-    chart.scale("heat", {
-      max: 24,
+    chart.scale("consumeFeat", {
+      max: 999,
       min: 0,
       tickCount: 5,
     });
 
-    drawChart(chart, "date*heat", "id", current == 1 ? "interval" : "point");
+    drawChart(
+      chart,
+      "date*consumeFeat",
+      "id",
+      current == 1 ? "interval" : "point"
+    );
 
     handleAxis.call(this, chart);
 

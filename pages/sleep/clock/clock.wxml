@@ -1,11 +1,21 @@
 <!--pages/sport/clock/clock.wxml-->
 <view class="page">
   <view class="car-container">
-    <view class="car-container-title bold"><text class="required f-orange f22">*</text> 拍照上传</view>
+    <view class="car-container-title bold"
+      ><text class="required f-orange f22">*</text> 拍照上传</view
+    >
     <view class="media-wrap clock-img mt-30 ivon-camera-fill">
-      <van-uploader class="clock-upload" accept="image" sizeType="['compressed']" max-count="1" deletable
-        preview-size="200rpx" file-list="{{ fileList }}" bind:after-read="handleUpload"
-        bind:delete="handleDeleteUpload" />
+      <van-uploader
+        class="clock-upload"
+        accept="image"
+        sizeType="['compressed']"
+        max-count="1"
+        deletable
+        preview-size="200rpx"
+        file-list="{{ fileList }}"
+        bind:after-read="handleUpload"
+        bind:delete="handleDeleteUpload"
+      />
     </view>
   </view>
   <!-- <view class="car-container">
@@ -22,21 +32,44 @@
     <view class="car-container-title bold">睡眠时长</view>
     <view class="mt-25"></view>
     <view class="pt-5 pb-5">
-      <input type="number" class="f24 f-number input-inline-block" placeholder="请输入" placeholder-class="text-lighter"
-        model:value="{{hour}}" />
+      <input
+        type="number"
+        class="f24 f-number input-inline-block"
+        placeholder="请输入"
+        placeholder-class="text-lighter"
+        model:value="{{hour}}"
+      />
       <text class="f24 text-light ml-10 mr-10"> 小时</text>
-      <input type="number" class="f24 f-number input-inline-block" placeholder="请输入" placeholder-class="text-lighter"
-        model:value="{{minute}}" />
+      <input
+        type="number"
+        class="f24 f-number input-inline-block"
+        placeholder="请输入"
+        placeholder-class="text-lighter"
+        model:value="{{minute}}"
+      />
       <text class="f24 text-light ml-10"> 分钟</text>
     </view>
   </view>
   <view class="car-container">
-    <view class="car-container-title bold">描述内容 <text class="f22 text-lighter">0/100</text></view>
+    <view class="car-container-title bold"
+      >描述内容 <text class="f22 text-lighter">0/100</text></view
+    >
     <view class="mt-25"></view>
-    <view class="pt-5 pb-5 ">
-      <textarea class="f24" style="min-height:100px" maxlength="100" auto-height="{{true}}" placeholder="请输入内容..."
-        model:value="{{describe}}" />
-      </view>
+    <view class="pt-5 pb-5">
+      <textarea
+        class="f24"
+        style="min-height: 100px"
+        maxlength="100"
+        auto-height="{{true}}"
+        placeholder="请输入内容..."
+        model:value="{{describe}}"
+      />
+    </view>
   </view>
-  <button wx:if="{{true}}" class="full-btn fixed" bindtap="addSleepRecord">保存记录</button>
+  <button wx:if="{{id==''}}" class="full-btn fixed" bindtap="addSleepRecord">
+    保存记录
+  </button>
+  <button wx:else class="full-btn fixed" bindtap="updateSleepRecord">
+    更新记录
+  </button>
 </view>
