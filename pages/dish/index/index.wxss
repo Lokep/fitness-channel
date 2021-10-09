@@ -25,3 +25,40 @@
   background: #fff;
   color: #75acff;
 }
+.chart-title {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 40rpx;
+  text-align: center;
+  margin-bottom: 12rpx;
+}
+.chart-subtitle view {
+  font-size: 60rpx;
+  font-family: DINAlternate-Bold, DINAlternate;
+  font-weight: bold;
+  color: #1e1e1e;
+  line-height: 1;
+  vertical-align: bottom;
+  margin-bottom: 16rpx;
+  text-align: center;
+}
+.chart-subtitle text {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 1;
+  display: block;
+  margin-left: 20rpx;
+}
+.chart-date {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #bfbfbf;
+  line-height: 34rpx;
+  text-align: center;
+  margin-bottom: 40rpx;
+}

@@ -47,7 +47,19 @@
 
     <!-- day -->
     <Day wx:if="{{dayType == 0}}" date="{{date}}" count="{{count}}" />
-    <Week wx:if="{{dayType == 1}}" />
-    <Month wx:if="{{dayType == 2}}" />
+    <Week
+      wx:if="{{dayType == 1}}"
+      beginTime="{{beginTime}}"
+      endTime="{{endTime}}"
+      average="{{average}}"
+      sportRecords="{{sportRecords}}"
+    />
+    <Month
+      wx:if="{{dayType == 2}}"
+      beginTime="{{beginTime}}"
+      endTime="{{endTime}}"
+      average="{{average}}"
+      sportRecords="{{sportRecords}}"
+    />
   </view>
 </view>
