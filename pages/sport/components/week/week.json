@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Chart": "../../../../components/chart/index"
+  }
+}

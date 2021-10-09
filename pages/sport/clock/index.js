@@ -6,7 +6,7 @@ import {
   getListClockRecordByPlan,
   getSportRecordsByDate,
 } from "../../../api/sport";
-import { drawChart } from "../../../utils/drawChart";
+// import { drawChart } from "../../../utils/drawChart";
 import dayjs from "dayjs";
 
 Page({
@@ -19,7 +19,7 @@ Page({
     sportList: [],
     listClockRecordByPlan: [],
 
-    onInitChart: null,
+    // onInitChart: null,
     sportRecords: [],
     average: 0,
     beginTime: "",
@@ -36,7 +36,7 @@ Page({
     await this.getSportList();
     await this.getListClockRecordByPlan();
     await this.getSportRecordsByDate();
-    onInitChart.call(this);
+    // onInitChart.call(this);
   },
   /* 今日统计 */
   getSportInfo() {
@@ -120,7 +120,7 @@ Page({
       function () {
         if (current) {
           this.getSportRecordsByDate();
-          onInitChart.call(this);
+          // onInitChart.call(this);
         }
       }
     );
@@ -181,98 +181,98 @@ Page({
 });
 
 /** chart */
-function onInitChart() {
-  const { sportRecords: list, current } = this.data;
+// function onInitChart() {
+//   const { sportRecords: list, current } = this.data;
 
-  this.setData({
-    onInitChart: init,
-  });
+//   this.setData({
+//     onInitChart: init,
+//   });
 
-  function init(F2, config) {
-    const chart = new F2.Chart(config);
+//   function init(F2, config) {
+//     const chart = new F2.Chart(config);
 
-    chart.source([...list]);
+//     chart.source([...list]);
 
-    chart.scale("date", {
-      type: "cat",
-      range: [0.2, 0.8],
-    });
+//     chart.scale("date", {
+//       type: "cat",
+//       range: [0.2, 0.8],
+//     });
 
-    chart.scale("consumeFeat", {
-      max: 1000,
-      min: 100,
-      tickCount: 5,
-    });
+//     chart.scale("consumeFeat", {
+//       max: 1000,
+//       min: 100,
+//       tickCount: 5,
+//     });
 
-    drawChart(
-      chart,
-      "date*consumeFeat",
-      "id",
-      current == 1 ? "interval" : "point"
-    );
+//     drawChart(
+//       chart,
+//       "date*consumeFeat",
+//       "id",
+//       current == 1 ? "interval" : "point"
+//     );
 
-    handleAxis.call(this, chart);
+//     handleAxis.call(this, chart);
 
-    chart.legend(false);
+//     chart.legend(false);
 
-    chart.tooltip({
-      custom: true,
-      onChange(tip) {
-        const { consumeFeat } = tip.items[0].origin;
-        wx.showToast({
-          title: `已消耗${consumeFeat}千卡`,
-          icon: "none",
-        });
-      },
-    });
+//     chart.tooltip({
+//       custom: true,
+//       onChange(tip) {
+//         const { consumeFeat } = tip.items[0].origin;
+//         wx.showToast({
+//           title: `已消耗${consumeFeat}千卡`,
+//           icon: "none",
+//         });
+//       },
+//     });
 
-    chart.render();
-    return chart;
-  }
-}
+//     chart.render();
+//     return chart;
+//   }
+// }
 
-function handleAxis(chart) {
-  /** 修改x轴 */
-  chart.axis("index", {
-    line: {
-      stroke: "#85A5FF",
-    },
-    // label: (text, index, total) => {
-    //   const cfg = {
-    //     textAlign: "left",
-    //     fill: "#85A5FF",
-    //     fontSize: 12,
-    //     fontWeight: 300,
-    //     text: "",
-    //   };
+// function handleAxis(chart) {
+//   /** 修改x轴 */
+//   chart.axis("index", {
+//     line: {
+//       stroke: "#85A5FF",
+//     },
+//     // label: (text, index, total) => {
+//     //   const cfg = {
+//     //     textAlign: "left",
+//     //     fill: "#85A5FF",
+//     //     fontSize: 12,
+//     //     fontWeight: 300,
+//     //     text: "",
+//     //   };
 
-    //   const { list } = this;
+//     //   const { list } = this;
 
-    //   const { executionDate = "", point = "" } = list[index];
+//     //   const { executionDate = "", point = "" } = list[index];
 
-    //   console.log(list, index, text);
+//     //   console.log(list, index, text);
 
-    //   if (!executionDate || !point) {
-    //     return cfg;
-    //   }
+//     //   if (!executionDate || !point) {
+//     //     return cfg;
+//     //   }
 
-    //   if (index === 0) {
-    //     cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`;
-    //   } else if (index === total - 1) {
-    //     cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`;
-    //   } else {
-    //     if (total > 5) {
-    //       const rest = total / 2;
-    //       const step = Math.floor(rest);
+//     //   if (index === 0) {
+//     //     cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`;
+//     //   } else if (index === total - 1) {
+//     //     cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`;
+//     //   } else {
+//     //     if (total > 5) {
+//     //       const rest = total / 2;
+//     //       const step = Math.floor(rest);
 
-    //       index % step === 0 &&
-    //         (cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`);
-    //     } else {
-    //       cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`;
-    //     }
-    //   }
+//     //       index % step === 0 &&
+//     //         (cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`);
+//     //     } else {
+//     //       cfg.text = `${dayjs(executionDate).format("MM/DD")}\n${point}`;
+//     //     }
+//     //   }
 
-    //   return cfg;
-    // },
-  });
-}
+//     //   return cfg;
+//     // },
+//   });
+// }

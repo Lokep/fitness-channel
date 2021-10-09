@@ -69,7 +69,8 @@
         </view>
 
         <view class="chart-date"> {{beginTime}}~{{endTime}} </view>
-        <Chart list="{{sportRecords}}" onInitChart="{{onInitChart}}" />
+        <Week wx:if="{{current==1}}" sportRecords="{{sportRecords}}" />
+        <Month wx:if="{{current==2}}" sportRecords="{{sportRecords}}" />
       </view>
     </block>
   </view>
@@ -92,7 +93,9 @@
             <text class="dot blue"></text>
             {{sportList[sportListCurrent].planName}}
           </view>
-          <view class="f22 text-lighter"> 从2021-07-01开始 </view>
+          <view class="f22 text-lighter">
+            从{{sportList[sportListCurrent].beginDate}}开始
+          </view>
         </view>
         <view
           class="swiper-btn swiper-btn-next"

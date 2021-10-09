@@ -1,0 +1,2 @@
+<!--pages/sleep/components/week.wxml-->
+<Chart list="{{sportRecords}}" onInitChart="{{onInitChart}}" />
