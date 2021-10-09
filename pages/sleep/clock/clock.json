@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "运动打卡",
-  "usingComponents": {}
+  "usingComponents": {
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
 }

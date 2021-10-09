@@ -45,7 +45,7 @@
     <view class="car-container-title bold">消耗热量</view>
     <view class="mt-25"></view>
     <view class="pt-5 pb-5">
-      <!-- <input type="number" class="f24 f-number input-inline-block" placeholder="请输入" placeholder-class="text-lighter"></input> -->
+      <input type="number" class="f24 f-number input-inline-block" placeholder="请输入" placeholder-class="text-lighter" model:value="{{consumeFeat}}" />
       <text class="f24 text-light ml-10"> 千卡</text>
     </view>
   </view>
@@ -55,8 +55,8 @@
     >
     <view class="mt-25"></view>
     <view class="pt-5 pb-5">
-      <!-- <textarea class="f24" style="min-height:100px" maxlength="100" auto-height="{{true}}"
-        placeholder="请输入内容..."></textarea> -->
+      <textarea class="f24" style="min-height:100px" maxlength="100" auto-height="{{true}}"
+        placeholder="请输入内容..." model:value="{{describe}}" />
     </view>
   </view>
   <button wx:if="{{true}}" class="full-btn fixed" bindtap="clockRecordUpdate">

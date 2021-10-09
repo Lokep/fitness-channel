@@ -102,11 +102,12 @@ Page({
 
     this.setData({
       current,
+    },function(){
+      if (current) {
+        this.getSportRecordsByDate();
+        onInitChart.call(this);
+      }
     });
-    if (current) {
-      this.getSportRecordsByDate();
-      onInitChart.call(this);
-    }
   },
   async onLoad() {
     this.getSportInfo();

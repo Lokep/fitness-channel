@@ -1,66 +1,44 @@
 // pages/sport/clock/index.js
+import dayjs from "dayjs";
+import {
+  getCache
+} from "../../../utils/util";
+import {
+  getSleepRecordsByDate,
+} from "../../../api/sleep"
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    date: dayjs().format("YYYY-MM-DD"),
+    id: "",
+    picUrl: "",
+    describe: "",
+    hour: "",
+    minute: "",
+    advice: ""
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad: function ({
+    date
+  }) {
+    this.setData({
+      date
+    })
+    this.getSleepRecordsByDate()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  /* 按日期获取日睡眠记录 */
+  getSleepRecordsByDate() {
+    const {
+      memberId
+    } = getCache("loginInfo");
+    const {
+      date
+    } = this.data;
+    getSleepRecordsByDate({
+      date,
+      memberId,
+    }).then(res => {
+      this.setData({
+        ...res.data
+      })
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
