@@ -79,8 +79,9 @@
         <text class="f38 f-number">{{averageArr[1]}}</text>
         <text class="ml-10">分钟</text>
       </view>
-      <view class="charts-text">2021年8月1日-8月7日</view>
-      <Chart list="{{sportRecords}}" onInitChart="{{onInitChart}}" />
+      <view class="charts-text">{{beginTime}} - {{endTime}}</view>
+      <Week wx:if="{{current==1}}" sportRecords="{{sportRecords}}" />
+      <Month wx:if="{{current==2}}" sportRecords="{{sportRecords}}" />
     </block>
     <!-- <block wx:if="{{true}}">
       <view class="flex justify-between">
