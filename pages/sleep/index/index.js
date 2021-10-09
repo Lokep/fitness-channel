@@ -124,18 +124,13 @@ function onInitChart() {
       range: [0.2, 0.8],
     });
 
-    chart.scale("consumeFeat", {
-      max: 1000,
-      min: 100,
+    chart.scale("hour", {
+      max: 24,
+      min: 0,
       tickCount: 5,
     });
 
-    drawChart(
-      chart,
-      "date*consumeFeat",
-      "id",
-      current == 1 ? "interval" : "point"
-    );
+    drawChart(chart, "date*hour", "id", current == 1 ? "interval" : "point");
 
     handleAxis.call(this, chart);
 
