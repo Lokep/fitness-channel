@@ -27,3 +27,12 @@ export const addSleepRecordByDate = (data) =>
     showErrMsg: false,
     showLoading: false,
   });
+/* 更新睡眠记录 */
+export const updateSleepRecord = (data) =>
+  axios({
+    url: "/Ma/Sleep/updateSleepRecord",
+    method: "post",
+    data,
+    showErrMsg: false,
+    showLoading: false,
+  });

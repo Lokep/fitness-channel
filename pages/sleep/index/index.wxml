@@ -1,17 +1,40 @@
-<navigation-bar title="睡眠记录" color="#fff" background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)" />
+<navigation-bar
+  title="睡眠记录"
+  color="#fff"
+  background="linear-gradient(360deg, #afcbf9 0%, #75acff 100%)"
+/>
 <!---bg --->
 <view class="gradient"></view>
 <view class="wrap mt-20 ml-30 mr-30">
   <!-- 切换 -->
   <view class="flex charts-toggle-bar">
-    <view class="charts-btn {{current==0?'current':''}}" data-index="{{0}}" bindtap="toggleSelect">日</view>
-    <view class="charts-btn {{current==1?'current':''}}" data-index="{{1}}" bindtap="toggleSelect">周</view>
-    <view class="charts-btn {{current==2?'current':''}}" data-index="{{2}}" bindtap="toggleSelect">月</view>
+    <view
+      class="charts-btn {{current==0?'current':''}}"
+      data-index="{{0}}"
+      bindtap="toggleSelect"
+      >日</view
+    >
+    <view
+      class="charts-btn {{current==1?'current':''}}"
+      data-index="{{1}}"
+      bindtap="toggleSelect"
+      >周</view
+    >
+    <view
+      class="charts-btn {{current==2?'current':''}}"
+      data-index="{{2}}"
+      bindtap="toggleSelect"
+      >月</view
+    >
   </view>
   <!-- 图表区域-->
   <view class="charts-container mt-30">
     <block wx:if="{{current==0}}">
-      <picker mode="date" model:value="{{today}}" bindchange="getSleepRecordsByDate">
+      <picker
+        mode="date"
+        model:value="{{today}}"
+        bindchange="getSleepRecordsByDate"
+      >
         <view class="text-center flex justify-center align-center">
           <view class="ivon-date"></view>
           <text class="f-number pl-20 pr-20 f38">{{today}}</text>
@@ -21,7 +44,11 @@
       <block wx:if="{{!todayInfo}}">
         <empty title="今日还未上传睡眠记录哦~" />
         <view class="text-center mt-30">
-          <navigator url="/pages/sleep/clock/clock?date={{today}}" class="btn-normal">添加记录</navigator>
+          <navigator
+            url="/pages/sleep/clock/clock?date={{today}}"
+            class="btn-normal"
+            >添加记录</navigator
+          >
         </view>
       </block>
       <block wx:else>
@@ -37,8 +64,9 @@
           <image mode="aspectFill" src="{{todayInfo.picUrl}}"></image>
         </view>
         <view class="mt-30 text-center">
-          <navigator url="/pages/sleep/clock/detail?date={{today}}" class="link" data-id="{{todayInfo.id}}"
-            >查看详情</navigator>
+          <view class="link" data-id="{{todayInfo.id}}" bindtap="toDetailView"
+            >查看详情</view
+          >
         </view>
       </block>
     </block>
@@ -71,7 +99,7 @@
       </view>
     </block> -->
   </view>
-  <button wx:if="{{true}}" class="full-btn fixed">添加记录</button>
+  <button wx:if="{{false}}" class="full-btn fixed">添加记录</button>
   <!--  -->
   <!-- <view class="mt-30">
     <view class="flex justify-between align-center">

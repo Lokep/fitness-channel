@@ -93,16 +93,15 @@ Page({
   },
   toDetailView() {
     const {
-      date,
-      todayInfo: { id, hour, minute },
+      todayInfo: { id, hour, minute, date: date },
     } = this.data;
-    if (hour && minute) {
+    if (hour == 0 || minute == 0) {
       wx.navigateTo({
-        url: `/pages/sleep/clock/detail`,
+        url: `/pages/sleep/clock/clock?id=${id}&date=${date}`,
       });
     } else {
       wx.navigateTo({
-        url: `/pages/sleep/clock/clock"`,
+        url: `/pages/sleep/clock/detail?date=${date}`,
       });
     }
   },
