@@ -48,6 +48,7 @@ Page({
           height,
           bmi,
           weight,
+          name,
           standardWeight,
         } = res.data;
         this.setData({
@@ -59,6 +60,7 @@ Page({
           height,
           bmi,
           weight,
+          name,
           standardWeight,
         });
       }
@@ -67,7 +69,8 @@ Page({
 
   updateMemberInfo() {
     const { memberId = "" } = getCache("loginInfo");
-    const { sex, birthDate, height, standardWeight, bmi, weight } = this.data;
+    const { sex, birthDate, height, standardWeight, bmi, weight, name } =
+      this.data;
     updateMemberInfo({
       id: 1,
       memberId,
@@ -77,6 +80,7 @@ Page({
       standardWeight,
       bmi,
       weight,
+      name,
     });
   },
 

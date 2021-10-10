@@ -2,6 +2,8 @@
   "navigationStyle": "custom",
   "usingComponents": {
     "empty": "../../../components/empty/empty",
-    "Chart": "../../../components/chart/index"
+    "Chart": "../../../components/chart/index",
+    "Week": "../components/week/week",
+    "Month": "../components/month/month"
   }
 }

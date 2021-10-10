@@ -1,1 +1,9 @@
-<view class="week"> </view>
+<view class="week">
+  <view class="chart-title"> 平均消耗热量 </view>
+  <view class="chart-subtitle justify-center align-center">
+    <view> {{average || 0}} </view>
+    <text>千卡</text>
+  </view>
+  <view class="chart-date"> {{beginTime}}~{{endTime}} </view>
+  <Chart list="{{sportRecords}}" onInitChart="{{onInitChart}}" />
+</view>

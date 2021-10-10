@@ -1,11 +1,7 @@
 // pages/sport/clock/index.js
 import dayjs from "dayjs";
-import {
-  getCache
-} from "../../../utils/util";
-import {
-  getSleepRecordsByDate,
-} from "../../../api/sleep"
+import { getCache } from "../../../utils/util";
+import { getSleepRecordsByDate } from "../../../api/sleep";
 Page({
   data: {
     date: dayjs().format("YYYY-MM-DD"),
@@ -14,31 +10,29 @@ Page({
     describe: "",
     hour: "",
     minute: "",
-    advice: ""
+    advice: "",
   },
-  onLoad: function ({
-    date
-  }) {
+  onLoad: function ({ date }) {
     this.setData({
-      date
-    })
-    this.getSleepRecordsByDate()
+      date,
+    });
+  },
+  onShow() {
+    this.getSleepRecordsByDate();
   },
   /* 按日期获取日睡眠记录 */
   getSleepRecordsByDate() {
-    const {
-      memberId
-    } = getCache("loginInfo");
-    const {
-      date
-    } = this.data;
+    const { memberId } = getCache("loginInfo");
+    const { date } = this.data;
     getSleepRecordsByDate({
       date,
       memberId,
-    }).then(res => {
+    }).then((res) => {
       this.setData({
-        ...res.data
-      })
-    })
+        ...res.data,
+        advice: res.data?.advice || "",
+        describe: res.data?.describe || "",
+      });
+    });
   },
-})
+});

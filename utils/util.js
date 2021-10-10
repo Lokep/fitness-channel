@@ -62,3 +62,12 @@ export const validPhone = (phone) => {
   const reg = /^1(3\d|4[5-9]|5[0-35-9]|6[2567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
   return reg.test(phone);
 };
+export const arraySplit = (arr, num = 2) => {
+  let newArr = [];
+  if (arr instanceof Array) {
+    for (var i = 0; i < arr.length; i += num) {
+      newArr.push(arr.slice(i, i + num));
+    }
+  }
+  return newArr;
+};
