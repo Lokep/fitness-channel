@@ -1,1 +1,54 @@
-/* pages/dish/detail/index.wxss */
+.container {
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+.cell {
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+  background: #fff;
+  border-radius: 40rpx;
+}
+.cell + .cell {
+  margin-top: 20rpx;
+}
+.cell-title {
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 44rpx;
+}
+.cell-desc {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 40rpx;
+}
+.cell-img {
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #eee;
+}
+.cell-wrap-title {
+  font-size: 28rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #1e1e1e;
+  line-height: 40rpx;
+}
+.cell-content {
+  box-sizing: border-box;
+  padding: 30rpx 32rpx;
+  background-color: #f9fafb;
+  flex-wrap: wrap;
+}
+.cell-dish-item {
+  flex: 1;
+  flex-basis: 50%;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 34rpx;
+}

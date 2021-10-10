@@ -28,6 +28,7 @@ Page({
     bmi: "",
     weight: "",
     type: "", // 用于区分展示日期组件还是性别下拉框
+    userInfo: {},
   },
 
   onShow() {
@@ -52,11 +53,12 @@ Page({
           standardWeight,
         } = res.data;
         this.setData({
+          userInfo: res.data,
           sex: {
             value: sex,
             label: sex === 1 ? "男" : "女",
           },
-          birth: birthDate,
+          birth: dayjs(birthDate).format("YYYY-DD-MM"),
           height,
           bmi,
           weight,
@@ -69,9 +71,18 @@ Page({
 
   updateMemberInfo() {
     const { memberId = "" } = getCache("loginInfo");
-    const { sex, birthDate, height, standardWeight, bmi, weight, name } =
-      this.data;
+    const {
+      sex,
+      birthDate,
+      height,
+      standardWeight,
+      bmi,
+      weight,
+      name,
+      userInfo,
+    } = this.data;
     updateMemberInfo({
+      ...userInfo,
       id: 1,
       memberId,
       sex: sex.value,

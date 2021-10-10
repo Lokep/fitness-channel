@@ -1,2 +1,39 @@
-<!--pages/dish/detail/index.wxml-->
-<text>pages/dish/detail/index.wxml</text>
+<view class="container">
+  <view class="cell">
+    <view class="cell-title mb-30">拍照上传</view>
+    <view class="cell-wrap">
+      <image class="cell-img" src="{{record.picUrl}}" />
+    </view>
+  </view>
+
+  <view class="cell">
+    <view class="cell-title mb-30">描述内容</view>
+    <view class="cell-wrap">
+      <view class="cell-desc"> {{record.describe}} </view>
+    </view>
+  </view>
+
+  <view class="cell">
+    <view class="cell-title mb-30">营养师记录</view>
+    <view class="cell-wrap">
+      <!--
+        <view class="cell-wrap-title mb-25">
+          · 饮食种类
+        </view>
+        -->
+      <view class="cell-content flex">
+        <view class="cell-dish-item"> 热量 {{record.heat}}千卡 </view>
+        <view class="cell-dish-item"> 蛋白 {{record.protein}}克 </view>
+        <view class="cell-dish-item"> 脂肪 {{record.fat}}克 </view>
+        <view class="cell-dish-item"> 碳水 {{record.carbonWater}}克 </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="cell">
+    <view class="cell-title mb-30">营养师建议</view>
+    <view class="cell-wrap">
+      <view class="cell-desc"> {{record.advice}} </view>
+    </view>
+  </view>
+</view>

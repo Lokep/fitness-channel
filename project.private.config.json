@@ -131,6 +131,12 @@
           "pathName": "pages/sport/clock/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "饮食记录详情",
+          "pathName": "pages/dish/detail/index",
+          "query": "id=ac84a1cf63ac4c6eb045f7b7be1af2fe",
+          "scene": null
         }
       ]
     }

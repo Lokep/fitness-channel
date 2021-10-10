@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import { getMemberInfo, updateMemberInfo } from "../../../api/index";
 import { getCache } from "../../../utils/util";
 
@@ -71,8 +72,14 @@ Page({
       memberId,
     }).then((res) => {
       if (res.result === 1) {
+        let userInfo = res.data;
+
+        if (userInfo.birth) {
+          userInfo.birth = dayjs(userInfo.birth).format("YYYY-MM-DD");
+        }
+
         this.setData({
-          userInfo: res.data,
+          userInfo,
         });
       }
     });

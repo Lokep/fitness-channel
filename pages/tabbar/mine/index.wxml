@@ -3,7 +3,7 @@
     <!--- 头像 --->
     <van-image
       custom-class="mine-topbar--avatar"
-      src="/assets/images/img_diet.png"
+      src="{{userInfo.headPic}}"
       lazy-load
       use-loading-slot
       use-error-slot
@@ -33,7 +33,7 @@
           src="/assets/images/{{userInfo.sex == 1 ? 'icon_mine_man' : 'icon_mine_woman'}}.png"
         />
       </view>
-      <view class="mine-topbar--birth mt-10" wx:if="{{birth}}">
+      <view class="mine-topbar--birth mt-10" wx:if="{{userInfo.birth}}">
         {{userInfo.birth}}
       </view>
     </view>
