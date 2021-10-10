@@ -40,6 +40,7 @@ function handleStyle(status) {
   return `background: ${COLOR[status.toUpperCase()]}; 
           border-radius: 2px;
           padding: 3px 2px; text-align: center;
+          color: #fff;
           font-weight: 400;
           width: 30pt;`;
 }

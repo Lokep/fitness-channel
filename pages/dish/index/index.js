@@ -49,11 +49,14 @@ Page({
       memberId,
     }).then((res) => {
       if (res.result === 1) {
+        const hasPlan =
+          res.data && Array.isArray(res.data) && res.data.length > 0;
         this.setData({
           average: res.average || 0,
           sportRecords: res.data || [],
           beginTime,
           endTime,
+          hasPlan,
         });
       }
     });

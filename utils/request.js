@@ -145,7 +145,7 @@ function qs(obj) {
 }
 
 function handleData(data) {
-  if (env !== "develop") return data;
+  if (env === "release") return data;
 
   return {
     ...data,

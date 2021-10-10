@@ -1,8 +1,12 @@
+.container {
+  overflow: hidden;
+}
 .wrap {
   position: relative;
   z-index: 2;
   box-sizing: border-box;
   padding: 0 30rpx;
+  margin-bottom: 200rpx;
 }
 .wrap-tab {
   margin: 32rpx 0;
