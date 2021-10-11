@@ -26,7 +26,7 @@ Component({
     show: false,
     date: handleDate(new Date()),
     minDate: new Date(2020, 8, 17).getTime(),
-    maxDate: new Date().getTime() + MONTH_TIME_STAMP,
+    maxDate: new Date().getTime(),
     dayCount: 0,
     dayNum: 0,
     planId: null,

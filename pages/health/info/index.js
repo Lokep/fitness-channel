@@ -29,6 +29,7 @@ Page({
     weight: "",
     type: "", // 用于区分展示日期组件还是性别下拉框
     userInfo: {},
+    timeStamp: new Date(1990, 0, 1).getTime(),
   },
 
   onShow() {
@@ -58,7 +59,8 @@ Page({
             value: sex,
             label: sex === 1 ? "男" : "女",
           },
-          birth: dayjs(birthDate).format("YYYY-DD-MM"),
+          birthDate: dayjs(birthDate).format("YYYY-DD-MM"),
+          timeStamp: new Date(birthDate).getTime(),
           height,
           bmi,
           weight,
@@ -102,7 +104,7 @@ Page({
   },
   handleDateSelector(e) {
     const timeStamp = e.detail;
-    const birthDate = formatDate(new Date(timeStamp));
+    const birthDate = dayjs(timeStamp).format("YYYY-MM-DD");
     this.setData({
       timeStamp,
       birthDate,

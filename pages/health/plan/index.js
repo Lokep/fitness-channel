@@ -53,14 +53,17 @@ Page({
       getDietPlanDetail({
         id,
       }).then((res) => {
-        let ruleListArr = [];
-        if (res.plan.ruleList instanceof Array) {
-          res.plan.ruleList.forEach((item) => {
-            const idx = item.mealType;
-            ruleListArr[idx - 1] = ruleListArr[idx - 1] || [];
-            ruleListArr[idx - 1].push(item);
-          });
-        }
+        // let ruleListArr = [];
+        // if (res.plan.ruleList instanceof Array) {
+        //   res.plan.ruleList.forEach((item) => {
+        //     const idx = item.mealType;
+        //     ruleListArr[idx - 1] = ruleListArr[idx - 1] || [];
+        //     ruleListArr[idx - 1].push(item);
+        //   });
+        // }
+        const { ruleList } = res.plan;
+        const ruleListArr = handleRuleList(ruleList);
+
         if (res.result === 1) {
           this.setData({
             info: res.plan,
@@ -139,3 +142,11 @@ Page({
     }
   },
 });
+
+function handleRuleList(list = []) {
+  if (list.length == 0) {
+    return [];
+  }
+
+  return list;
+}

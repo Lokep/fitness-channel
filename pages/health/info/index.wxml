@@ -31,6 +31,7 @@
           data-type="height"
           bindinput="handleInput"
         />
+        cm
       </view>
     </view>
   </view>
@@ -47,6 +48,7 @@
           data-type="weight"
           bindinput="handleInput"
         />
+        kg
       </view>
     </view>
   </view>
@@ -77,6 +79,7 @@
           disabled
           placeholder="未填写"
         />
+        kg
       </view>
     </view>
   </view>

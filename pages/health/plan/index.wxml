@@ -29,7 +29,7 @@
           wx:key="index"
           class="swiper-full"
         >
-          <scroll-view scroll-y class="swiper-full">
+          <view class="swiper-full">
             <!-- 标题 -->
             <block>
               <view wx:if="{{index==0}}" class="plan-content__title">早餐</view>
@@ -79,7 +79,7 @@
                 </view>
               </view>
             </block>
-          </scroll-view>
+          </view>
         </swiper-item>
       </swiper>
       <!-- <view class="plan-meal" wx:for="{{info.ruleList}}" wx:key="type">

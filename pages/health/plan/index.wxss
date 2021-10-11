@@ -106,9 +106,6 @@
 .shadow-light {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.swiper-full {
-  height: calc(100vh - 370rpx);
-}
 .swiper-btn {
   width: 60rpx;
   height: 60rpx;

@@ -127,10 +127,10 @@
             <view class="text-container">
               <view class="top cb flex algin-center justify-between">
                 <view>
-                  <text class="f30"
+                  <text class="sport-block--title"
                     >{{item.suggestContent?item.suggestContent:'—'}}</text
                   >
-                  <text class="f24 text-lighter ml-10"
+                  <text class="sport-block--calorie ml-20"
                     >{{item.suggestConsume?item.suggestConsume:'/'}}千卡</text
                   >
                 </view>
@@ -138,17 +138,17 @@
                   <view class="fr f22 day text-lighter"
                     >第{{item.dayNum}}天</view
                   >
-                  <view class="ml-10 arrow-right"></view>
+                  <view class="arrow-right"></view>
                 </view>
               </view>
-              <view class="text text-light f24 ellipsis-2 mt-10 mt-10">
+              <view class="sport-block--desc mt-10 mt-10">
                 {{item.suggestContent ? item.suggestContent : ''}}
               </view>
-              <view class="top">
-                <text class="f-number f40"
-                  >{{item.consumeFeat ? item.consumeFeat : "/"}}</text
+              <view class="top" wx:if="{{item.consumeFeat}}">
+                <text class="sport-block--consume"
+                  >{{item.consumeFeat ? item.consumeFeat : "--"}}</text
                 >
-                <text class="f24 text-lighter ml-10">千卡</text>
+                <text class="sport-block--unit">千卡</text>
                 <block wx:if="{{item.typeName}}">
                   <text class="f24 text-lighter ml-10">——</text>
                   <text class="tag success ml-10"

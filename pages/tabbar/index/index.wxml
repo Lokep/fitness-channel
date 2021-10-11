@@ -200,9 +200,12 @@
         </view>
 
         <view class="card-item">
-          <view class="info-data" wx:if="{{blood}}">{{blood || '--'}}</view>
+          <view class="info-data" wx:if="{{standardWeight}}">
+            <view>{{standardWeight || '--'}}</view>
+            <text>kg</text>
+          </view>
           <view class="info-data--placeholder" wx:else> 未填写 </view>
-          <view class="info-desc">血型</view>
+          <view class="info-desc">标准体重</view>
         </view>
       </view>
     </view>

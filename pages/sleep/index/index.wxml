@@ -33,6 +33,7 @@
       <picker
         mode="date"
         model:value="{{today}}"
+        end="{{today}}"
         bindchange="getSleepRecordsByDate"
       >
         <view class="text-center flex justify-center align-center">

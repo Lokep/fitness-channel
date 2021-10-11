@@ -18,13 +18,15 @@
 }
 .charts-btn {
   color: #fff;
-  width: 130rpx;
-  height: 74rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 37rpx;
-  font-size: 26rpx;
+  width: 136rpx;
+  height: 70rpx;
+  border-radius: 51rpx;
+  font-size: 36rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
   transition: font-size 0.5s, background-color 0.5s;
 }
 .charts-btn.active,
@@ -32,7 +34,6 @@
 .charts-btn.on {
   background-color: #fff;
   color: #75acff;
-  font-size: 28rpx;
 }
 .charts-container {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -121,13 +122,16 @@
   line-height: 1.75;
 }
 .clock-item .day {
-  padding: 0 12rpx;
+  padding: 2rpx 12rpx;
   border-radius: 20rpx;
-  line-height: 36rpx;
-  height: 36rpx;
+  line-height: 1;
   margin-left: auto;
   display: inline-block;
-  border: 1px solid #999;
+  border: 1rpx solid #c4ced6;
+  font-size: 20rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #c4ced6;
 }
 .arrow-right {
   background-size: 30rpx 30rpx;
@@ -190,4 +194,40 @@
   line-height: 34rpx;
   text-align: center;
   margin-bottom: 40rpx;
+}
+.sport-block--title {
+  font-size: 32rpx;
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+  color: #1e1e1e;
+  line-height: 1;
+}
+.sport-block--calorie {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #bfbfbf;
+  line-height: 1;
+}
+.sport-block--desc {
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #666;
+  line-height: 34rpx;
+}
+.sport-block--consume {
+  font-size: 40rpx;
+  font-family: DINAlternate-Bold, DINAlternate;
+  font-weight: bold;
+  color: #1e1e1e;
+  line-height: 48rpx;
+}
+.sport-block--unit {
+  margin-left: 16rpx;
+  font-size: 24rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: #bfbfbf;
+  line-height: 34rpx;
 }

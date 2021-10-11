@@ -93,7 +93,9 @@
               bindtap="handleRecordDetailNavigation"
               wx:else
             >
-              <view class="ellipsis" style="flex: 1"> asdfasdfasdfasd </view>
+              <view class="ellipsis" style="flex: 1">
+                {{mealRecords[0].foodDetail}}
+              </view>
               <view class="iconfont iconarrow-right"></view>
             </view>
 
@@ -152,7 +154,9 @@
               bindtap="handleRecordDetailNavigation"
               wx:else
             >
-              <view class="ellipsis" style="flex: 1"> asdfasdfasdfasd </view>
+              <view class="ellipsis" style="flex: 1">
+                {{mealRecords[1].foodDetail}}
+              </view>
               <view class="iconfont iconarrow-right"></view>
             </view>
 
@@ -210,7 +214,9 @@
               bindtap="handleRecordDetailNavigation"
               wx:else
             >
-              <view class="ellipsis" style="flex: 1"> asdfasdfasdfasd </view>
+              <view class="ellipsis" style="flex: 1">
+                {{mealRecords[2].foodDetail}}
+              </view>
               <view class="iconfont iconarrow-right"></view>
             </view>
             <view class="day-meal-item__args flex">

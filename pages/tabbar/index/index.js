@@ -12,6 +12,7 @@ Page({
     bmi: null,
     weight: null,
     blood: null,
+    standardWeight: null,
 
     suggestConsume: null,
     consumeFeat: null,
@@ -79,12 +80,14 @@ Page({
           bmi = "",
           weight = "",
           blood = "",
+          standardWeight = "",
         } = res.data || {};
         this.setData({
           height,
           bmi,
           weight,
           blood: enum_blood[blood],
+          standardWeight,
         });
       }
     });
