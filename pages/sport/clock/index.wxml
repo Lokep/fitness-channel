@@ -156,9 +156,15 @@
                   >
                 </block>
               </view>
-              <view class="sport-clock mt-10" wx:if="{{item.isSubmit!==1}}">
-                运动打卡
-              </view>
+              <block wx:if="{{item.isSubmit!==1}}">
+                <view
+                  wx:if="{{currentToday < sportList[sportListCurrent].beginDate }}"
+                  class="sport-clock mt-10 disable"
+                >
+                  不可打卡
+                </view>
+                <view wx:else class="sport-clock mt-10"> 运动打卡 </view>
+              </block>
               <view
                 class="sport-clock mt-10 disable"
                 wx:else

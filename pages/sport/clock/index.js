@@ -11,6 +11,10 @@ import dayjs from "dayjs";
 
 Page({
   data: {
+    /* 今日时间时间戳 */
+    // currentToday: Date.parse(new Date(dayjs().format('YYYY/MM/DD'))),
+    currentToday: dayjs().format("YYYY-MM-DD"),
+    /*  */
     suggestConsume: "",
     consumeFeat: "",
     needConsume: "",
