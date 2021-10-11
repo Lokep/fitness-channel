@@ -22,12 +22,16 @@ Page({
   },
   handleDayTypeChange({ currentTarget }) {
     const { index } = currentTarget.dataset;
-    this.setData({
-      dayType: index,
-    });
-    if (index) {
-      this.getDietRecordList();
-    }
+    this.setData(
+      {
+        dayType: Number(index),
+      },
+      () => {
+        if (index) {
+          this.getDietRecordList();
+        }
+      }
+    );
   },
   /* 饮食打卡 */
   getDietRecordList() {
@@ -48,10 +52,12 @@ Page({
       endTime,
       memberId,
     }).then((res) => {
+      let sportRecords = res.data || [];
+      // sportRecords.reverse();
       if (res.result === 1) {
         this.setData({
           average: res.average || 0,
-          sportRecords: res.data || [],
+          sportRecords,
           beginTime,
           endTime,
         });
