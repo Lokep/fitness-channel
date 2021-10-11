@@ -88,7 +88,7 @@ Page({
       id: 1,
       memberId,
       sex: sex.value,
-      birth: dayjs(birthDate).format("YYYY-MM-DD hh:mm:ss"),
+      birth: dayjs(birthDate).format("YYYY-MM-DD"),
       height,
       standardWeight,
       bmi,
