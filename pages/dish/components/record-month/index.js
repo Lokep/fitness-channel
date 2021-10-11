@@ -1,5 +1,6 @@
 // pages/dish/components/record-month/index.js
 import { drawChart } from "../../../../utils/drawChart";
+let chart = null;
 Component({
   /**
    * 组件的属性列表
@@ -37,6 +38,11 @@ Component({
    * 组件的方法列表
    */
   methods: {},
+  observers: {
+    sportRecords(v) {
+      chart && chart.changeData(v);
+    },
+  },
 });
 /** chart */
 function onInitChart() {
@@ -47,7 +53,7 @@ function onInitChart() {
   });
 
   function init(F2, config) {
-    const chart = new F2.Chart(config);
+    chart = new F2.Chart(config);
 
     chart.source([...list]);
 
@@ -62,7 +68,12 @@ function onInitChart() {
       tickCount: 5,
     });
 
-    drawChart(chart, "date*heat", "id", current == 1 ? "interval" : "point");
+    drawChart(
+      chart,
+      "date*heat",
+      "memberId",
+      current == 1 ? "interval" : "point"
+    );
 
     handleAxis.call(this, chart);
 

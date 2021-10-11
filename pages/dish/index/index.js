@@ -59,7 +59,12 @@ Page({
           res.data && Array.isArray(res.data) && res.data.length > 0;
         this.setData({
           average: res.average || 0,
-          sportRecords,
+          sportRecords: sportRecords.reverse().map((item) => {
+            if (!item.memberId) {
+              item.memberId = 1;
+            }
+            return item;
+          }),
           beginTime,
           endTime,
           hasPlan,

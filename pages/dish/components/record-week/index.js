@@ -1,4 +1,5 @@
 // pages/dish/components/record-week/index.js
+let chart = null;
 import { drawChart } from "../../../../utils/drawChart";
 Component({
   /**
@@ -37,17 +38,24 @@ Component({
    * 组件的方法列表
    */
   methods: {},
+  observers: {
+    sportRecords(v) {
+      chart && chart.changeData(v);
+    },
+  },
 });
 /** chart */
 function onInitChart() {
   const { sportRecords: list, current } = this.data;
+
+  console.log("[sportRecords]:", list);
 
   this.setData({
     onInitChart: init,
   });
 
   function init(F2, config) {
-    const chart = new F2.Chart(config);
+    chart = new F2.Chart(config);
 
     chart.source([...list]);
 
@@ -62,7 +70,12 @@ function onInitChart() {
       tickCount: 5,
     });
 
-    drawChart(chart, "date*heat", "id", current == 1 ? "interval" : "point");
+    drawChart(
+      chart,
+      "date*heat",
+      "memberId",
+      current == 1 ? "interval" : "point"
+    );
 
     handleAxis.call(this, chart);
 
@@ -71,9 +84,9 @@ function onInitChart() {
     chart.tooltip({
       custom: true,
       onChange(tip) {
-        const { consumeFeat } = tip.items[0].origin;
+        const { heat } = tip.items[0].origin;
         wx.showToast({
-          title: `已消耗${consumeFeat}千卡`,
+          title: `已消耗${heat}千卡`,
           icon: "none",
         });
       },
