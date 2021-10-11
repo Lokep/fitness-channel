@@ -148,5 +148,20 @@ function handleRuleList(list = []) {
     return [];
   }
 
-  return list;
+  let result = {},
+    arr = [];
+  list.map((item) => {
+    const key = `${item.dayNum}`;
+
+    if (result[key]) {
+      result[key].push(item);
+    } else {
+      result[key] = [item];
+    }
+  });
+  for (let key in result) {
+    arr.push(result[key]);
+  }
+  console.log(arr);
+  return arr;
 }

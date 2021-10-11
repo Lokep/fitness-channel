@@ -1,3 +1,8 @@
+<wxs module="handleMealType">
+  module.exports = function handleMealType(type) { switch (type) { case 1:
+  return '早餐'; case 2: return '午餐'; case 3: return '晚餐'; case 4: return
+  '加餐'; } }
+</wxs>
 <view class="container">
   <view class="bg"></view>
 
@@ -29,57 +34,68 @@
           wx:key="index"
           class="swiper-full"
         >
-          <view class="swiper-full">
+          <scroll-view scroll-y class="swiper-full">
             <!-- 标题 -->
             <block>
+              <!--
               <view wx:if="{{index==0}}" class="plan-content__title">早餐</view>
               <view wx:if="{{index==1}}" class="plan-content__title">午餐</view>
               <view wx:if="{{index==2}}" class="plan-content__title">晚餐</view>
               <view wx:if="{{index==3}}" class="plan-content__title">加餐</view>
+              -->
+              <view class="plan-content__title"> 第{{index + 1}}天 </view>
             </block>
             <block>
-              <view class="plan-meal" wx:for="{{item}}" wx:key="type">
+              <view
+                class="plan-meal"
+                wx:for="{{item}}"
+                wx:key="i"
+                wx:for-item="el"
+                wx:for-index="i"
+              >
                 <view class="plan-meal__title align-center">
                   <image
                     class="plan-meal__icon"
-                    wx:if="{{item.mealType==1}}"
+                    wx:if="{{el.mealType==1}}"
                     src="/assets/images/icon_diet_breakfast.png"
                   />
                   <image
                     class="plan-meal__icon"
-                    wx:if="{{item.mealType==2}}"
+                    wx:if="{{el.mealType==2}}"
                     src="/assets/images/icon_diet_lunch.png"
                   />
                   <image
                     class="plan-meal__icon"
-                    wx:if="{{item.mealType==3}}"
+                    wx:if="{{el.mealType==3}}"
                     src="/assets/images/icon_diet_dinner.png"
                   />
                   <image
                     class="plan-meal__icon"
-                    wx:if="{{item.mealType==4}}"
+                    wx:if="{{el.mealType==4}}"
                     src="/assets/images/icon_diet_dinner.png"
                   />
-                  {{item.foodDetail}}
+                  {{ handleMealType(el.mealType) }}
                 </view>
-                <view class="plan-meal__content">{{item.foodDetail}}</view>
+
+                <view class="plan-meal__content">{{el.foodDetail}}</view>
+
                 <view class="plan-meal__calorie flex">
                   <view class="plan-meal__calorie-item mb-10"
-                    >热量 {{item.heat}} 千卡</view
+                    >热量 {{el.heat}} 千卡</view
                   >
                   <view class="plan-meal__calorie-item mb-10"
-                    >蛋白 {{item.protein}} 克</view
+                    >蛋白 {{el.protein}} 克</view
                   >
                   <view class="plan-meal__calorie-item"
-                    >碳水 {{item.carbonWater}} 克</view
+                    >碳水 {{el.carbonWater}} 克</view
                   >
                   <view class="plan-meal__calorie-item"
-                    >脂肪 {{item.fat}} 克</view
+                    >脂肪 {{el.fat}} 克</view
                   >
                 </view>
               </view>
             </block>
-          </view>
+          </scroll-view>
         </swiper-item>
       </swiper>
       <!-- <view class="plan-meal" wx:for="{{info.ruleList}}" wx:key="type">
